@@ -7,7 +7,7 @@ namespace Clinica_Frba.DataTransferObjects
 {
     class Rol
     {
-        public static String nombreTabla = "LaMiScoGon.Rol";
+        public static String nombreTabla = "LOS_BORBOTONES.Rol";
         public static String primaryKey = "Nombre";
         public static String campoDeCambioDeEstado;
         public static String valorCampoDeCambioDeEstado;

@@ -7,9 +7,9 @@ namespace Clinica_Frba.DataTransferObjects
 {
     class FuncionalidadesPorRol
     {
-        public static String nombreTabla = "LaMiScoGon.Funcionalidades_por_Rol";
-        public String Nombre_Rol;
-        public String Nombre_Funcionalidad;
+        public static String nombreTabla = "LOS_BORBOTONES.Func_Rol";
+        public String furo_CodRol;
+        public String furo_CodFuncionalidad;
 
         public FuncionalidadesPorRol() { }
     }

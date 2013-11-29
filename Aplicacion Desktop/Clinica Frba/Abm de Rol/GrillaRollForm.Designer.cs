@@ -262,7 +262,7 @@
             this.Controls.Add(this.B_Limpiar);
             this.Controls.Add(this.listadoAfiliados);
             this.Name = "GrillaRollForm";
-            this.Text = "Form1";
+            this.Text = "Roles";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.GrillaAfiliado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listadoAfiliados)).EndInit();

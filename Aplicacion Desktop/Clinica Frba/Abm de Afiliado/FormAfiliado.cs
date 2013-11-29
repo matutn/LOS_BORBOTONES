@@ -30,6 +30,8 @@ namespace Clinica_Frba.Abm_de_Afiliado
                         dni.Text = afiliado.Dni;
                         nombre.Text = afiliado.Nombre;
                         apellido.Text = afiliado.Apellido;
+
+                        /*  Buscar una función que discrimine letras de números.
                         if (direccion.Length == 2){
                             calle.Text = direccion[0];
                             nro.Text = direccion[1];
@@ -38,13 +40,14 @@ namespace Clinica_Frba.Abm_de_Afiliado
                             calle.Text = direccion[0] + ' ' + direccion[1];
                             nro.Text = direccion[2];
                         }
+                         */
                         telefono.Text = afiliado.Telefono;
                         mail.Text = afiliado.Mail;
                         diaNac.Text = fechaNacimiento[0];
                         mesNac.Text = fechaNacimiento[1];
                         añoNac.Text = fechaNacimiento[2];
                         if (afiliado.Sexo == "M") masculino.Checked = true; else femenino.Checked = true;
-                        estadoCivil.SelectedItem = Clases.DB.ExecuteNonQuery("Select esci_Descripcion from LOS_BORBOTONES.EstadoCivil where esci_CodEcivil = '" + afiliado.EstadoCivil + "'");
+                        estadoCivil.SelectedItem = Clases.DB.ExecuteReader("Select esci_Descripcion from LOS_BORBOTONES.EstadoCivil where esci_CodEcivil = '" + afiliado.EstadoCivil + "'");
                     }
                     break;
                 case 'A':
@@ -102,7 +105,7 @@ namespace Clinica_Frba.Abm_de_Afiliado
                     break;
                 case 'B':
                     {
-                        nro_estadoCivil = Clases.DB.ExecuteNonQuery("Select esci_CodEcivil from LOS_BORBOTONES.EstadoCivil where esci_Descripcion = '" + estado_civil + "'");
+                        nro_estadoCivil = Clases.DB.ExecuteCardinal("Select esci_CodEcivil from LOS_BORBOTONES.EstadoCivil where esci_Descripcion = '" + estado_civil + "'");
                         var lista = Clases.DB.ExecuteReader("Select * from LOS_BORBOTONES.Afiliado where afi_Apellido = '" + apellido.Text +
                             "' OR afi_Nombre = '" + nombre.Text + "' OR afi_Dni = '" + dni_afi + "' OR afi_Telefono = '" + tel +
                             "' OR afi_Mail = '" + mail.Text + "' OR afi_EstadoCivil = '" + nro_estadoCivil + 
@@ -183,6 +186,11 @@ namespace Clinica_Frba.Abm_de_Afiliado
 
             validador.hayUnoChequeado("Sexo", radioButtons);
             validador.hayUnoSeleccionado("Estado Civil",estadoCivil);
+        }
+
+        private void nombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

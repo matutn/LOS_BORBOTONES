@@ -54,6 +54,18 @@
     <Compile Include="Abm de Afiliado\FormAfiliado.Designer.cs">
       <DependentUpon>FormAfiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm de Rol\ABMRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm de Rol\ABMRol.Designer.cs">
+      <DependentUpon>ABMRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm de Rol\GrillaRollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm de Rol\GrillaRollForm.Designer.cs">
+      <DependentUpon>GrillaRollForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection\DB.cs" />
     <Compile Include="DTO\AfiliadoDTO.cs" />
     <Compile Include="DTO\Funcionalidad.cs" />
@@ -150,6 +162,12 @@
       <DependentUpon>GrillaAfiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm de Profesional\ModificacionProfesional.resx" />
+    <EmbeddedResource Include="Abm de Rol\ABMRol.resx">
+      <DependentUpon>ABMRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm de Rol\GrillaRollForm.resx">
+      <DependentUpon>GrillaRollForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -171,7 +189,6 @@
     <Compile Include="Utilities\Validador.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abm de Rol\" />
     <Folder Include="DAO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

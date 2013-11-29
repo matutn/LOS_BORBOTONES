@@ -140,6 +140,7 @@
             this.nombre.Size = new System.Drawing.Size(250, 20);
             this.nombre.TabIndex = 87;
             this.nombre.Tag = "Nombre";
+            this.nombre.TextChanged += new System.EventHandler(this.nombre_TextChanged);
             // 
             // L_Año
             // 

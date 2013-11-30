@@ -5,7 +5,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 //using Clinica_Frba.DataAccesObjects;
-using Clinica_Frba.DataTransferObjects;
+using Clinica_Frba.DTO;
 
 namespace Clinica_Frba.Utils
 {

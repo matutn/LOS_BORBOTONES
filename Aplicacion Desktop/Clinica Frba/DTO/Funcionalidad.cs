@@ -1,7 +1,7 @@
 using System;
 using System.Data.SqlClient;
 
-namespace Clinica_Frba.DataTransferObjects
+namespace Clinica_Frba.DTO
 {
 
     public class Funcionalidad

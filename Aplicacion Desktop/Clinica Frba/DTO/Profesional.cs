@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Collections.Generic;
 
-namespace Clinica_Frba.DataTransferObjects {
+namespace Clinica_Frba.DTO {
 
     public class Profesional {
         

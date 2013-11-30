@@ -13,9 +13,8 @@ namespace Clinica_Frba.GrillaRol
 {
     public partial class GrillaRol_Form : Form
     {
-        /* NOTA: Arreglar estas variables. */
-        public static Clinica_Frba.DTO.RolDTO Rol;
-        public static List<RolDTO> RolesAMostrar = new List<RolDTO>();        
+        public static Clinica_Frba.DTO.Rol_DTO Rol;
+        public static List<Rol_DTO> RolesAMostrar = new List<Rol_DTO>();        
 
         public static GrillaRol_Form instancia;
         public GrillaRol_Form()

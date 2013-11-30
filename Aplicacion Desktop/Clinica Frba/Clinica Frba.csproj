@@ -66,12 +66,13 @@
     <Compile Include="Abm de Rol\GrillaRol.Designer.cs">
       <DependentUpon>GrillaRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connection\DB.cs" />
+    <Compile Include="Conexión BD\DB.cs" />
+    <Compile Include="DAO\Rol_DAO.cs" />
     <Compile Include="DTO\AfiliadoDTO.cs" />
     <Compile Include="DTO\Funcionalidad.cs" />
     <Compile Include="DTO\FuncionalidadesPorRol.cs" />
     <Compile Include="DTO\Profesional.cs" />
-    <Compile Include="DTO\RolDTO.cs" />
+    <Compile Include="DTO\Rol_DTO.cs" />
     <Compile Include="DTO\RolesParaUnUsuario.cs" />
     <Compile Include="DTO\RolesPorUsuario.cs" />
     <Compile Include="DTO\Usuario.cs" />
@@ -187,9 +188,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Utilities\Validador.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

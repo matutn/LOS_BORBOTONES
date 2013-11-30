@@ -17,7 +17,7 @@ namespace Clinica_Frba.Abm_Rol
     public partial class Abm_Rol_Form : Form
     {
 
-         public static Clinica_Frba.DTO.RolDTO rol;
+         public static Clinica_Frba.DTO.Rol_DTO rol;
         public static char tipoDeFormularioSecundario;
         public Amb_Rol_Form() {
 

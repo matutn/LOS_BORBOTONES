@@ -29,8 +29,8 @@ namespace Clinica_Frba.GrillaAfiliado
 
         private void B_Buscar_Click(object sender, EventArgs e)
         {
-            Amb_Afiliado_Form.tipoDeFormularioSecundario = 'B';
-            (new Amb_Afiliado_Form()).Show(); 
+            Abm_Afiliado_Form.tipoDeFormularioSecundario = 'B';
+            (new Abm_Afiliado_Form()).Show(); 
         }
 
         public void actualizarListadoAfiliados()
@@ -73,8 +73,8 @@ namespace Clinica_Frba.GrillaAfiliado
 
         private void agregar_Click(object sender, EventArgs e)
         {
-            Amb_Afiliado_Form.tipoDeFormularioSecundario = 'A';
-            (new Amb_Afiliado_Form()).Show(); 
+            Abm_Afiliado_Form.tipoDeFormularioSecundario = 'A';
+            (new Abm_Afiliado_Form()).Show(); 
         }
 
         private void B_Limpiar_Click(object sender, EventArgs e)
@@ -104,7 +104,7 @@ namespace Clinica_Frba.GrillaAfiliado
                 return;
             DataGridViewRow fila = listadoAfiliados.SelectedRows[0];
             //FormAfiliado.idAfiliado = fila.Cells["IdAfiliado"].Value.ToString();
-            Amb_Afiliado_Form.afiliado = new AfiliadoDTO
+            Abm_Afiliado_Form.afiliado = new AfiliadoDTO
             (
             fila.Cells["txt_IdAfiliado"].Value.ToString(),
             "",
@@ -123,9 +123,9 @@ namespace Clinica_Frba.GrillaAfiliado
             fila.Cells["txt_CantidadConsultas"].Value.ToString(),
             ""
             );
-            Amb_Afiliado_Form.tipoDeFormularioSecundario = 'M';
+            Abm_Afiliado_Form.tipoDeFormularioSecundario = 'M';
 
-            (new Amb_Afiliado_Form()).Show();
+            (new Abm_Afiliado_Form()).Show();
         }
 
 

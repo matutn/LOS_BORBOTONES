@@ -13,11 +13,11 @@ using Clinica_Frba.Utils;
 
 namespace Clinica_Frba.Abm_Afiliado
 {
-    public partial class Amb_Afiliado_Form : Form
+    public partial class Abm_Afiliado_Form : Form
     {
         public static Clinica_Frba.DTO.AfiliadoDTO afiliado;
         public static char tipoDeFormularioSecundario;
-        public Amb_Afiliado_Form()
+        public Abm_Afiliado_Form()
         {
             InitializeComponent();
             switch (tipoDeFormularioSecundario)
@@ -31,7 +31,7 @@ namespace Clinica_Frba.Abm_Afiliado
                         nombre.Text = afiliado.Nombre;
                         apellido.Text = afiliado.Apellido;
 
-                        /*  Buscar una función que discrimine letras de números.
+                       
                         if (direccion.Length == 2){
                             calle.Text = direccion[0];
                             nro.Text = direccion[1];
@@ -40,7 +40,7 @@ namespace Clinica_Frba.Abm_Afiliado
                             calle.Text = direccion[0] + ' ' + direccion[1];
                             nro.Text = direccion[2];
                         }
-                         */
+                         
                         telefono.Text = afiliado.Telefono;
                         mail.Text = afiliado.Mail;
                         diaNac.Text = fechaNacimiento[0];

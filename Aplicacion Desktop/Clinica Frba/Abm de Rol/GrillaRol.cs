@@ -35,6 +35,7 @@ namespace Clinica_Frba.GrillaRol
             ;
         }
 
+        //Botón Buscar Rol
         private void B_Buscar_Click(object sender, EventArgs e)
         {
             FormAfiliado.tipoDeFormularioSecundario = 'B';

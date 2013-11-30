@@ -10,3 +10,11 @@ C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica 
 C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_de_Profesional.ModificacionProfesional.resources
 C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.exe
 C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.pdb
+C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_Afiliado.Abm_Afiliado_Form.resources
+C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.GrillaAfiliado.GrillaAfiliado_Form.resources
+C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_de_Profesional.ModificacionProfesional.resources
+C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_Rol.Abm_Rol_Form.resources
+C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.GrillaRol.GrillaRol_Form.resources
+C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Properties.Resources.resources
+C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.csproj.GenerateResource.Cache

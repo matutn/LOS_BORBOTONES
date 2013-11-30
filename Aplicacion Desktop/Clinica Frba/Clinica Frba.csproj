@@ -54,18 +54,6 @@
     <Compile Include="Abm de Afiliado\Abm_Afiliado.Designer.cs">
       <DependentUpon>Abm_Afiliado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm de Rol\Amb_Rol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abm de Rol\Amb_Rol.Designer.cs">
-      <DependentUpon>Amb_Rol.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Abm de Rol\GrillaRol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abm de Rol\GrillaRol.Designer.cs">
-      <DependentUpon>GrillaRol.cs</DependentUpon>
-    </Compile>
     <Compile Include="Conexión BD\DB.cs" />
     <Compile Include="DAO\Rol_DAO.cs" />
     <Compile Include="DTO\AfiliadoDTO.cs" />
@@ -73,7 +61,6 @@
     <Compile Include="DTO\FuncionalidadesPorRol.cs" />
     <Compile Include="DTO\Profesional.cs" />
     <Compile Include="DTO\Rol_DTO.cs" />
-    <Compile Include="DTO\RolesParaUnUsuario.cs" />
     <Compile Include="DTO\RolesPorUsuario.cs" />
     <Compile Include="DTO\Usuario.cs" />
     <Compile Include="Login\Form1.cs">
@@ -163,12 +150,6 @@
       <DependentUpon>GrillaAfiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm de Profesional\ModificacionProfesional.resx" />
-    <EmbeddedResource Include="Abm de Rol\Amb_Rol.resx">
-      <DependentUpon>Amb_Rol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Rol\GrillaRol.resx">
-      <DependentUpon>GrillaRol.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

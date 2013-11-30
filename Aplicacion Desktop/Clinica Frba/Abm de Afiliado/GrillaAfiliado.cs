@@ -15,7 +15,6 @@ namespace Clinica_Frba.GrillaAfiliado
     {
         public static List<AfiliadoDTO> afiliadosAMostrar = new List<AfiliadoDTO>();
         public static GrillaAfiliado_Form instancia;
-        public static List<AfiliadoDTO> profesionalesAMostrar = new List<AfiliadoDTO>();
         public GrillaAfiliado_Form()
         {
             InitializeComponent();
@@ -82,17 +81,6 @@ namespace Clinica_Frba.GrillaAfiliado
             listadoAfiliados.Rows.Clear();
         }
 
-        private void checkAll_Click(object sender, EventArgs e)
-        {
-            bool todosChequeados = true;
-
-            for (int i = 0; i < listadoAfiliados.Rows.Count; i++)
-                todosChequeados &= (bool)listadoAfiliados.Rows[i].Cells["Eliminado"].Value;
-
-            for (int i = 0; i < listadoAfiliados.Rows.Count; i++)
-                listadoAfiliados.Rows[i].Cells["Eliminado"].Value = !todosChequeados;
-        }
-
         private void B_Volver_Click(object sender, EventArgs e)
         {
             Close();
@@ -103,7 +91,6 @@ namespace Clinica_Frba.GrillaAfiliado
             if (listadoAfiliados.SelectedRows.Count == 0)
                 return;
             DataGridViewRow fila = listadoAfiliados.SelectedRows[0];
-            //FormAfiliado.idAfiliado = fila.Cells["IdAfiliado"].Value.ToString();
             Amb_Afiliado_Form.afiliado = new AfiliadoDTO
             (
             fila.Cells["txt_IdAfiliado"].Value.ToString(),
@@ -128,11 +115,22 @@ namespace Clinica_Frba.GrillaAfiliado
             (new Amb_Afiliado_Form()).Show();
         }
 
+        private void B_EliminarClientes_Click(object sender, EventArgs e)
+        {
+            if (listadoAfiliados.SelectedRows.Count == 0)
+                return;
+            DataGridViewRow fila = listadoAfiliados.SelectedRows[0];
 
-
-
-
-      
-   
+            if ((bool)fila.Cells["Eliminado"].Value)
+            {
+                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Afiliado set afi_Estado = '" + 0 + "' where afi_Dni = '" + fila.Cells["txt_Dni"].Value + "'");
+                fila.Cells["Eliminado"].Value = false;
+            }
+            else
+            {
+                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Afiliado set afi_Estado = '" + 1 + "' where afi_Dni = '" + fila.Cells["txt_Dni"].Value + "'");
+                fila.Cells["Eliminado"].Value = true;
+            }
+        }
     }
 }

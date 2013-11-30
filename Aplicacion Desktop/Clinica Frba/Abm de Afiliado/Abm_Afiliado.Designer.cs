@@ -57,13 +57,15 @@
             this.limpiar = new System.Windows.Forms.Button();
             this.cancelar = new System.Windows.Forms.Button();
             this.aceptar = new System.Windows.Forms.Button();
+            this.plan = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // femenino
             // 
             this.femenino.AutoSize = true;
             this.femenino.ForeColor = System.Drawing.Color.Black;
-            this.femenino.Location = new System.Drawing.Point(202, 197);
+            this.femenino.Location = new System.Drawing.Point(202, 223);
             this.femenino.Name = "femenino";
             this.femenino.Size = new System.Drawing.Size(71, 17);
             this.femenino.TabIndex = 109;
@@ -73,7 +75,7 @@
             // 
             // mail
             // 
-            this.mail.Location = new System.Drawing.Point(111, 142);
+            this.mail.Location = new System.Drawing.Point(111, 168);
             this.mail.MaxLength = 25;
             this.mail.Name = "mail";
             this.mail.Size = new System.Drawing.Size(249, 20);
@@ -84,7 +86,7 @@
             // 
             this.masculino.AutoSize = true;
             this.masculino.ForeColor = System.Drawing.Color.Black;
-            this.masculino.Location = new System.Drawing.Point(110, 197);
+            this.masculino.Location = new System.Drawing.Point(110, 223);
             this.masculino.Name = "masculino";
             this.masculino.Size = new System.Drawing.Size(73, 17);
             this.masculino.TabIndex = 108;
@@ -96,7 +98,7 @@
             // 
             this.LSexo.AutoSize = true;
             this.LSexo.ForeColor = System.Drawing.Color.Black;
-            this.LSexo.Location = new System.Drawing.Point(12, 197);
+            this.LSexo.Location = new System.Drawing.Point(12, 223);
             this.LSexo.Name = "LSexo";
             this.LSexo.Size = new System.Drawing.Size(31, 13);
             this.LSexo.TabIndex = 107;
@@ -117,7 +119,7 @@
             // 
             this.L_Mes.AutoSize = true;
             this.L_Mes.ForeColor = System.Drawing.Color.Black;
-            this.L_Mes.Location = new System.Drawing.Point(147, 91);
+            this.L_Mes.Location = new System.Drawing.Point(147, 115);
             this.L_Mes.Name = "L_Mes";
             this.L_Mes.Size = new System.Drawing.Size(12, 13);
             this.L_Mes.TabIndex = 106;
@@ -125,7 +127,7 @@
             // 
             // mesNac
             // 
-            this.mesNac.Location = new System.Drawing.Point(165, 88);
+            this.mesNac.Location = new System.Drawing.Point(165, 112);
             this.mesNac.MaxLength = 2;
             this.mesNac.Name = "mesNac";
             this.mesNac.Size = new System.Drawing.Size(30, 20);
@@ -146,7 +148,7 @@
             // 
             this.L_Año.AutoSize = true;
             this.L_Año.ForeColor = System.Drawing.Color.Black;
-            this.L_Año.Location = new System.Drawing.Point(201, 91);
+            this.L_Año.Location = new System.Drawing.Point(201, 115);
             this.L_Año.Name = "L_Año";
             this.L_Año.Size = new System.Drawing.Size(12, 13);
             this.L_Año.TabIndex = 105;
@@ -164,7 +166,7 @@
             // añoNac
             // 
             this.añoNac.ForeColor = System.Drawing.Color.Black;
-            this.añoNac.Location = new System.Drawing.Point(219, 88);
+            this.añoNac.Location = new System.Drawing.Point(219, 112);
             this.añoNac.MaxLength = 4;
             this.añoNac.Name = "añoNac";
             this.añoNac.Size = new System.Drawing.Size(40, 20);
@@ -184,7 +186,7 @@
             // diaNac
             // 
             this.diaNac.ForeColor = System.Drawing.Color.Black;
-            this.diaNac.Location = new System.Drawing.Point(111, 88);
+            this.diaNac.Location = new System.Drawing.Point(111, 112);
             this.diaNac.MaxLength = 2;
             this.diaNac.Name = "diaNac";
             this.diaNac.Size = new System.Drawing.Size(30, 20);
@@ -195,7 +197,7 @@
             // 
             this.LMail.AutoSize = true;
             this.LMail.ForeColor = System.Drawing.Color.Black;
-            this.LMail.Location = new System.Drawing.Point(12, 145);
+            this.LMail.Location = new System.Drawing.Point(12, 171);
             this.LMail.Name = "LMail";
             this.LMail.Size = new System.Drawing.Size(26, 13);
             this.LMail.TabIndex = 97;
@@ -205,7 +207,7 @@
             // 
             this.LFechaNacimiento.AutoSize = true;
             this.LFechaNacimiento.ForeColor = System.Drawing.Color.Black;
-            this.LFechaNacimiento.Location = new System.Drawing.Point(12, 91);
+            this.LFechaNacimiento.Location = new System.Drawing.Point(12, 115);
             this.LFechaNacimiento.Name = "LFechaNacimiento";
             this.LFechaNacimiento.Size = new System.Drawing.Size(93, 13);
             this.LFechaNacimiento.TabIndex = 104;
@@ -215,7 +217,7 @@
             // 
             this.LDireccion.AutoSize = true;
             this.LDireccion.ForeColor = System.Drawing.Color.Black;
-            this.LDireccion.Location = new System.Drawing.Point(12, 171);
+            this.LDireccion.Location = new System.Drawing.Point(12, 197);
             this.LDireccion.Name = "LDireccion";
             this.LDireccion.Size = new System.Drawing.Size(52, 13);
             this.LDireccion.TabIndex = 96;
@@ -243,7 +245,7 @@
             // 
             // telefono
             // 
-            this.telefono.Location = new System.Drawing.Point(110, 116);
+            this.telefono.Location = new System.Drawing.Point(110, 142);
             this.telefono.MaxLength = 10;
             this.telefono.Name = "telefono";
             this.telefono.Size = new System.Drawing.Size(249, 20);
@@ -254,7 +256,7 @@
             // 
             this.LTelefono.AutoSize = true;
             this.LTelefono.ForeColor = System.Drawing.Color.Black;
-            this.LTelefono.Location = new System.Drawing.Point(12, 119);
+            this.LTelefono.Location = new System.Drawing.Point(12, 145);
             this.LTelefono.Name = "LTelefono";
             this.LTelefono.Size = new System.Drawing.Size(49, 13);
             this.LTelefono.TabIndex = 100;
@@ -264,7 +266,7 @@
             // 
             this.LNro.AutoSize = true;
             this.LNro.ForeColor = System.Drawing.Color.Black;
-            this.LNro.Location = new System.Drawing.Point(290, 171);
+            this.LNro.Location = new System.Drawing.Point(290, 197);
             this.LNro.Name = "LNro";
             this.LNro.Size = new System.Drawing.Size(19, 13);
             this.LNro.TabIndex = 99;
@@ -273,7 +275,7 @@
             // calle
             // 
             this.calle.ForeColor = System.Drawing.Color.Black;
-            this.calle.Location = new System.Drawing.Point(138, 168);
+            this.calle.Location = new System.Drawing.Point(138, 194);
             this.calle.MaxLength = 35;
             this.calle.Name = "calle";
             this.calle.Size = new System.Drawing.Size(146, 20);
@@ -284,7 +286,7 @@
             // 
             this.LCalle.AutoSize = true;
             this.LCalle.ForeColor = System.Drawing.Color.Black;
-            this.LCalle.Location = new System.Drawing.Point(107, 171);
+            this.LCalle.Location = new System.Drawing.Point(107, 197);
             this.LCalle.Name = "LCalle";
             this.LCalle.Size = new System.Drawing.Size(30, 13);
             this.LCalle.TabIndex = 98;
@@ -293,7 +295,7 @@
             // nro
             // 
             this.nro.ForeColor = System.Drawing.Color.Black;
-            this.nro.Location = new System.Drawing.Point(315, 168);
+            this.nro.Location = new System.Drawing.Point(315, 194);
             this.nro.MaxLength = 6;
             this.nro.Name = "nro";
             this.nro.Size = new System.Drawing.Size(45, 20);
@@ -309,7 +311,7 @@
             "Casado",
             "Divorciado",
             "Separado"});
-            this.estadoCivil.Location = new System.Drawing.Point(110, 222);
+            this.estadoCivil.Location = new System.Drawing.Point(110, 248);
             this.estadoCivil.Name = "estadoCivil";
             this.estadoCivil.Size = new System.Drawing.Size(149, 21);
             this.estadoCivil.TabIndex = 111;
@@ -319,7 +321,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 225);
+            this.label1.Location = new System.Drawing.Point(12, 251);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 112;
@@ -328,7 +330,7 @@
             // limpiar
             // 
             this.limpiar.ForeColor = System.Drawing.Color.Black;
-            this.limpiar.Location = new System.Drawing.Point(172, 267);
+            this.limpiar.Location = new System.Drawing.Point(15, 295);
             this.limpiar.Margin = new System.Windows.Forms.Padding(2);
             this.limpiar.Name = "limpiar";
             this.limpiar.Size = new System.Drawing.Size(60, 22);
@@ -340,7 +342,7 @@
             // cancelar
             // 
             this.cancelar.ForeColor = System.Drawing.Color.Black;
-            this.cancelar.Location = new System.Drawing.Point(236, 267);
+            this.cancelar.Location = new System.Drawing.Point(300, 295);
             this.cancelar.Margin = new System.Windows.Forms.Padding(2);
             this.cancelar.Name = "cancelar";
             this.cancelar.Size = new System.Drawing.Size(60, 22);
@@ -352,7 +354,7 @@
             // aceptar
             // 
             this.aceptar.ForeColor = System.Drawing.Color.Black;
-            this.aceptar.Location = new System.Drawing.Point(300, 267);
+            this.aceptar.Location = new System.Drawing.Point(236, 295);
             this.aceptar.Margin = new System.Windows.Forms.Padding(2);
             this.aceptar.Name = "aceptar";
             this.aceptar.Size = new System.Drawing.Size(60, 22);
@@ -361,11 +363,33 @@
             this.aceptar.UseVisualStyleBackColor = true;
             this.aceptar.Click += new System.EventHandler(this.aceptar_Click);
             // 
-            // FormAfiliado
+            // plan
+            // 
+            this.plan.AutoSize = true;
+            this.plan.ForeColor = System.Drawing.Color.Black;
+            this.plan.Location = new System.Drawing.Point(13, 89);
+            this.plan.Name = "plan";
+            this.plan.Size = new System.Drawing.Size(28, 13);
+            this.plan.TabIndex = 117;
+            this.plan.Text = "Plan";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox1.Location = new System.Drawing.Point(111, 86);
+            this.textBox1.MaxLength = 10;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(250, 20);
+            this.textBox1.TabIndex = 116;
+            this.textBox1.Tag = "Dni";
+            // 
+            // Amb_Afiliado_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 300);
+            this.ClientSize = new System.Drawing.Size(377, 328);
+            this.Controls.Add(this.plan);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.limpiar);
             this.Controls.Add(this.cancelar);
             this.Controls.Add(this.aceptar);
@@ -395,7 +419,7 @@
             this.Controls.Add(this.LNro);
             this.Controls.Add(this.calle);
             this.Controls.Add(this.LCalle);
-            this.Name = "FormAfiliado";
+            this.Name = "Amb_Afiliado_Form";
             this.Text = "FormAfiliado";
             this.Load += new System.EventHandler(this.FormAfiliado_Load);
             this.ResumeLayout(false);
@@ -434,5 +458,7 @@
         private System.Windows.Forms.Button limpiar;
         private System.Windows.Forms.Button cancelar;
         private System.Windows.Forms.Button aceptar;
+        private System.Windows.Forms.Label plan;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

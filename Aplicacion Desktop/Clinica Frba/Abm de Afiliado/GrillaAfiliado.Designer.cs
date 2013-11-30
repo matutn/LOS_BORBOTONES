@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.listadoAfiliados = new System.Windows.Forms.DataGridView();
-            this.checkAll = new System.Windows.Forms.Button();
             this.agregar = new System.Windows.Forms.Button();
             this.B_Volver = new System.Windows.Forms.Button();
             this.B_EliminarClientes = new System.Windows.Forms.Button();
@@ -51,7 +50,6 @@
             this.txt_CantPersonas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_CantidadConsultas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listadoAfiliados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,28 +72,16 @@
             this.txt_EstadoCivil,
             this.txt_CantPersonas,
             this.txt_CantidadConsultas,
-            this.Eliminado,
-            this.Estado});
-            this.listadoAfiliados.Location = new System.Drawing.Point(107, 31);
+            this.Eliminado});
+            this.listadoAfiliados.Location = new System.Drawing.Point(12, 41);
             this.listadoAfiliados.Name = "listadoAfiliados";
-            this.listadoAfiliados.Size = new System.Drawing.Size(1149, 259);
+            this.listadoAfiliados.Size = new System.Drawing.Size(1180, 247);
             this.listadoAfiliados.TabIndex = 0;
             this.listadoAfiliados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // checkAll
-            // 
-            this.checkAll.Location = new System.Drawing.Point(12, 117);
-            this.checkAll.Margin = new System.Windows.Forms.Padding(2);
-            this.checkAll.Name = "checkAll";
-            this.checkAll.Size = new System.Drawing.Size(90, 25);
-            this.checkAll.TabIndex = 32;
-            this.checkAll.Text = "Check All";
-            this.checkAll.UseVisualStyleBackColor = true;
-            this.checkAll.Click += new System.EventHandler(this.checkAll_Click);
-            // 
             // agregar
             // 
-            this.agregar.Location = new System.Drawing.Point(12, 31);
+            this.agregar.Location = new System.Drawing.Point(12, 12);
             this.agregar.Name = "agregar";
             this.agregar.Size = new System.Drawing.Size(90, 23);
             this.agregar.TabIndex = 31;
@@ -105,7 +91,7 @@
             // 
             // B_Volver
             // 
-            this.B_Volver.Location = new System.Drawing.Point(13, 176);
+            this.B_Volver.Location = new System.Drawing.Point(1103, 298);
             this.B_Volver.Name = "B_Volver";
             this.B_Volver.Size = new System.Drawing.Size(90, 25);
             this.B_Volver.TabIndex = 30;
@@ -115,17 +101,18 @@
             // 
             // B_EliminarClientes
             // 
-            this.B_EliminarClientes.Location = new System.Drawing.Point(12, 88);
+            this.B_EliminarClientes.Location = new System.Drawing.Point(297, 12);
             this.B_EliminarClientes.Margin = new System.Windows.Forms.Padding(2);
             this.B_EliminarClientes.Name = "B_EliminarClientes";
             this.B_EliminarClientes.Size = new System.Drawing.Size(90, 25);
             this.B_EliminarClientes.TabIndex = 29;
             this.B_EliminarClientes.Text = "Cambiar Estado";
             this.B_EliminarClientes.UseVisualStyleBackColor = true;
+            this.B_EliminarClientes.Click += new System.EventHandler(this.B_EliminarClientes_Click);
             // 
             // B_Buscar
             // 
-            this.B_Buscar.Location = new System.Drawing.Point(13, 59);
+            this.B_Buscar.Location = new System.Drawing.Point(203, 12);
             this.B_Buscar.Margin = new System.Windows.Forms.Padding(2);
             this.B_Buscar.Name = "B_Buscar";
             this.B_Buscar.Size = new System.Drawing.Size(90, 25);
@@ -136,7 +123,7 @@
             // 
             // B_Limpiar
             // 
-            this.B_Limpiar.Location = new System.Drawing.Point(12, 146);
+            this.B_Limpiar.Location = new System.Drawing.Point(999, 299);
             this.B_Limpiar.Margin = new System.Windows.Forms.Padding(2);
             this.B_Limpiar.Name = "B_Limpiar";
             this.B_Limpiar.Size = new System.Drawing.Size(90, 25);
@@ -147,7 +134,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 207);
+            this.button1.Location = new System.Drawing.Point(108, 11);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 25);
             this.button1.TabIndex = 33;
@@ -238,30 +225,24 @@
             // 
             this.Eliminado.HeaderText = "Eliminado";
             this.Eliminado.Name = "Eliminado";
+            this.Eliminado.ReadOnly = true;
             this.Eliminado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Eliminado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Eliminado.Width = 60;
             // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.Width = 50;
-            // 
-            // GrillaAfiliado
+            // GrillaAfiliado_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 335);
+            this.ClientSize = new System.Drawing.Size(1203, 335);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkAll);
             this.Controls.Add(this.agregar);
             this.Controls.Add(this.B_Volver);
             this.Controls.Add(this.B_EliminarClientes);
             this.Controls.Add(this.B_Buscar);
             this.Controls.Add(this.B_Limpiar);
             this.Controls.Add(this.listadoAfiliados);
-            this.Name = "GrillaAfiliado";
+            this.Name = "GrillaAfiliado_Form";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.GrillaAfiliado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listadoAfiliados)).EndInit();
@@ -272,7 +253,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView listadoAfiliados;
-        private System.Windows.Forms.Button checkAll;
         private System.Windows.Forms.Button agregar;
         private System.Windows.Forms.Button B_Volver;
         private System.Windows.Forms.Button B_EliminarClientes;
@@ -294,7 +274,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn txt_CantPersonas;
         private System.Windows.Forms.DataGridViewTextBoxColumn txt_CantidadConsultas;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
 
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Clinica_Frba.NewFolder12;
+using Clinica_Frba.GrillaAfiliado;
 //using Clinica_Frba.AbmProfesional;
 
 namespace Clinica_Frba

@@ -9,7 +9,7 @@ namespace Clinica_Frba.DataTransferObjects
         public static String operacionComplejaRelacionada;
         public static String nombreUsuario;
         public static String contraseña;
-        public static String nombreTabla = "LaMiScoGon.Usuario";
+        public static String nombreTabla = "LOS_BORBOTONES.Usuario";
         public static String primaryKey = "Nombre_Usuario";
         public String Nombre_Usuario;
         public String Clave;

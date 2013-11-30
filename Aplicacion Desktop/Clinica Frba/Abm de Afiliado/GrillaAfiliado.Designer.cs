@@ -1,6 +1,6 @@
-﻿namespace Clinica_Frba.NewFolder12
+﻿namespace Clinica_Frba.GrillaAfiliado
 {
-    partial class GrillaAfiliado
+    partial class GrillaAfiliado_Form
     {
         /// <summary>
         /// Required designer variable.

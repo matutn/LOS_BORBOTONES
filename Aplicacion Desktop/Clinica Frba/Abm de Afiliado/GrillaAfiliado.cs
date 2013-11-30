@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clinica_Frba.DTO;
-using Clinica_Frba.Abm_de_Afiliado;
+using Clinica_Frba.Abm_Afiliado;
 
-namespace Clinica_Frba.NewFolder12
+namespace Clinica_Frba.GrillaAfiliado
 {
-    public partial class GrillaAfiliado : Form
+    public partial class GrillaAfiliado_Form : Form
     {
         public static List<AfiliadoDTO> afiliadosAMostrar = new List<AfiliadoDTO>();
-        public static GrillaAfiliado instancia;
+        public static GrillaAfiliado_Form instancia;
         public static List<AfiliadoDTO> profesionalesAMostrar = new List<AfiliadoDTO>();
-        public GrillaAfiliado()
+        public GrillaAfiliado_Form()
         {
             InitializeComponent();
-            GrillaAfiliado.instancia = this;
+            GrillaAfiliado_Form.instancia = this;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -29,8 +29,8 @@ namespace Clinica_Frba.NewFolder12
 
         private void B_Buscar_Click(object sender, EventArgs e)
         {
-            FormAfiliado.tipoDeFormularioSecundario = 'B';
-            (new FormAfiliado()).Show(); 
+            Amb_Afiliado_Form.tipoDeFormularioSecundario = 'B';
+            (new Amb_Afiliado_Form()).Show(); 
         }
 
         public void actualizarListadoAfiliados()
@@ -73,8 +73,8 @@ namespace Clinica_Frba.NewFolder12
 
         private void agregar_Click(object sender, EventArgs e)
         {
-            FormAfiliado.tipoDeFormularioSecundario = 'A';
-            (new FormAfiliado()).Show(); 
+            Amb_Afiliado_Form.tipoDeFormularioSecundario = 'A';
+            (new Amb_Afiliado_Form()).Show(); 
         }
 
         private void B_Limpiar_Click(object sender, EventArgs e)
@@ -104,7 +104,7 @@ namespace Clinica_Frba.NewFolder12
                 return;
             DataGridViewRow fila = listadoAfiliados.SelectedRows[0];
             //FormAfiliado.idAfiliado = fila.Cells["IdAfiliado"].Value.ToString();
-            FormAfiliado.afiliado = new AfiliadoDTO
+            Amb_Afiliado_Form.afiliado = new AfiliadoDTO
             (
             fila.Cells["txt_IdAfiliado"].Value.ToString(),
             "",
@@ -123,9 +123,9 @@ namespace Clinica_Frba.NewFolder12
             fila.Cells["txt_CantidadConsultas"].Value.ToString(),
             ""
             );
-            FormAfiliado.tipoDeFormularioSecundario = 'M';
+            Amb_Afiliado_Form.tipoDeFormularioSecundario = 'M';
 
-            (new FormAfiliado()).Show();
+            (new Amb_Afiliado_Form()).Show();
         }
 
 

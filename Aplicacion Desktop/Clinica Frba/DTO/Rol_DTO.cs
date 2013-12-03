@@ -31,7 +31,11 @@ namespace Clinica_Frba.DTO {
         ///PRUEBA EN GIT Comentario mati
     }
 }
+<<<<<<< HEAD
 
 
 
 
+=======
+//comentario pablo
+>>>>>>> 2344736e05b094f52b5f9ac657741a67b42bb500

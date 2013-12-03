@@ -48,10 +48,8 @@
             this.LApellido = new System.Windows.Forms.Label();
             this.telefono = new System.Windows.Forms.TextBox();
             this.LTelefono = new System.Windows.Forms.Label();
-            this.LNro = new System.Windows.Forms.Label();
             this.calle = new System.Windows.Forms.TextBox();
             this.LCalle = new System.Windows.Forms.Label();
-            this.nro = new System.Windows.Forms.TextBox();
             this.estadoCivil = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.limpiar = new System.Windows.Forms.Button();
@@ -78,7 +76,7 @@
             this.mail.Location = new System.Drawing.Point(111, 168);
             this.mail.MaxLength = 25;
             this.mail.Name = "mail";
-            this.mail.Size = new System.Drawing.Size(249, 20);
+            this.mail.Size = new System.Drawing.Size(216, 20);
             this.mail.TabIndex = 91;
             this.mail.Tag = "Mail";
             // 
@@ -124,6 +122,7 @@
             this.L_Mes.Size = new System.Drawing.Size(12, 13);
             this.L_Mes.TabIndex = 106;
             this.L_Mes.Text = "/";
+            this.L_Mes.Click += new System.EventHandler(this.L_Mes_Click);
             // 
             // mesNac
             // 
@@ -133,13 +132,14 @@
             this.mesNac.Size = new System.Drawing.Size(30, 20);
             this.mesNac.TabIndex = 102;
             this.mesNac.Tag = "Mes de Nacimiento";
+            this.mesNac.TextChanged += new System.EventHandler(this.mesNac_TextChanged);
             // 
             // nombre
             // 
             this.nombre.Location = new System.Drawing.Point(110, 6);
             this.nombre.MaxLength = 20;
             this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(250, 20);
+            this.nombre.Size = new System.Drawing.Size(217, 20);
             this.nombre.TabIndex = 87;
             this.nombre.Tag = "Nombre";
             this.nombre.TextChanged += new System.EventHandler(this.nombre_TextChanged);
@@ -153,13 +153,14 @@
             this.L_Año.Size = new System.Drawing.Size(12, 13);
             this.L_Año.TabIndex = 105;
             this.L_Año.Text = "/";
+            this.L_Año.Click += new System.EventHandler(this.L_Año_Click);
             // 
             // apellido
             // 
             this.apellido.Location = new System.Drawing.Point(111, 32);
             this.apellido.MaxLength = 30;
             this.apellido.Name = "apellido";
-            this.apellido.Size = new System.Drawing.Size(249, 20);
+            this.apellido.Size = new System.Drawing.Size(216, 20);
             this.apellido.TabIndex = 88;
             this.apellido.Tag = "Apellido";
             // 
@@ -172,6 +173,7 @@
             this.añoNac.Size = new System.Drawing.Size(40, 20);
             this.añoNac.TabIndex = 103;
             this.añoNac.Tag = "Año de Nacimiento";
+            this.añoNac.TextChanged += new System.EventHandler(this.añoNac_TextChanged);
             // 
             // LNombre
             // 
@@ -192,6 +194,7 @@
             this.diaNac.Size = new System.Drawing.Size(30, 20);
             this.diaNac.TabIndex = 101;
             this.diaNac.Tag = "Dia de Nacimiento";
+            this.diaNac.TextChanged += new System.EventHandler(this.diaNac_TextChanged);
             // 
             // LMail
             // 
@@ -229,7 +232,7 @@
             this.dni.Location = new System.Drawing.Point(110, 58);
             this.dni.MaxLength = 10;
             this.dni.Name = "dni";
-            this.dni.Size = new System.Drawing.Size(250, 20);
+            this.dni.Size = new System.Drawing.Size(217, 20);
             this.dni.TabIndex = 86;
             this.dni.Tag = "Dni";
             // 
@@ -248,7 +251,7 @@
             this.telefono.Location = new System.Drawing.Point(110, 142);
             this.telefono.MaxLength = 10;
             this.telefono.Name = "telefono";
-            this.telefono.Size = new System.Drawing.Size(249, 20);
+            this.telefono.Size = new System.Drawing.Size(217, 20);
             this.telefono.TabIndex = 89;
             this.telefono.Tag = "Telefono";
             // 
@@ -262,23 +265,13 @@
             this.LTelefono.TabIndex = 100;
             this.LTelefono.Text = "Telefono";
             // 
-            // LNro
-            // 
-            this.LNro.AutoSize = true;
-            this.LNro.ForeColor = System.Drawing.Color.Black;
-            this.LNro.Location = new System.Drawing.Point(290, 197);
-            this.LNro.Name = "LNro";
-            this.LNro.Size = new System.Drawing.Size(19, 13);
-            this.LNro.TabIndex = 99;
-            this.LNro.Text = "Nº";
-            // 
             // calle
             // 
             this.calle.ForeColor = System.Drawing.Color.Black;
             this.calle.Location = new System.Drawing.Point(138, 194);
             this.calle.MaxLength = 35;
             this.calle.Name = "calle";
-            this.calle.Size = new System.Drawing.Size(146, 20);
+            this.calle.Size = new System.Drawing.Size(189, 20);
             this.calle.TabIndex = 93;
             this.calle.Tag = "Calle";
             // 
@@ -291,16 +284,6 @@
             this.LCalle.Size = new System.Drawing.Size(30, 13);
             this.LCalle.TabIndex = 98;
             this.LCalle.Text = "Calle";
-            // 
-            // nro
-            // 
-            this.nro.ForeColor = System.Drawing.Color.Black;
-            this.nro.Location = new System.Drawing.Point(315, 194);
-            this.nro.MaxLength = 6;
-            this.nro.Name = "nro";
-            this.nro.Size = new System.Drawing.Size(45, 20);
-            this.nro.TabIndex = 110;
-            this.nro.Tag = "Numero de Calle";
             // 
             // estadoCivil
             // 
@@ -342,7 +325,7 @@
             // cancelar
             // 
             this.cancelar.ForeColor = System.Drawing.Color.Black;
-            this.cancelar.Location = new System.Drawing.Point(300, 295);
+            this.cancelar.Location = new System.Drawing.Point(267, 295);
             this.cancelar.Margin = new System.Windows.Forms.Padding(2);
             this.cancelar.Name = "cancelar";
             this.cancelar.Size = new System.Drawing.Size(60, 22);
@@ -354,7 +337,7 @@
             // aceptar
             // 
             this.aceptar.ForeColor = System.Drawing.Color.Black;
-            this.aceptar.Location = new System.Drawing.Point(236, 295);
+            this.aceptar.Location = new System.Drawing.Point(203, 295);
             this.aceptar.Margin = new System.Windows.Forms.Padding(2);
             this.aceptar.Name = "aceptar";
             this.aceptar.Size = new System.Drawing.Size(60, 22);
@@ -379,7 +362,7 @@
             this.plan.Location = new System.Drawing.Point(111, 86);
             this.plan.MaxLength = 10;
             this.plan.Name = "plan";
-            this.plan.Size = new System.Drawing.Size(250, 20);
+            this.plan.Size = new System.Drawing.Size(216, 20);
             this.plan.TabIndex = 116;
             this.plan.Tag = "Dni";
             // 
@@ -387,7 +370,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 328);
+            this.ClientSize = new System.Drawing.Size(337, 328);
             this.Controls.Add(this.planTexto);
             this.Controls.Add(this.plan);
             this.Controls.Add(this.limpiar);
@@ -395,7 +378,6 @@
             this.Controls.Add(this.aceptar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.estadoCivil);
-            this.Controls.Add(this.nro);
             this.Controls.Add(this.femenino);
             this.Controls.Add(this.mail);
             this.Controls.Add(this.masculino);
@@ -416,7 +398,6 @@
             this.Controls.Add(this.LApellido);
             this.Controls.Add(this.telefono);
             this.Controls.Add(this.LTelefono);
-            this.Controls.Add(this.LNro);
             this.Controls.Add(this.calle);
             this.Controls.Add(this.LCalle);
             this.Name = "Amb_Afiliado_Form";
@@ -449,10 +430,8 @@
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.TextBox telefono;
         private System.Windows.Forms.Label LTelefono;
-        private System.Windows.Forms.Label LNro;
         private System.Windows.Forms.TextBox calle;
         private System.Windows.Forms.Label LCalle;
-        private System.Windows.Forms.TextBox nro;
         private System.Windows.Forms.ComboBox estadoCivil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button limpiar;

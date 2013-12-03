@@ -6,19 +6,72 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Clinica_Frba.DataTransferObjects;
+using Clinica_Frba.DTO;
+using Clinica_Frba.Abm_Afiliado;
+using Clinica_Frba.Abm_Profesional;
 
-namespace Clinica_Frba.AbmProfesional
+namespace Clinica_Frba.GrillaProfesional
 {
-    public partial class GrillaProfesional : Form
+    public partial class GrillaProfesional_Form : Form
     {
-        public static List<Profesional> profesionalesAMostrar = new List<Profesional>();
-        public static GrillaProfesional instancia;
-
-        public GrillaProfesional()
+        public static List<ProfesionalDTO> profesionalesAMostrar = new List<ProfesionalDTO>();
+        public static GrillaProfesional_Form instancia;
+        public GrillaProfesional_Form()
         {
             InitializeComponent();
-            GrillaProfesional.instancia = this;
+            GrillaProfesional_Form.instancia = this;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void B_Buscar_Click(object sender, EventArgs e)
+        {
+            Amb_Profesional_Form.tipoDeFormularioSecundario = 'B';
+            (new Amb_Profesional_Form()).Show(); 
+        }
+
+        public void actualizarListadoProfesionales()
+        {
+            listadoProfesionales.Rows.Clear();
+            List<DataGridViewRow> filas = new List<DataGridViewRow>();
+            Object[] columnas = new Object[16];
+
+            foreach (ProfesionalDTO profesional in profesionalesAMostrar)
+            {
+                columnas[0] = profesional.IdProfesional;
+                columnas[1] = profesional.NombreUsuario;
+                columnas[2] = profesional.Nombre;
+                columnas[3] = profesional.Apellido;
+                columnas[4] = profesional.Dni;
+                columnas[5] = profesional.NroMatricula;
+                columnas[6] = profesional.Direccion;
+                columnas[7] = profesional.Telefono;
+                columnas[8] = profesional.Mail;
+                columnas[9] = profesional.FechaNacimiento;
+                columnas[10] = profesional.Sexo;
+                columnas[11] = (profesional.Estado == "True") ? true : false;
+                filas.Add(new DataGridViewRow());
+                filas[filas.Count - 1].CreateCells(listadoProfesionales, columnas);
+            }
+            listadoProfesionales.Rows.AddRange(filas.ToArray());
+        }
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GrillaAfiliado_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void agregar_Click(object sender, EventArgs e)
+        {
+            Amb_Profesional_Form.tipoDeFormularioSecundario = 'A';
+            (new Amb_Profesional_Form()).Show(); 
         }
 
         private void B_Limpiar_Click(object sender, EventArgs e)
@@ -26,127 +79,53 @@ namespace Clinica_Frba.AbmProfesional
             listadoProfesionales.Rows.Clear();
         }
 
-        private void B_Buscar_Click(object sender, EventArgs e)
-        {
-            FormProfesional.tipoDeFormularioSecundario = 'B';
-            (new FormProfesional()).Show();           
-        }
-
-        public void actualizarListadoDeProfesionales()
-        {
-            listadoProfesionales.Rows.Clear();
-            List<DataGridViewRow> filas = new List<DataGridViewRow>();
-            Object[] columnas = new Object[16];
-
-            foreach (Profesional profesional in profesionalesAMostrar)
-            {
-                columnas[0] = profesional.prof_NombreUsuario;
-                columnas[1] = profesional.prof_Matricula;
-                columnas[2] = profesional.prof_Dni;
-                columnas[3] = profesional.prof_Nombre;
-                columnas[4] = profesional.prof_Apellido;
-                columnas[5] = profesional.prof_FechaNacimiento;
-                columnas[6] = profesional.prof_Mail;
-                columnas[7] = profesional.prof_Telefono;
-                columnas[8] = profesional.prof_Direccion;
-                columnas[9] = profesional.prof_Sexo;
-                columnas[10] = (profesional.Eliminado == "True") ? true : false;
-                filas.Add(new DataGridViewRow());
-                filas[filas.Count - 1].CreateCells(listadoProfesionales, columnas);
-            }
-            listadoProfesionales.Rows.AddRange(filas.ToArray());
-        }
-
-        private void agregar_Click(object sender, EventArgs e)
-        {
-            FormProfesional.tipoDeFormularioSecundario = 'A';
-            (new FormProfesional()).Show();     
-        }
-        
         private void B_Volver_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void listadoProfesionales_RowHeaderMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            if (listadoProfesionales.SelectedRows.Count == 0)
+                return;
             DataGridViewRow fila = listadoProfesionales.SelectedRows[0];
-            FormProfesional.profesional = new Profesional
+            Amb_Profesional_Form.profesional = new ProfesionalDTO
             (
+            fila.Cells["txt_IdProfesional"].Value.ToString(),
             "",
-            fila.Cells["matricula"].Value.ToString(),
-            fila.Cells["dni"].Value.ToString(),
-            fila.Cells["nombre"].Value.ToString(),
-            fila.Cells["apellido"].Value.ToString(),
-            fila.Cells["direccion"].Value.ToString(),
-            fila.Cells["telefono"].Value.ToString(),
-            fila.Cells["mail"].Value.ToString(),
-            fila.Cells["fecha_nacimiento"].Value.ToString(),
-            fila.Cells["sexo"].Value.ToString()
+            fila.Cells["txt_Nombre"].Value.ToString(),
+            fila.Cells["txt_Apellido"].Value.ToString(),
+            "",
+            fila.Cells["txt_Dni"].Value.ToString(),
+            fila.Cells["txt_Matricula"].Value.ToString(),
+            fila.Cells["txt_Direccion"].Value.ToString(),
+            fila.Cells["txt_Telefono"].Value.ToString(),
+            fila.Cells["txt_Mail"].Value.ToString(),
+            fila.Cells["txt_FechaNacimiento"].Value.ToString(),
+            fila.Cells["txt_Sexo"].Value.ToString(),
+            ""
             );
-            FormProfesional.tipoDeFormularioSecundario = 'M';
+            Amb_Profesional_Form.tipoDeFormularioSecundario = 'M';
 
-            (new FormProfesional()).Show();
+            (new Amb_Profesional_Form()).Show();
         }
 
         private void B_EliminarClientes_Click(object sender, EventArgs e)
         {
-            this.eliminarProfesionalesLogicamente();
-            this.darAltaProfesionalesEliminadosLogicamente();
-        }
+            if (listadoProfesionales.SelectedRows.Count == 0)
+                return;
+            DataGridViewRow fila = listadoProfesionales.SelectedRows[0];
 
-        private void darAltaProfesionalesEliminadosLogicamente()
-        {
-            SqlServerDAO<Profesional, Profesional> daoProfesional = SqlServerDAO<Profesional, Profesional>.Instance;
-
-            Profesional.primaryKeys = new List<String>();
-            Profesional.primaryKeys.Clear();
-            Profesional.campoDeCambioDeEstado = "Eliminado";
-            Profesional.valorCampoDeCambioDeEstado = "0";
-
-            for (int i = 0; i < listadoProfesionales.Rows.Count; i++)
-                if (!(bool)listadoProfesionales.Rows[i].Cells["eliminar"].Value)
-                    Profesional.primaryKeys.Add((String)listadoProfesionales.Rows[i].Cells["DNI"].Value);
-
-            daoProfesional.cambioDeEstado();
-        }
-
-        private void eliminarProfesionalesLogicamente()
-        {
-            SqlServerDAO<Profesional, Profesional> daoProfesional = SqlServerDAO<Profesional, Profesional>.Instance;
-
-            Profesional.primaryKeys = new List<String>();
-            Profesional.primaryKeys.Clear();
-            Profesional.campoDeCambioDeEstado = "Eliminado";
-            Profesional.valorCampoDeCambioDeEstado = "1";
-
-            for (int i = 0; i < listadoProfesionales.Rows.Count; i++)
-                if ((bool)listadoProfesionales.Rows[i].Cells["eliminar"].Value)
-                    Profesional.primaryKeys.Add((String)listadoProfesionales.Rows[i].Cells["DNI"].Value);
-
-            daoProfesional.cambioDeEstado();
-        }
-
-        private void checkAll_Click(object sender, EventArgs e)
-        {
-            bool todosChequeados = true;
-
-            for (int i = 0; i < listadoProfesionales.Rows.Count; i++)
-                todosChequeados &= (bool) listadoProfesionales.Rows[i].Cells["eliminar"].Value;
-
-            for (int i = 0; i < listadoProfesionales.Rows.Count; i++)
-                listadoProfesionales.Rows[i].Cells["eliminar"].Value = !todosChequeados;
-        }
-
-        private void AbmProfesionalPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listadoProfesionales_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            if ((bool)fila.Cells["Eliminado"].Value)
+            {
+                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Profesional set prof_Estado = '" + 0 + "' where prof_IdProfesional = '" + fila.Cells["txt_IdProfesional"].Value + "'");
+                fila.Cells["Eliminado"].Value = false;
+            }
+            else
+            {
+                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Profesional set prof_Estado = '" + 1 + "' where prof_IdProfesional = '" + fila.Cells["txt_IdProfesional"].Value + "'");
+                fila.Cells["Eliminado"].Value = true;
+            }
         }
     }
 }

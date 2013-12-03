@@ -30,21 +30,7 @@ namespace Clinica_Frba.Abm_Afiliado
                         dni.Text = afiliado.Dni;
                         nombre.Text = afiliado.Nombre;
                         apellido.Text = afiliado.Apellido;
-
-                        if (direccion.Length == 2){
-                            calle.Text = direccion[0];
-                            nro.Text = direccion[1];
-                        }
-                        if (direccion.Length == 3){
-                            calle.Text = direccion[0] + ' ' + direccion[1];
-                            nro.Text = direccion[2];
-                        }
-                        if (direccion.Length == 4)
-                        {
-                            calle.Text = direccion[0] + ' ' + direccion[1] + direccion[2];
-                            nro.Text = direccion[3];
-                        }
-
+                        calle.Text = afiliado.Direccion;
                         telefono.Text = afiliado.Telefono;
                         mail.Text = afiliado.Mail;
                         plan.Text = afiliado.IdPlan;
@@ -82,7 +68,7 @@ namespace Clinica_Frba.Abm_Afiliado
                 }
             }
             string sexo = (masculino.Checked) ? "M" : "F";
-            string fecNac = diaNac.Text  + mesNac.Text + añoNac.Text;
+            string fecNac = añoNac.Text + diaNac.Text + mesNac.Text;
             int tel, nro_estadoCivil;
             long dni_afi,idPlan;
             int.TryParse(telefono.Text, out tel);
@@ -94,19 +80,25 @@ namespace Clinica_Frba.Abm_Afiliado
             {
                 case 'M':
                     {
-                        int valor = Clases.DB.ExecuteNonQuery(@"Update LOS_BORBOTONES.Afiliado set afi_Nombre = '" + afiliado.Nombre + "',afi_Apellido = '" + 
-                            apellido.Text + "', afi_Dni = '" + afiliado.Dni + "',afi_Direccion = '" + calle.Text + " " + nro.Text + "',afi_Telefono = '" + 
-                            afiliado.Telefono + "',afi_Mail = '" + mail.Text + "',afi_FechaNacimiento = '" + afiliado.FechaNacimiento + "',afi_Sexo = '" + 
-                            afiliado.Sexo + "',afi_IdPlan = '" + idPlan + "',afi_EstadoCivil = '" + afiliado.EstadoCivil + "' where afi_Dni = '" + dni_afi + "'"); 
-                        MessageBox.Show("El profesional se modifico correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        nro_estadoCivil = Clases.DB.ExecuteCardinal("Select esci_CodEcivil from LOS_BORBOTONES.EstadoCivil where esci_Descripcion = '" + estado_civil + "'");
+                        int valor = Clases.DB.ExecuteNonQuery(@"Update LOS_BORBOTONES.Afiliado set afi_Nombre = '" + nombre.Text + "',afi_Apellido = '" + 
+                            apellido.Text  + "',afi_Direccion = '" + calle.Text + "',afi_Telefono = '" + afiliado.Telefono + "',afi_Mail = '" + mail.Text +
+                            afiliado.Sexo + "',afi_IdPlan = '" + idPlan + "',afi_EstadoCivil = '" + nro_estadoCivil + "' where afi_Dni = '" + long.Parse(afiliado.Dni) + "'"); 
+                        MessageBox.Show("El Afiliado se modifico correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
                 case 'A':
                     {
-                        nro_estadoCivil = Clases.DB.ExecuteNonQuery("Select esci_CodEcivil from LOS_BORBOTONES.EstadoCivil where esci_Descripcion = '" + estado_civil + "'");
+                        DataTable dt_plan  = Clases.DB.ExecuteReader("Select 1 from LOS_BORBOTONES.Plan_Medico where plan_IdPlan = '" + idPlan + "'");
+                        if (dt_plan.Rows.Count == 0)
+                        {
+                            MessageBox.Show("El Plan ingresado no existe", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                        nro_estadoCivil = Clases.DB.ExecuteCardinal("Select esci_CodEcivil from LOS_BORBOTONES.EstadoCivil where esci_Descripcion = '" + estado_civil + "'");
                         int valor = Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Afiliado (afi_IdPlan,afi_EstadoCivil,afi_Nombre,afi_Apellido ,afi_Dni,afi_Direccion,afi_Telefono,afi_Mail,afi_FechaNacimiento,afi_Sexo) 
-                        values ( '" + idPlan + "','" + nro_estadoCivil + "','" + nombre.Text + "','" + apellido.Text + "'," + dni_afi + ",'" + calle.Text + " " + nro.Text + "','" + tel + "','" + mail.Text + "','" + fecNac + "','" + sexo + "')");
-                        MessageBox.Show("El afiliado se dio de alta correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        values ( '" + idPlan + "','" + nro_estadoCivil + "','" + nombre.Text + "','" + apellido.Text + "'," + dni_afi + ",'" + calle.Text + "','" + tel + "','" + mail.Text + "','" + fecNac + "','" + sexo + "')");
+                        MessageBox.Show("El Afiliado se dio de alta correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
                 case 'B':
@@ -120,7 +112,7 @@ namespace Clinica_Frba.Abm_Afiliado
                         var lista = Clases.DB.ExecuteReader("Select * from LOS_BORBOTONES.Afiliado where afi_Apellido = '" + apellido.Text +
                             "' OR afi_Nombre = '" + nombre.Text + "' OR afi_Dni = '" + dni_afi + "' OR afi_Telefono = '" + tel +
                             "' OR afi_Mail = '" + mail.Text + "' OR afi_EstadoCivil = '" + nro_estadoCivil + "' OR afi_IdPlan = '" + idPlan +
-                            "' OR afi_Direccion = '" + calle.Text + " " + nro.Text + "' OR afi_Sexo = '" + sexo + "' OR afi_FechaNacimiento = '" + fecNac + "'");
+                            "' OR afi_Direccion = '" + calle.Text + "' OR afi_Sexo = '" + sexo + "' OR afi_FechaNacimiento = '" + fecNac + "'");
 
                         foreach (DataRow row in lista.Rows)
                         {
@@ -184,13 +176,13 @@ namespace Clinica_Frba.Abm_Afiliado
             validador.esAlfabetico(nombre);
             validador.esAlfabetico(apellido);
             validador.esNumerico(dni);
+            validador.esNumerico(plan);
             validador.esNumerico(diaNac);
             validador.esNumerico(mesNac);
             validador.esNumerico(añoNac);
             validador.esNumerico(telefono);
-            validador.esAlfaNumerico(mail);
-            validador.esAlfabetico(calle);
-            validador.esNumerico(nro);
+            validador.esMail(mail);
+            validador.esAlfaNumerico(calle);
 
             radioButtons.Add(masculino);
             radioButtons.Add(femenino);
@@ -200,6 +192,31 @@ namespace Clinica_Frba.Abm_Afiliado
         }
 
         private void nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void añoNac_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void L_Año_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mesNac_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void L_Mes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void diaNac_TextChanged(object sender, EventArgs e)
         {
 
         }

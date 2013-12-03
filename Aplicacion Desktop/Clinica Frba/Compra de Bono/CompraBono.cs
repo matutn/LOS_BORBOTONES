@@ -33,14 +33,14 @@ namespace Clinica_Frba.Compra_de_Bono
 
         private void button_Aceptar_Click(object sender, EventArgs e)
         {
-            DateTime fecha = new DateTime(Convert.ToInt16(añoCompra.Text), Convert.ToInt16(mesCompra.Text),Convert.ToInt16(diaCompra.Text));
+            
             this.validarFormulario();
             if (Validador.Instance.hayErrores())
             {
                 Validador.Instance.mostrarErrores();
                 return;
             }
-
+            DateTime fecha = new DateTime(Convert.ToInt16(añoCompra.Text), Convert.ToInt16(mesCompra.Text), Convert.ToInt16(diaCompra.Text));
             if (cantBC.Value == 0 && cantBF.Value == 0)
             {
                 MessageBox.Show("Se debe cargar al menos un Bono", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

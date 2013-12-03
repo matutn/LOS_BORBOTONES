@@ -13,76 +13,80 @@ namespace Clinica_Frba.GrillaRol
 {
     public partial class GrillaRol_Form : Form
     {
+        //Variable Rol que es objeto Rol_DTO.
         public static Clinica_Frba.DTO.Rol_DTO Rol;
+
+        //Variable RolesAMostrar que es una lista de objetos Rol_DTO.
         public static List<Rol_DTO> RolesAMostrar = new List<Rol_DTO>();        
 
+        //Variable instancia que es un objeto GrillaRol_Form.
         public static GrillaRol_Form instancia;
-        public GrillaRol_Form()
 
+        //Constructor
+        public GrillaRol_Form()
         {
             InitializeComponent();
             GrillaRol_Form.instancia = this;
         }
 
+
        
         //---------------------COMIENZO Botones de la Grilla---------------------------
-        
-        //Botón Añadir Rol
-        private void agregar_Click(object sender, EventArgs e)
+
+        private void B_Añadir_Click(object sender, EventArgs e)
         {
-            GrillaRol_Form.tipoDeFormularioSecundario = 'A';
-            (new FormAfiliado()).Show())
-            ;
+            Abm_Rol_Form.tipoDeFormularioSecundario = 'A';
+            (new Abm_Rol_Form()).Show();
         }
 
         private void B_Buscar_Click(object sender, EventArgs e)
         {
-            FormAfiliado.tipoDeFormularioSecundario = 'B';
-            (new FormAfiliado()).Show();
+            Abm_Rol_Form.tipoDeFormularioSecundario = 'B';
+            (new Abm_Rol_Form()).Show();
         }
 
-        //Botón Limpiar Roles
+
         private void B_Limpiar_Click(object sender, EventArgs e)
         {
             listadoRoles.Rows.Clear();
         }
 
-
-        //Botón Cancelar (Cerrar Grilla)
-        private void B_Volver_Click(object sender, EventArgs e)
+        private void B_Cancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        //Botón Modificar Rol
-        private void Modificar_Click(object sender, EventArgs e)
+        private void B_Modificar_Click(object sender, EventArgs e)
         {
             if (listadoRoles.SelectedRows.Count == 0)
                 return;
             DataGridViewRow fila = listadoRoles.SelectedRows[0];
-            //FormAfiliado.idAfiliado = fila.Cells["IdAfiliado"].Value.ToString();
-            FormAfiliado.afiliado = new AfiliadoDTO
+            Abm_Rol_Form.rol = new Rol_DTO
             (
-            fila.Cells["txt_IdAfiliado"].Value.ToString(),
-            "",
-            fila.Cells["txt_Nombre"].Value.ToString(),
-            fila.Cells["txt_Apellido"].Value.ToString(),
-            "",
-            fila.Cells["txt_Dni"].Value.ToString(),
-            fila.Cells["txt_IdPlan"].Value.ToString(),
-            fila.Cells["txt_Direccion"].Value.ToString(),
-            fila.Cells["txt_Telefono"].Value.ToString(),
-            fila.Cells["txt_Mail"].Value.ToString(),
-            fila.Cells["txt_FechaNacimiento"].Value.ToString(),
-            fila.Cells["txt_Sexo"].Value.ToString(),
-            fila.Cells["txt_EstadoCivil"].Value.ToString(),
-            fila.Cells["txt_CantPersonas"].Value.ToString(),
-            fila.Cells["txt_CantidadConsultas"].Value.ToString(),
-            ""
+            fila.Cells["txt_Codigo_Rol"].Value.ToString(),
+            fila.Cells["txt_Nombre_Rol"].Value.ToString()
             );
-            FormAfiliado.tipoDeFormularioSecundario = 'M';
+            Abm_Rol_Form.tipoDeFormularioSecundario = 'M';
 
-            (new FormAfiliado()).Show();
+            (new Abm_Rol_Form()).Show();
+        }
+
+        private void B_EliminarClientes_Click(object sender, EventArgs e)
+        {
+            if (listadoRoles.SelectedRows.Count == 0)
+                return;
+            DataGridViewRow fila = listadoRoles.SelectedRows[0];
+
+            if ((bool)fila.Cells["Eliminado"].Value)
+            {
+                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Afiliado set afi_Estado = '" + 0 + "' where afi_Dni = '" + fila.Cells["txt_Dni"].Value + "'");
+                fila.Cells["Eliminado"].Value = false;
+            }
+            else
+            {
+                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Afiliado set afi_Estado = '" + 1 + "' where afi_Dni = '" + fila.Cells["txt_Dni"].Value + "'");
+                fila.Cells["Eliminado"].Value = true;
+            }
         }
         //---------------------FIN Botones de la Grilla---------------------------
 
@@ -125,10 +129,7 @@ namespace Clinica_Frba.GrillaRol
 
 
         //-------------------------COMIENZO: Eventos Innecesarios-------------------
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+   
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 

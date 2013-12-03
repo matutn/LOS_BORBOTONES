@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.listadoRoles = new System.Windows.Forms.DataGridView();
-            this.B_Buscar = new System.Windows.Forms.Button();
-            this.B_Cancelar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.B_Modificar = new System.Windows.Forms.Button();
-            this.B_Añadir = new System.Windows.Forms.Button();
-            this.B_Limpiar = new System.Windows.Forms.Button();
             this.Codigo_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.B_Buscar = new System.Windows.Forms.Button();
+            this.B_Cancelar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.B_Limpiar = new System.Windows.Forms.Button();
+            this.B_Modificar = new System.Windows.Forms.Button();
+            this.B_Añadir = new System.Windows.Forms.Button();
             this.B_EliminarClientes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listadoRoles)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -46,6 +46,7 @@
             // listadoRoles
             // 
             this.listadoRoles.AllowUserToAddRows = false;
+            this.listadoRoles.AllowUserToDeleteRows = false;
             this.listadoRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listadoRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo_Rol,
@@ -56,6 +57,23 @@
             this.listadoRoles.Size = new System.Drawing.Size(355, 192);
             this.listadoRoles.TabIndex = 0;
             this.listadoRoles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // Codigo_Rol
+            // 
+            this.Codigo_Rol.HeaderText = "Codigo de Rol";
+            this.Codigo_Rol.Name = "Codigo_Rol";
+            // 
+            // Nombre_Rol
+            // 
+            this.Nombre_Rol.HeaderText = "Nombre de Rol";
+            this.Nombre_Rol.Name = "Nombre_Rol";
+            this.Nombre_Rol.Width = 110;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 101;
             // 
             // B_Buscar
             // 
@@ -90,6 +108,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones de Roles";
             // 
+            // B_Limpiar
+            // 
+            this.B_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Limpiar.Location = new System.Drawing.Point(20, 187);
+            this.B_Limpiar.Name = "B_Limpiar";
+            this.B_Limpiar.Size = new System.Drawing.Size(147, 35);
+            this.B_Limpiar.TabIndex = 46;
+            this.B_Limpiar.Text = "Limpiar Lista";
+            this.B_Limpiar.UseVisualStyleBackColor = true;
+            // 
             // B_Modificar
             // 
             this.B_Modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,33 +139,6 @@
             this.B_Añadir.TabIndex = 44;
             this.B_Añadir.Text = "Añadir";
             this.B_Añadir.UseVisualStyleBackColor = true;
-            // 
-            // B_Limpiar
-            // 
-            this.B_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Limpiar.Location = new System.Drawing.Point(20, 187);
-            this.B_Limpiar.Name = "B_Limpiar";
-            this.B_Limpiar.Size = new System.Drawing.Size(147, 35);
-            this.B_Limpiar.TabIndex = 46;
-            this.B_Limpiar.Text = "Limpiar Lista";
-            this.B_Limpiar.UseVisualStyleBackColor = true;
-            // 
-            // Codigo_Rol
-            // 
-            this.Codigo_Rol.HeaderText = "Codigo de Rol";
-            this.Codigo_Rol.Name = "Codigo_Rol";
-            // 
-            // Nombre_Rol
-            // 
-            this.Nombre_Rol.HeaderText = "Nombre de Rol";
-            this.Nombre_Rol.Name = "Nombre_Rol";
-            this.Nombre_Rol.Width = 110;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.Width = 101;
             // 
             // B_EliminarClientes
             // 

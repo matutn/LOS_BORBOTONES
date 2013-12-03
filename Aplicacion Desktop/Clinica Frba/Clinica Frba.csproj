@@ -87,13 +87,8 @@
     <Compile Include="Conexión BD\DB.cs" />
     <Compile Include="DAO\Rol_DAO.cs" />
     <Compile Include="DTO\AfiliadoDTO.cs" />
-    <Compile Include="DTO\Funcionalidad.cs" />
-    <Compile Include="DTO\FuncionalidadesPorRol.cs" />
-    <Compile Include="DTO\Profesional.cs" />
     <Compile Include="DTO\ProfesionalDTO.cs" />
     <Compile Include="DTO\Rol_DTO.cs" />
-    <Compile Include="DTO\RolesPorUsuario.cs" />
-    <Compile Include="DTO\Usuario.cs" />
     <Compile Include="Login\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

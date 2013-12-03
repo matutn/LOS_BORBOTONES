@@ -1,9 +1,0 @@
-<connectionString>
-	<serverUrl>localhost\SQLSERVER2008</serverUrl>
-	<dataBase>GD2C2013</dataBase>
-	<dataBaseUser>gd</dataBaseUser>
-	<dateBaseUserPassword>gd2013</dateBaseUserPassword>
-	<secureConnection>false</secureConnection>
-	<clientConnectionTimeOut>15</clientConnectionTimeOut>
-</connectionString>
-

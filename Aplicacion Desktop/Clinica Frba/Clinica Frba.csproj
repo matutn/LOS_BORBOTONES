@@ -54,37 +54,51 @@
     <Compile Include="Abm de Afiliado\Abm_Afiliado.Designer.cs">
       <DependentUpon>Abm_Afiliado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm de Rol\Amb_Rol.cs">
+    <Compile Include="Abm de Profesional\Abm_Profesional.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm de Rol\Amb_Rol.Designer.cs">
-      <DependentUpon>Amb_Rol.cs</DependentUpon>
+    <Compile Include="Abm de Profesional\Abm_Profesional.Designer.cs">
+      <DependentUpon>Abm_Profesional.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm de Rol\GrillaRol.cs">
+    <Compile Include="Abm de Profesional\GrillaProfesional.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm de Rol\GrillaRol.Designer.cs">
-      <DependentUpon>GrillaRol.cs</DependentUpon>
+    <Compile Include="Abm de Profesional\GrillaProfesional.Designer.cs">
+      <DependentUpon>GrillaProfesional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compra de Bono\CompraBono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compra de Bono\CompraBono.Designer.cs">
+      <DependentUpon>CompraBono.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compra de Bono\CompraBono_Administrativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compra de Bono\CompraBono_Administrativo.Designer.cs">
+      <DependentUpon>CompraBono_Administrativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compra de Bono\CompraBono_Afiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compra de Bono\CompraBono_Afiliado.Designer.cs">
+      <DependentUpon>CompraBono_Afiliado.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexión BD\DB.cs" />
-    <Compile Include="DAO\Usuario_DAO.cs" />
+    <Compile Include="DAO\Rol_DAO.cs" />
     <Compile Include="DTO\AfiliadoDTO.cs" />
-    <Compile Include="DTO\Funcionalidad_DTO.cs" />
+    <Compile Include="DTO\Funcionalidad.cs" />
+    <Compile Include="DTO\FuncionalidadesPorRol.cs" />
     <Compile Include="DTO\Profesional.cs" />
+    <Compile Include="DTO\ProfesionalDTO.cs" />
     <Compile Include="DTO\Rol_DTO.cs" />
-    <Compile Include="DTO\RolesX.cs" />
-    <Compile Include="DTO\Usuario_DTO.cs" />
-    <Compile Include="Login\Ingreso.cs">
+    <Compile Include="DTO\RolesPorUsuario.cs" />
+    <Compile Include="DTO\Usuario.cs" />
+    <Compile Include="Login\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\Ingreso.Designer.cs">
-      <DependentUpon>Ingreso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Login\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Registro de Usuario\Form1.cs">
       <SubType>Form</SubType>
@@ -98,22 +112,22 @@
     <Compile Include="Abm de Afiliado\GrillaAfiliado.Designer.cs">
       <DependentUpon>GrillaAfiliado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm de Especialidades Medicas\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm de Especialidades Medicas\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm de Planes\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm de Planes\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registrar Agenda\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registrar Agenda\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Compra de Bono\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Compra de Bono\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pedir Turno\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pedir Turno\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Registro de LLegada\Form1.cs">
@@ -154,18 +168,20 @@
     <EmbeddedResource Include="Abm de Afiliado\GrillaAfiliado.resx">
       <DependentUpon>GrillaAfiliado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Profesional\ModificacionProfesional.resx" />
-    <EmbeddedResource Include="Abm de Rol\Amb_Rol.resx">
-      <DependentUpon>Amb_Rol.cs</DependentUpon>
+    <EmbeddedResource Include="Abm de Profesional\Abm_Profesional.resx">
+      <DependentUpon>Abm_Profesional.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Rol\GrillaRol.resx">
-      <DependentUpon>GrillaRol.cs</DependentUpon>
+    <EmbeddedResource Include="Abm de Profesional\GrillaProfesional.resx">
+      <DependentUpon>GrillaProfesional.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\Ingreso.resx">
-      <DependentUpon>Ingreso.cs</DependentUpon>
+    <EmbeddedResource Include="Compra de Bono\CompraBono.resx">
+      <DependentUpon>CompraBono.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Compra de Bono\CompraBono_Administrativo.resx">
+      <DependentUpon>CompraBono_Administrativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compra de Bono\CompraBono_Afiliado.resx">
+      <DependentUpon>CompraBono_Afiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,6 +202,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Utilities\Validador.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pedir Turno\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

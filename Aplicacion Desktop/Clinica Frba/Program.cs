@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Clinica_Frba.GrillaAfiliado;
+using Clinica_Frba.GrillaProfesional;
+using Clinica_Frba.Compra_de_Bono;
 //using Clinica_Frba.AbmProfesional;
 
 namespace Clinica_Frba
@@ -17,7 +19,7 @@ namespace Clinica_Frba
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GrillaAfiliado_Form());
+            Application.Run(new CompraBono_Administrativo());
         }
     }
 }

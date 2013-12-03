@@ -73,6 +73,19 @@ namespace Clinica_Frba.Utils
 
         }
 
+        public void esMail(TextBox textBox)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(textBox.Text);
+            }
+            catch
+            {
+                errores.Add("El campo <" + textBox.Tag + "> no es un mail");
+                return;
+            }
+        }
+
         public void esAlfabetico(TextBox textBox)
         {
             String text = textBox.Text;

@@ -17,19 +17,14 @@ namespace Clinica_Frba.Abm_Rol
     public partial class Abm_Rol_Form : Form
     {
 
-        public static Clinica_Frba.DTO.Rol_DTO rol;
+         public static Clinica_Frba.DTO.Rol_DTO rol;
         public static char tipoDeFormularioSecundario;
-        public Abm_Rol_Form() {
+        public Amb_Rol_Form() {
 
             InitializeComponent();
-            switch (tipoDeFormularioSecundario)
-            {
-                case 'M':
-                    {   
-                        this.Text = "Modificacion de Afiliado";
 
-                        txt_Nombre_Rol.Text = rol.rol_Nombre;
 
+<<<<<<< HEAD
                 DataTable listadoFuncRol = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Func_Rol fr, LOS_BORBOTONES.Funcionalidad f where	"+ rol.rol_CodRol+" = fr.furo_CodRol AND f.fun_CodFuncionalidad = fr.furo_CodFuncionalidad");
                 DataTable listadoFuncTot = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Funcionalidad f");
 
@@ -94,12 +89,19 @@ namespace Clinica_Frba.Abm_Rol
             }
         }
   
+=======
+        private void AñadirUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> df0e8c842057534b500380d61b8cb3a09682c176
 
         private void GB_Rol_Enter(object sender, EventArgs e)
         {
         
         }
 
+<<<<<<< HEAD
         private void txt_Nombre_Rol_TextChanged(object sender, EventArgs e)
         {
 
@@ -110,7 +112,8 @@ namespace Clinica_Frba.Abm_Rol
 
         }
 
+=======
+>>>>>>> df0e8c842057534b500380d61b8cb3a09682c176
         
-    
     }
 }

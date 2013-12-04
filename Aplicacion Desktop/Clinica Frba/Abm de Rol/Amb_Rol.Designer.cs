@@ -129,6 +129,7 @@
             // 
             this.IdFunc.HeaderText = "Id Funcionalidad";
             this.IdFunc.Name = "IdFunc";
+            this.IdFunc.Visible = false;
             this.IdFunc.Width = 93;
             // 
             // Funcionalidad
@@ -157,6 +158,7 @@
             this.Location = new System.Drawing.Point(12, 78);
             this.Name = "Abm_Rol_Form";
             this.Text = "Rol";
+            this.Load += new System.EventHandler(this.Abm_Rol_Form_Load);
             this.GB_Rol.ResumeLayout(false);
             this.GB_Rol.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaFunc)).EndInit();

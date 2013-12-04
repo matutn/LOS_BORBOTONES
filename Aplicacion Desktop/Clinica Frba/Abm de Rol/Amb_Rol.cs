@@ -35,7 +35,6 @@ namespace Clinica_Frba.Abm_Rol
 
 
                 grillaFunc.Rows.Clear();
-                List<DataGridViewRow> filas = new List<DataGridViewRow>();
                 Object[] columnas = new Object[4];
 
                 foreach (DataRow regft in listadoFuncTot.Rows)
@@ -47,20 +46,15 @@ namespace Clinica_Frba.Abm_Rol
                     foreach (DataRow regfr in listadoFuncRol.Rows)
 
                         if (regfr["fun_CodFuncionalidad"].ToString() == regft["fun_CodFuncionalidad"].ToString())
-                        {
-
+                          {
                             columnas[2] = true;
                             break;
-                        }
+                            }
                         else {columnas[2] = false; }
 
-                    filas.Add(new DataGridViewRow());
-                    filas[filas.Count - 1].CreateCells(grillaFunc, columnas);
+                    grillaFunc.Rows.Add(columnas[0], columnas[1],columnas[2]);
+                 
                 }
-                grillaFunc.Rows.AddRange(filas.ToArray());
-                        
-                       
-
                     }
                     break;
 
@@ -73,7 +67,7 @@ namespace Clinica_Frba.Abm_Rol
 
 
                     grillaFunc.Rows.Clear();
-                    List<DataGridViewRow> filas2 = new List<DataGridViewRow>();
+                    
                     Object[] columnas2 = new Object[3];
 
                     foreach (DataRow regft in listadoFuncTot2.Rows)
@@ -81,10 +75,9 @@ namespace Clinica_Frba.Abm_Rol
                         columnas2[0] = regft["fun_Descripcion"].ToString();
                         columnas2[1] = false;
 
-                        filas2.Add(new DataGridViewRow());
-                        filas2[filas2.Count - 1].CreateCells(grillaFunc, columnas2);
+                        grillaFunc.Rows.Add(columnas2[0], columnas2[1]);
                     }
-                    grillaFunc.Rows.AddRange(filas2.ToArray());
+              
                         
                     break;
 
@@ -117,10 +110,10 @@ namespace Clinica_Frba.Abm_Rol
 
                 foreach (DataRow dr in grillaFunc.Rows)
                 {
-                    if(dr["FuncAgregada"].ToString() == "True"){
+                    if(((CheckBox)dr["FuncAgregada"]).Checked){
 
                         int valor3 = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Func_Rol (furo_CodRol,furo_CodFuncionalidad) Values ("+
-                                                                  rol.rol_CodRol +", "+dr["Funcionalidad"].ToString()+")"); 
+                                                                  rol.rol_CodRol +", "+dr["IdFunc"].ToString()+")"); 
                     }
 
 
@@ -192,6 +185,11 @@ namespace Clinica_Frba.Abm_Rol
             }
 
             Close();
+
+        private void Abm_Rol_Form_Load(object sender, EventArgs e)
+        {
+        
+        }
         }
         }
 

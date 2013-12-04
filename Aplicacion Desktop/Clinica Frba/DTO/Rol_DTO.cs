@@ -12,6 +12,7 @@ namespace Clinica_Frba.DTO {
         public static List<String> primaryKeys;
         public string rol_CodRol { get; set; }
         public string rol_Nombre { get; set; }
+        public string rol_Estado { get; set; }
 
 
 
@@ -21,14 +22,14 @@ namespace Clinica_Frba.DTO {
 
         
         public Rol_DTO(string rol_CodRol,
-                       string Nombre){
+                       string Nombre,
+                       string Estado ){
 
             this.rol_CodRol = rol_CodRol;
             this.rol_Nombre = Nombre;
+            this.rol_Estado = Estado;
         }
 
-
-        ///PRUEBA EN GIT Comentario mati
     }
 }
 

@@ -33,59 +33,74 @@ namespace Clinica_Frba.GrillaRol
        
         //---------------------COMIENZO Botones de la Grilla---------------------------
 
+        // Botón Añadir Rol
         private void B_Añadir_Click(object sender, EventArgs e)
         {
             Abm_Rol_Form.tipoDeFormularioSecundario = 'A';
             (new Abm_Rol_Form()).Show();
         }
 
+        // Botón Buscar Rol
         private void B_Buscar_Click(object sender, EventArgs e)
         {
             Abm_Rol_Form.tipoDeFormularioSecundario = 'B';
             (new Abm_Rol_Form()).Show();
         }
 
-
+        // Botón Limpiar GrillaRoles
         private void B_Limpiar_Click(object sender, EventArgs e)
         {
             grillaRoles.Rows.Clear();
         }
 
+        // Botón Cerrar Formulario de Roles
         private void B_Cancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        // Botón Modificar Rol (El nombre y/o sus funcionalidades
         private void B_Modificar_Click(object sender, EventArgs e)
         {
+            //Si no seleccionó ningun registro retorna.
             if (grillaRoles.SelectedRows.Count == 0)
                 return;
-            DataGridViewRow fila = grillaRoles.SelectedRows[0];
+
+            //Le asigno a reg el registro seleccionado.
+            DataGridViewRow reg = grillaRoles.SelectedRows[0];
+
+            //Creo un Rol_DTO y como parametros le doy los datos del registro del datagrid.
             Abm_Rol_Form.rol = new Rol_DTO
             (
-            fila.Cells["txt_Codigo_Rol"].Value.ToString(),
-            fila.Cells["txt_Nombre_Rol"].Value.ToString()
+            reg.Cells["Codigo_Rol"].Value.ToString(),
+            reg.Cells["Nombre_Rol"].Value.ToString(),
+            ""
             );
+            //Las Celdas del registro de arriba va con los nombres(no los que muestra) de las columnas de grillaRolles
+            
+            //Se puede darle valor a la clase antes de crear la instrancia porque es una variable de clase.
             Abm_Rol_Form.tipoDeFormularioSecundario = 'M';
 
             (new Abm_Rol_Form()).Show();
         }
 
-        private void B_EliminarClientes_Click(object sender, EventArgs e)
+
+        private void B_BajaRol_Click(object sender, EventArgs e)
         {
             if (grillaRoles.SelectedRows.Count == 0)
                 return;
-            DataGridViewRow fila = grillaRoles.SelectedRows[0];
 
-            if ((bool)fila.Cells["Eliminado"].Value)
+            DataGridViewRow reg = grillaRoles.SelectedRows[0];
+
+            if ((bool)reg.Cells["Eliminado"].Value)
             {
-                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Afiliado set afi_Estado = '" + 0 + "' where afi_Dni = '" + fila.Cells["txt_Dni"].Value + "'");
-                fila.Cells["Eliminado"].Value = false;
+                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set Rol_Estado = '" + 0 + "' where rol_CodRol = '" + reg.Cells["Codigo_Rol"].Value + "'");
+                reg.Cells["Eliminado"].Value = false;
             }
             else
             {
-                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Afiliado set afi_Estado = '" + 1 + "' where afi_Dni = '" + fila.Cells["txt_Dni"].Value + "'");
-                fila.Cells["Eliminado"].Value = true;
+                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set Rol_Estado = '" + 1 + "' where rol_CodRol = '" + reg.Cells["Codigo_Rol"].Value + "'");
+                reg.Cells["Eliminado"].Value = true;
             }
         }
         //---------------------FIN Botones de la Grilla---------------------------
@@ -95,33 +110,20 @@ namespace Clinica_Frba.GrillaRol
 
 
         //---------------------COMIENZO: FUNCIONES--------------------
-        public void actualizarListadoAfiliados()
+        public void actualizarGrillaRoles()
         {
             grillaRoles.Rows.Clear();
-            List<DataGridViewRow> filas = new List<DataGridViewRow>();
-            Object[] columnas = new Object[16];
+           
+            Object[] columnas = new Object[4];
 
-            foreach (AfiliadoDTO afiliado in afiliadosAMostrar)
+            foreach (Rol_DTO rol in RolesAMostrar)
             {
-                columnas[0] = afiliado.IdAfiliado;
-                columnas[1] = afiliado.NombreUsuario;
-                columnas[2] = afiliado.Nombre;
-                columnas[3] = afiliado.Apellido;
-                columnas[4] = afiliado.Dni;
-                columnas[5] = afiliado.IdPlan;           
-                columnas[6] = afiliado.Direccion;
-                columnas[7] = afiliado.Telefono;
-                columnas[8] = afiliado.Mail;
-                columnas[9] = afiliado.FechaNacimiento;
-                columnas[10] = afiliado.Sexo;
-                columnas[11] = afiliado.EstadoCivil;
-                columnas[12] = afiliado.CantPersonas;
-                columnas[13] = afiliado.CantidadConsultas;
-                columnas[14] = (afiliado.Estado == "True") ? true : false;
-                filas.Add(new DataGridViewRow());
-                filas[filas.Count - 1].CreateCells(grillaRoles, columnas);
+                columnas[0] = rol.rol_CodRol;
+                columnas[1] = rol.rol_Nombre;
+                columnas[2] = (rol.rol_Estado == "True") ? true : false;
+
+                grillaRoles.Rows.Add(columnas[0], columnas[1], columnas[2]);
             }
-            grillaRoles.Rows.AddRange(filas.ToArray());
         }
         //----------------------------FIN FUNCIONES-----------------------
 

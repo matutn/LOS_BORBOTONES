@@ -26,7 +26,19 @@ namespace Clinica_Frba.GrillaRol
         public GrillaRol_Form()
         {
             InitializeComponent();
+
+            DataTable listadoRoles = Clases.DB.ExecuteReader("Select * From LOS_BORBOTONES.Rol");
             GrillaRol_Form.instancia = this;
+            Object[] columnas = new Object[4];
+
+            foreach (DataRow dr in listadoRoles.Rows)
+            {
+                columnas[0] = dr["rol_CodRol"].ToString();
+                columnas[1] = dr["rol_Nombre"].ToString();
+                columnas[2] =(dr["rol_CodRol"].ToString() == "True") ? true : false;
+
+                grillaRoles.Rows.Add(columnas[0], columnas[1], columnas[2]);
+            }
         }
 
 
@@ -94,12 +106,12 @@ namespace Clinica_Frba.GrillaRol
 
             if ((bool)reg.Cells["Eliminado"].Value)
             {
-                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set Rol_Estado = '" + 0 + "' where rol_CodRol = '" + reg.Cells["Codigo_Rol"].Value + "'");
+                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set rol_Estado = '" + 0 + "' where rol_CodRol = '" + reg.Cells["Codigo_Rol"].Value + "'");
                 reg.Cells["Eliminado"].Value = false;
             }
             else
             {
-                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set Rol_Estado = '" + 1 + "' where rol_CodRol = '" + reg.Cells["Codigo_Rol"].Value + "'");
+                Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set rol_Estado = '" + 1 + "' where rol_CodRol = '" + reg.Cells["Codigo_Rol"].Value + "'");
                 reg.Cells["Eliminado"].Value = true;
             }
         }

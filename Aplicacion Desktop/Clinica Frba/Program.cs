@@ -4,8 +4,9 @@ using System.Linq;
 using System.Windows.Forms;
 using Clinica_Frba.GrillaAfiliado;
 using Clinica_Frba.GrillaProfesional;
-using Clinica_Frba.Compra_de_Bono;
+//using Clinica_Frba.Compra_de_Bono;
 //using Clinica_Frba.AbmProfesional;
+using Clinica_Frba.GrillaRol;
 
 namespace Clinica_Frba
 {

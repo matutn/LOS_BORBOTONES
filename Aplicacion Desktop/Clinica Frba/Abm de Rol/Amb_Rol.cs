@@ -19,9 +19,11 @@ namespace Clinica_Frba.Abm_Rol
 
         public static Clinica_Frba.DTO.Rol_DTO rol;
         public static char tipoDeFormularioSecundario;
-        public Abm_Rol_Form() {
+        public Abm_Rol_Form()
+        {
 
             InitializeComponent();
+          
             switch (tipoDeFormularioSecundario)
             {
                 case 'M':
@@ -115,87 +117,59 @@ namespace Clinica_Frba.Abm_Rol
                         int valor3 = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Func_Rol (furo_CodRol,furo_CodFuncionalidad) Values ("+
                                                                   rol.rol_CodRol +", "+dr["IdFunc"].ToString()+")"); 
                     }
-
-
-                    filas.Add(new DataGridViewRow());
-                    filas[filas.Count - 1].CreateCells(grillaFunc, columnas);
                 }
-                grillaFunc.Rows.AddRange(filas.ToArray());
+               MessageBox.Show("El Rol se modifico correctamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         
                        
 
                     }
                     break;
-                        int valor = Clases.DB.ExecuteNonQuery(@"Update LOS_BORBOTONES.Afiliado set afi_Nombre = '" + nombre.Text + "',afi_Apellido = '" + 
-                            apellido.Text  + "',afi_Direccion = '" + calle.Text + "',afi_Telefono = '" + afiliado.Telefono + "',afi_Mail = '" + mail.Text +
-                            afiliado.Sexo + "',afi_IdPlan = '" + idPlan + "',afi_EstadoCivil = '" + nro_estadoCivil + "' where afi_Dni = '" + long.Parse(afiliado.Dni) + "'"); 
-                        MessageBox.Show("El Afiliado se modifico correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    break;
+                     
                 case 'A':
                     {
-                        DataTable dt_plan  = Clases.DB.ExecuteReader("Select 1 from LOS_BORBOTONES.Plan_Medico where plan_IdPlan = '" + idPlan + "'");
-                        if (dt_plan.Rows.Count == 0)
+                        int valor = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Rol (rol_CodRol,rol_Nombre,rol_Estado) Values (null, '" +
+                                                                 txt_Nombre_Rol + "' , true)");
+                        int valor2 = Clases.DB.ExecuteNonQuery("Delete From LOS_BORBOTONES.Func_Rol Where LOS_BORBOTONES.Func_Rol.furo_CodRol = '" +
+                                                                rol.rol_CodRol + "'");
+
+                        foreach (DataRow dr in grillaFunc.Rows)
                         {
-                            MessageBox.Show("El Plan ingresado no existe", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
+                            if (((CheckBox)dr["FuncAgregada"]).Checked)
+                            {
+
+                                int valor3 = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Func_Rol (furo_CodRol,furo_CodFuncionalidad) Values (" +
+                                                                          rol.rol_CodRol + ", " + dr["IdFunc"].ToString() + ")");
+                            }
                         }
-                        nro_estadoCivil = Clases.DB.ExecuteCardinal("Select esci_CodEcivil from LOS_BORBOTONES.EstadoCivil where esci_Descripcion = '" + estado_civil + "'");
-                        int valor = Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Afiliado (afi_IdPlan,afi_EstadoCivil,afi_Nombre,afi_Apellido ,afi_Dni,afi_Direccion,afi_Telefono,afi_Mail,afi_FechaNacimiento,afi_Sexo) 
-                        values ( '" + idPlan + "','" + nro_estadoCivil + "','" + nombre.Text + "','" + apellido.Text + "'," + dni_afi + ",'" + calle.Text + "','" + tel + "','" + mail.Text + "','" + fecNac + "','" + sexo + "')");
-                        MessageBox.Show("El Afiliado se dio de alta correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("El Rol se agregó correctamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
                 case 'B':
                     {
-                        GrillaAfiliado_Form.afiliadosAMostrar.Clear();
-                        if (estado_civil == "")
-                        {
-                            nro_estadoCivil = 0;
-                        }
-                        else nro_estadoCivil = Clases.DB.ExecuteCardinal("Select esci_CodEcivil from LOS_BORBOTONES.EstadoCivil where esci_Descripcion = '" + estado_civil + "'");   
-                        var lista = Clases.DB.ExecuteReader("Select * from LOS_BORBOTONES.Afiliado where afi_Apellido = '" + apellido.Text +
-                            "' OR afi_Nombre = '" + nombre.Text + "' OR afi_Dni = '" + dni_afi + "' OR afi_Telefono = '" + tel +
-                            "' OR afi_Mail = '" + mail.Text + "' OR afi_EstadoCivil = '" + nro_estadoCivil + "' OR afi_IdPlan = '" + idPlan +
-                            "' OR afi_Direccion = '" + calle.Text + "' OR afi_Sexo = '" + sexo + "' OR afi_FechaNacimiento = '" + fecNac + "'");
+                        DataTable buscados = Clases.DB.ExecuteReader("Select * From LOS_BORBOTONES.Rol Where LOS_BORBOTONES.Rol.rol_Nombre like '%"+txt_Nombre_Rol+"%'");
 
-                        foreach (DataRow row in lista.Rows)
+                        foreach (DataRow dr in buscados.Rows)
                         {
-                            afiliado = new Clinica_Frba.DTO.AfiliadoDTO();
-                            afiliado.IdAfiliado = row["afi_IdAfiliado"].ToString();
-                            afiliado.NombreUsuario = row["afi_NombreUsuario"].ToString();
-                            afiliado.Nombre = row["afi_Nombre"].ToString();
-                            afiliado.Apellido = row["afi_Apellido"].ToString();
-                            afiliado.EstadoCivil = row["afi_EstadoCivil"].ToString();
-                            afiliado.IdPlan = row["afi_IdPlan"].ToString();
-                            afiliado.Dni = row["afi_Dni"].ToString();
-                            afiliado.FechaNacimiento = row["afi_FechaNacimiento"].ToString();
-                            afiliado.Mail = row["afi_Mail"].ToString();
-                            afiliado.Telefono = row["afi_Telefono"].ToString();
-                            afiliado.Direccion = row["afi_Direccion"].ToString();
-                            afiliado.Estado = row["afi_Estado"].ToString();
-                            afiliado.Sexo = row["afi_Sexo"].ToString();
-                            afiliado.CantidadConsultas = row["afi_CantidadConsultas"].ToString();
-                            afiliado.CantPersonas = row["afi_CantPersonas"].ToString();
-                            GrillaAfiliado_Form.afiliadosAMostrar.Add(afiliado);
+                            rol = new Rol_DTO();
+                            rol.rol_CodRol = dr["rol_CodRol"].ToString();
+                            rol.rol_Nombre = dr["rol_Nombre"].ToString();
+                           // rol.rol_Estado = (dr["rol_Estado"].ToString()) ? "True" : "False";
+
+                            GrillaRol_Form.RolesAMostrar.Add(rol);
                         }
-                        GrillaAfiliado_Form.instancia.actualizarListadoAfiliados();                    
+                        GrillaRol_Form.instancia.actualizarGrillaRoles();
+                        
+                
                     }
                     break;
             }
 
             Close();
-
+           
+        }
         private void Abm_Rol_Form_Load(object sender, EventArgs e)
         {
         
-        }
-        }
-        }
-
-        private void Abm_Rol_Form_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void DG_GrillaFunc_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -212,8 +186,8 @@ namespace Clinica_Frba.Abm_Rol
         {
 
         }
-
-        
+                   
+        }
     
     }
-}
+

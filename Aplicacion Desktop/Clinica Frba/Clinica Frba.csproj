@@ -100,11 +100,17 @@
     <Compile Include="DTO\AfiliadoDTO.cs" />
     <Compile Include="DTO\ProfesionalDTO.cs" />
     <Compile Include="DTO\Rol_DTO.cs" />
-    <Compile Include="Login\Form1.cs">
+    <Compile Include="Login\Ingreso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login\Ingreso.Designer.cs">
+      <DependentUpon>Ingreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Registro de Usuario\Form1.cs">
       <SubType>Form</SubType>
@@ -194,6 +200,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compra de Bono\CompraBono_Afiliado.resx">
       <DependentUpon>CompraBono_Afiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Ingreso.resx">
+      <DependentUpon>Ingreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources" />
     <EmbeddedResource Include="obj\Debug\Clinica_Frba.Abm_de_Afiliado.FormAfiliado.resources" />

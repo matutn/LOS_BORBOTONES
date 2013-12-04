@@ -48,7 +48,7 @@ namespace Clinica_Frba.GrillaRol
 
         private void B_Limpiar_Click(object sender, EventArgs e)
         {
-            listadoRoles.Rows.Clear();
+            grillaRoles.Rows.Clear();
         }
 
         private void B_Cancelar_Click(object sender, EventArgs e)
@@ -58,9 +58,9 @@ namespace Clinica_Frba.GrillaRol
 
         private void B_Modificar_Click(object sender, EventArgs e)
         {
-            if (listadoRoles.SelectedRows.Count == 0)
+            if (grillaRoles.SelectedRows.Count == 0)
                 return;
-            DataGridViewRow fila = listadoRoles.SelectedRows[0];
+            DataGridViewRow fila = grillaRoles.SelectedRows[0];
             Abm_Rol_Form.rol = new Rol_DTO
             (
             fila.Cells["txt_Codigo_Rol"].Value.ToString(),
@@ -73,9 +73,9 @@ namespace Clinica_Frba.GrillaRol
 
         private void B_EliminarClientes_Click(object sender, EventArgs e)
         {
-            if (listadoRoles.SelectedRows.Count == 0)
+            if (grillaRoles.SelectedRows.Count == 0)
                 return;
-            DataGridViewRow fila = listadoRoles.SelectedRows[0];
+            DataGridViewRow fila = grillaRoles.SelectedRows[0];
 
             if ((bool)fila.Cells["Eliminado"].Value)
             {
@@ -97,7 +97,7 @@ namespace Clinica_Frba.GrillaRol
         //---------------------COMIENZO: FUNCIONES--------------------
         public void actualizarListadoAfiliados()
         {
-            listadoRoles.Rows.Clear();
+            grillaRoles.Rows.Clear();
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
             Object[] columnas = new Object[16];
 
@@ -119,9 +119,9 @@ namespace Clinica_Frba.GrillaRol
                 columnas[13] = afiliado.CantidadConsultas;
                 columnas[14] = (afiliado.Estado == "True") ? true : false;
                 filas.Add(new DataGridViewRow());
-                filas[filas.Count - 1].CreateCells(listadoRoles, columnas);
+                filas[filas.Count - 1].CreateCells(grillaRoles, columnas);
             }
-            listadoRoles.Rows.AddRange(filas.ToArray());
+            grillaRoles.Rows.AddRange(filas.ToArray());
         }
         //----------------------------FIN FUNCIONES-----------------------
 

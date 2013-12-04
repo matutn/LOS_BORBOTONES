@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listadoRoles = new System.Windows.Forms.DataGridView();
+            this.grillaRoles = new System.Windows.Forms.DataGridView();
             this.Codigo_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,24 +39,24 @@
             this.B_Modificar = new System.Windows.Forms.Button();
             this.B_Añadir = new System.Windows.Forms.Button();
             this.B_EliminarClientes = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.listadoRoles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaRoles)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listadoRoles
+            // grillaRoles
             // 
-            this.listadoRoles.AllowUserToAddRows = false;
-            this.listadoRoles.AllowUserToDeleteRows = false;
-            this.listadoRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listadoRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grillaRoles.AllowUserToAddRows = false;
+            this.grillaRoles.AllowUserToDeleteRows = false;
+            this.grillaRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo_Rol,
             this.Nombre_Rol,
             this.Estado});
-            this.listadoRoles.Location = new System.Drawing.Point(202, 12);
-            this.listadoRoles.Name = "listadoRoles";
-            this.listadoRoles.Size = new System.Drawing.Size(355, 192);
-            this.listadoRoles.TabIndex = 0;
-            this.listadoRoles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.grillaRoles.Location = new System.Drawing.Point(202, 12);
+            this.grillaRoles.Name = "grillaRoles";
+            this.grillaRoles.Size = new System.Drawing.Size(355, 192);
+            this.grillaRoles.TabIndex = 0;
+            this.grillaRoles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // Codigo_Rol
             // 
@@ -158,12 +158,12 @@
             this.ClientSize = new System.Drawing.Size(588, 307);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.B_Cancelar);
-            this.Controls.Add(this.listadoRoles);
+            this.Controls.Add(this.grillaRoles);
             this.Name = "GrillaRol_Form";
             this.Text = "Roles";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.GrillaAfiliado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.listadoRoles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaRoles)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -171,7 +171,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView listadoRoles;
+        private System.Windows.Forms.DataGridView grillaRoles;
         private System.Windows.Forms.Button B_Buscar;
         private System.Windows.Forms.Button B_Cancelar;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -66,6 +66,18 @@
     <Compile Include="Abm de Profesional\GrillaProfesional.Designer.cs">
       <DependentUpon>GrillaProfesional.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm de Rol\Amb_Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm de Rol\Amb_Rol.Designer.cs">
+      <DependentUpon>Amb_Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm de Rol\GrillaRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm de Rol\GrillaRol.Designer.cs">
+      <DependentUpon>GrillaRol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compra de Bono\CompraBono.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,7 +97,6 @@
       <DependentUpon>CompraBono_Afiliado.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexión BD\DB.cs" />
-    <Compile Include="DAO\Rol_DAO.cs" />
     <Compile Include="DTO\AfiliadoDTO.cs" />
     <Compile Include="DTO\ProfesionalDTO.cs" />
     <Compile Include="DTO\Rol_DTO.cs" />
@@ -169,6 +180,12 @@
     <EmbeddedResource Include="Abm de Profesional\GrillaProfesional.resx">
       <DependentUpon>GrillaProfesional.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Abm de Rol\Amb_Rol.resx">
+      <DependentUpon>Amb_Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm de Rol\GrillaRol.resx">
+      <DependentUpon>GrillaRol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compra de Bono\CompraBono.resx">
       <DependentUpon>CompraBono.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +195,26 @@
     <EmbeddedResource Include="Compra de Bono\CompraBono_Afiliado.resx">
       <DependentUpon>CompraBono_Afiliado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Abm_de_Afiliado.FormAfiliado.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Abm_Profesional.Amb_Profesional_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Administrativo.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Afiliado.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.GrillaAfiliado.GrillaAfiliado_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.GrillaProfesional.GrillaProfesional_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.NewFolder12.GrillaAfiliado.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Abm_de_Afiliado.FormAfiliado.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Abm_Profesional.Amb_Profesional_Form.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono_Administrativo.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono_Afiliado.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.GrillaAfiliado.GrillaAfiliado_Form.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.GrillaProfesional.GrillaProfesional_Form.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.NewFolder12.GrillaAfiliado.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -187,6 +224,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bin\Debug\Clinica Frba.vshost.exe.manifest" />
+    <None Include="obj\Debug\Clinica Frba.csproj.GenerateResource.Cache" />
+    <None Include="obj\Release\Clinica Frba.csproj.GenerateResource.Cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -199,6 +239,23 @@
     <Compile Include="Utilities\Validador.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Clinica Frba.exe" />
+    <Content Include="bin\Debug\Clinica Frba.pdb" />
+    <Content Include="bin\Debug\Clinica Frba.vshost.exe" />
+    <Content Include="bin\Debug\ConnectionString.xml" />
+    <Content Include="bin\Release\Clinica Frba.exe" />
+    <Content Include="bin\Release\Clinica Frba.pdb" />
+    <Content Include="obj\Debug\Clinica Frba.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Clinica Frba.exe" />
+    <Content Include="obj\Debug\Clinica Frba.pdb" />
+    <Content Include="obj\Release\Clinica Frba.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\Clinica Frba.exe" />
+    <Content Include="obj\Release\Clinica Frba.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\TempPE\" />
     <Folder Include="Pedir Turno\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

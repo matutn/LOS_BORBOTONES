@@ -31,14 +31,14 @@
             this.GB_Rol = new System.Windows.Forms.GroupBox();
             this.L_Funcionalidad = new System.Windows.Forms.Label();
             this.grillaFunc = new System.Windows.Forms.DataGridView();
+            this.IdFunc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Funcionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncAgregada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.B_Cancelar = new System.Windows.Forms.Button();
             this.txt_Nombre_Rol = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.B_Aceptar = new System.Windows.Forms.Button();
-            this.IdFunc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Funcionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncAgregada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.GB_Rol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaFunc)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +48,6 @@
             this.GB_Rol.Controls.Add(this.L_Funcionalidad);
             this.GB_Rol.Controls.Add(this.grillaFunc);
             this.GB_Rol.Controls.Add(this.button2);
-            this.GB_Rol.Enabled = false;
             this.GB_Rol.Location = new System.Drawing.Point(18, 38);
             this.GB_Rol.Name = "GB_Rol";
             this.GB_Rol.Size = new System.Drawing.Size(463, 211);
@@ -78,6 +77,25 @@
             this.grillaFunc.Name = "grillaFunc";
             this.grillaFunc.Size = new System.Drawing.Size(328, 150);
             this.grillaFunc.TabIndex = 50;
+            // 
+            // IdFunc
+            // 
+            this.IdFunc.HeaderText = "Id Funcionalidad";
+            this.IdFunc.Name = "IdFunc";
+            this.IdFunc.Visible = false;
+            this.IdFunc.Width = 93;
+            // 
+            // Funcionalidad
+            // 
+            this.Funcionalidad.HeaderText = "Funcionalidad";
+            this.Funcionalidad.Name = "Funcionalidad";
+            this.Funcionalidad.Width = 97;
+            // 
+            // FuncAgregada
+            // 
+            this.FuncAgregada.HeaderText = "Agregada";
+            this.FuncAgregada.Name = "FuncAgregada";
+            this.FuncAgregada.Width = 95;
             // 
             // button2
             // 
@@ -125,25 +143,6 @@
             this.B_Aceptar.UseVisualStyleBackColor = true;
             this.B_Aceptar.Click += new System.EventHandler(this.B_Aceptar_Click);
             // 
-            // IdFunc
-            // 
-            this.IdFunc.HeaderText = "Id Funcionalidad";
-            this.IdFunc.Name = "IdFunc";
-            this.IdFunc.Visible = false;
-            this.IdFunc.Width = 93;
-            // 
-            // Funcionalidad
-            // 
-            this.Funcionalidad.HeaderText = "Funcionalidad";
-            this.Funcionalidad.Name = "Funcionalidad";
-            this.Funcionalidad.Width = 97;
-            // 
-            // FuncAgregada
-            // 
-            this.FuncAgregada.HeaderText = "Agregada";
-            this.FuncAgregada.Name = "FuncAgregada";
-            this.FuncAgregada.Width = 95;
-            // 
             // Abm_Rol_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,7 +153,6 @@
             this.Controls.Add(this.txt_Nombre_Rol);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.B_Aceptar);
-            this.Enabled = false;
             this.Location = new System.Drawing.Point(12, 78);
             this.Name = "Abm_Rol_Form";
             this.Text = "Rol";

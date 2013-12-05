@@ -153,7 +153,7 @@ namespace Clinica_Frba.Abm_Rol
                             rol = new Rol_DTO();
                             rol.rol_CodRol = dr["rol_CodRol"].ToString();
                             rol.rol_Nombre = dr["rol_Nombre"].ToString();
-                           // rol.rol_Estado = (dr["rol_Estado"].ToString()) ? "True" : "False";
+                            rol.rol_Estado = dr["rol_Estado"].ToString();
 
                             GrillaRol_Form.RolesAMostrar.Add(rol);
                         }

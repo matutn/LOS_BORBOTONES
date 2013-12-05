@@ -13,8 +13,6 @@ namespace Clinica_Frba.GrillaRol
 {
     public partial class GrillaRol_Form : Form
     {
-        //Variable Rol que es objeto Rol_DTO.
-        public static Clinica_Frba.DTO.Rol_DTO Rol;
 
         //Variable RolesAMostrar que es una lista de objetos Rol_DTO.
         public static List<Rol_DTO> RolesAMostrar = new List<Rol_DTO>();        
@@ -26,9 +24,11 @@ namespace Clinica_Frba.GrillaRol
         public GrillaRol_Form()
         {
             InitializeComponent();
+            GrillaRol_Form.instancia = this;
 
             DataTable listadoRoles = Clases.DB.ExecuteReader("Select * From LOS_BORBOTONES.Rol");
-            GrillaRol_Form.instancia = this;
+            
+           
             Object[] columnas = new Object[4];
 
             foreach (DataRow dr in listadoRoles.Rows)
@@ -40,7 +40,7 @@ namespace Clinica_Frba.GrillaRol
                 grillaRoles.Rows.Add(columnas[0], columnas[1], columnas[2]);
             }
         }
-
+            
 
        
         //---------------------COMIENZO Botones de la Grilla---------------------------

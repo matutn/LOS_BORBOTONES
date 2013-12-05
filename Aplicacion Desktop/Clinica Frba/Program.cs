@@ -7,6 +7,7 @@ using Clinica_Frba.GrillaProfesional;
 //using Clinica_Frba.Compra_de_Bono;
 //using Clinica_Frba.AbmProfesional;
 using Clinica_Frba.GrillaRol;
+using Clinica_Frba.Abm_Rol;
 
 namespace Clinica_Frba
 {
@@ -20,7 +21,7 @@ namespace Clinica_Frba
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GrillaAfiliado_Form());
+            Application.Run(new Abm_Rol_Form());
         }
     }
 }

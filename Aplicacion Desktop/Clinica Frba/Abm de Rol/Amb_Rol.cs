@@ -25,7 +25,7 @@ namespace Clinica_Frba.Abm_Rol
             InitializeComponent();
 
 
-            //Agregado para arreglar
+        
 
             switch (tipoDeFormularioSecundario)
             {
@@ -100,30 +100,26 @@ namespace Clinica_Frba.Abm_Rol
 
         private void B_Aceptar_Click(object sender, EventArgs e)
         {
-            //Agregado para arreglar
-            string nombre = txt_Nombre_Rol.ToString();
-
-            
+                 
 
              switch (tipoDeFormularioSecundario)
             {
                 case 'M':
                     {
 
-                        int valor = Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set rol_Nombre = '" + nombre +
+                        int valor = Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set rol_Nombre = '" + txt_Nombre_Rol.Text +
                                                                 "' where LOS_BORBOTONES.Rol.rol_CodRol = '"+ rol.rol_CodRol.ToString() +"'");
                         int valor2 = Clases.DB.ExecuteNonQuery("Delete From LOS_BORBOTONES.Func_Rol Where LOS_BORBOTONES.Func_Rol.furo_CodRol = '"+
                                                                 rol.rol_CodRol.ToString() + "'");
 
                 foreach (DataRow dr in grillaFunc.Rows)
                 {
-                    //Agregado para arreglar
-                   string IdFunc = dr["IdFunc"].ToString();
+                    
 
                     if(((CheckBox)dr["FuncAgregada"]).Checked){
 
                         int valor3 = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Func_Rol (furo_CodRol,furo_CodFuncionalidad) Values ("+
-                                                                  codigorol + ", " + IdFunc + ")"); 
+                                                                  rol.rol_CodRol.ToString() + ", " + dr["IdFunc"].ToString() + ")"); 
                     }
                 }
                MessageBox.Show("El Rol se modifico correctamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -136,17 +132,17 @@ namespace Clinica_Frba.Abm_Rol
                 case 'A':
                     {
                         int valor = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Rol (rol_CodRol,rol_Nombre,rol_Estado) Values (null, '" +
-                                                                 nombre + "' , true)");
+                                                                 txt_Nombre_Rol + "' , true)");
                         int valor2 = Clases.DB.ExecuteNonQuery("Delete From LOS_BORBOTONES.Func_Rol Where LOS_BORBOTONES.Func_Rol.furo_CodRol = '" +
-                                                                codigorol + "'");
+                                                               rol.rol_CodRol.ToString() + "'");
 
                         foreach (DataRow dr in grillaFunc.Rows)
                         {
                             if (((CheckBox)dr["FuncAgregada"]).Checked)
                             {
-                                string IdFunc = dr["IdFunc"].ToString();
+
                                 int valor3 = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Func_Rol (furo_CodRol,furo_CodFuncionalidad) Values (" +
-                                                                          codigorol + ", " + IdFunc + ")");
+                                                                          rol.rol_CodRol.ToString() + ", " + dr["IdFunc"].ToString() + ")");
                             }
                         }
                         MessageBox.Show("El Rol se agregó correctamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -154,7 +150,7 @@ namespace Clinica_Frba.Abm_Rol
                     break;
                 case 'B':
                     {
-                        DataTable buscados = Clases.DB.ExecuteReader("Select * From LOS_BORBOTONES.Rol Where LOS_BORBOTONES.Rol.rol_Nombre like '%"+txt_Nombre_Rol+"%'");
+                        DataTable buscados = Clases.DB.ExecuteReader("Select * From LOS_BORBOTONES.Rol Where LOS_BORBOTONES.Rol.rol_Nombre like '%"+txt_Nombre_Rol.Text+"%'");
 
                         foreach (DataRow dr in buscados.Rows)
                         {

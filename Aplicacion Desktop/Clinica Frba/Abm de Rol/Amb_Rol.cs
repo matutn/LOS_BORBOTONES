@@ -103,8 +103,6 @@ namespace Clinica_Frba.Abm_Rol
         private void B_Aceptar_Click(object sender, EventArgs e)
         {
             //Agregado para arreglar
-            long codigorol;
-            long.TryParse(rol.rol_CodRol, out codigorol);
             string nombre = txt_Nombre_Rol.ToString();
 
             
@@ -115,9 +113,9 @@ namespace Clinica_Frba.Abm_Rol
                     {
 
                         int valor = Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set rol_Nombre = '" + nombre +
-                                                                "' where LOS_BORBOTONES.Rol.rol_CodRol = '"+ codigorol +"'");
+                                                                "' where LOS_BORBOTONES.Rol.rol_CodRol = '"+ rol.rol_CodRol.ToString() +"'");
                         int valor2 = Clases.DB.ExecuteNonQuery("Delete From LOS_BORBOTONES.Func_Rol Where LOS_BORBOTONES.Func_Rol.furo_CodRol = '"+
-                                                                codigorol + "'");
+                                                                rol.rol_CodRol.ToString() + "'");
 
                 foreach (DataRow dr in grillaFunc.Rows)
                 {

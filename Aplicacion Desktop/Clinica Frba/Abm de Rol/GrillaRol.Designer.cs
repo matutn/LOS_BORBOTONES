@@ -36,6 +36,7 @@
             this.B_Modificar = new System.Windows.Forms.Button();
             this.B_Añadir = new System.Windows.Forms.Button();
             this.B_BajaRol = new System.Windows.Forms.Button();
+            this.B_ActualizarListado = new System.Windows.Forms.Button();
             this.Codigo_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +55,7 @@
             this.Eliminado});
             this.grillaRoles.Location = new System.Drawing.Point(202, 12);
             this.grillaRoles.Name = "grillaRoles";
-            this.grillaRoles.Size = new System.Drawing.Size(255, 192);
+            this.grillaRoles.Size = new System.Drawing.Size(327, 244);
             this.grillaRoles.TabIndex = 0;
             this.grillaRoles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -67,18 +68,21 @@
             this.B_Buscar.TabIndex = 36;
             this.B_Buscar.Text = "Buscar";
             this.B_Buscar.UseVisualStyleBackColor = true;
+            this.B_Buscar.Click += new System.EventHandler(this.B_Buscar_Click_1);
             // 
             // B_Cancelar
             // 
-            this.B_Cancelar.Location = new System.Drawing.Point(367, 227);
+            this.B_Cancelar.Location = new System.Drawing.Point(371, 262);
             this.B_Cancelar.Name = "B_Cancelar";
             this.B_Cancelar.Size = new System.Drawing.Size(90, 25);
             this.B_Cancelar.TabIndex = 42;
             this.B_Cancelar.Text = "Cerrar";
             this.B_Cancelar.UseVisualStyleBackColor = true;
+            this.B_Cancelar.Click += new System.EventHandler(this.B_Cancelar_Click_1);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.B_ActualizarListado);
             this.groupBox1.Controls.Add(this.B_Limpiar);
             this.groupBox1.Controls.Add(this.B_Modificar);
             this.groupBox1.Controls.Add(this.B_Buscar);
@@ -86,7 +90,7 @@
             this.groupBox1.Controls.Add(this.B_BajaRol);
             this.groupBox1.Location = new System.Drawing.Point(9, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(187, 240);
+            this.groupBox1.Size = new System.Drawing.Size(187, 276);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones de Roles";
@@ -100,6 +104,7 @@
             this.B_Limpiar.TabIndex = 46;
             this.B_Limpiar.Text = "Limpiar Lista";
             this.B_Limpiar.UseVisualStyleBackColor = true;
+            this.B_Limpiar.Click += new System.EventHandler(this.B_Limpiar_Click_1);
             // 
             // B_Modificar
             // 
@@ -111,6 +116,7 @@
             this.B_Modificar.TabIndex = 45;
             this.B_Modificar.Text = "Modificar";
             this.B_Modificar.UseVisualStyleBackColor = true;
+            this.B_Modificar.Click += new System.EventHandler(this.B_Modificar_Click_1);
             // 
             // B_Añadir
             // 
@@ -122,6 +128,7 @@
             this.B_Añadir.TabIndex = 44;
             this.B_Añadir.Text = "Añadir";
             this.B_Añadir.UseVisualStyleBackColor = true;
+            this.B_Añadir.Click += new System.EventHandler(this.B_Añadir_Click_1);
             // 
             // B_BajaRol
             // 
@@ -133,12 +140,23 @@
             this.B_BajaRol.TabIndex = 29;
             this.B_BajaRol.Text = "Dar de Baja";
             this.B_BajaRol.UseVisualStyleBackColor = true;
+            this.B_BajaRol.Click += new System.EventHandler(this.B_BajaRol_Click_1);
+            // 
+            // B_ActualizarListado
+            // 
+            this.B_ActualizarListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_ActualizarListado.Location = new System.Drawing.Point(20, 228);
+            this.B_ActualizarListado.Name = "B_ActualizarListado";
+            this.B_ActualizarListado.Size = new System.Drawing.Size(147, 35);
+            this.B_ActualizarListado.TabIndex = 47;
+            this.B_ActualizarListado.Text = "Actualizar Listado";
+            this.B_ActualizarListado.UseVisualStyleBackColor = true;
+            this.B_ActualizarListado.Click += new System.EventHandler(this.B_ActualizarListado_Click);
             // 
             // Codigo_Rol
             // 
             this.Codigo_Rol.HeaderText = "Codigo de Rol";
             this.Codigo_Rol.Name = "Codigo_Rol";
-            this.Codigo_Rol.Visible = false;
             // 
             // Nombre_Rol
             // 
@@ -156,13 +174,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 264);
+            this.ClientSize = new System.Drawing.Size(541, 299);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.B_Cancelar);
             this.Controls.Add(this.grillaRoles);
             this.Name = "GrillaRol_Form";
             this.Text = "Roles";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.GrillaAfiliado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grillaRoles)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -180,6 +197,7 @@
         private System.Windows.Forms.Button B_Añadir;
         private System.Windows.Forms.Button B_Limpiar;
         private System.Windows.Forms.Button B_BajaRol;
+        private System.Windows.Forms.Button B_ActualizarListado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Eliminado;

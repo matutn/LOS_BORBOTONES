@@ -23,7 +23,12 @@ namespace Clinica_Frba.Abm_Rol
         {
 
             InitializeComponent();
-          
+
+
+            //Agregado para arreglar
+            long codigorol1;
+            long.TryParse(rol.rol_CodRol, out codigorol1);
+
             switch (tipoDeFormularioSecundario)
             {
                 case 'M':
@@ -32,7 +37,7 @@ namespace Clinica_Frba.Abm_Rol
 
                         txt_Nombre_Rol.Text = rol.rol_Nombre;
 
-                DataTable listadoFuncRol = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Func_Rol fr, LOS_BORBOTONES.Funcionalidad f where	"+ rol.rol_CodRol+" = fr.furo_CodRol AND f.fun_CodFuncionalidad = fr.furo_CodFuncionalidad");
+                        DataTable listadoFuncRol = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Func_Rol fr, LOS_BORBOTONES.Funcionalidad f where	'" + codigorol1 + "' = fr.furo_CodRol AND f.fun_CodFuncionalidad = fr.furo_CodFuncionalidad");
                 DataTable listadoFuncTot = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Funcionalidad f");
 
 
@@ -90,32 +95,39 @@ namespace Clinica_Frba.Abm_Rol
                     break;
             }
         }
-  
 
-        private void txt_Nombre_Rol_TextChanged(object sender, EventArgs e)
-        {
 
-        }
+
+        //---------------------COMIENZO Botones de la Grilla---------------------------
 
         private void B_Aceptar_Click(object sender, EventArgs e)
         {
+            //Agregado para arreglar
+            long codigorol;
+            long.TryParse(rol.rol_CodRol, out codigorol);
+            string nombre = txt_Nombre_Rol.ToString();
+
+            
+
              switch (tipoDeFormularioSecundario)
             {
                 case 'M':
                     {
 
-
-                        int valor = Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set rol_Nombre = '" + txt_Nombre_Rol +
-                                                                "where LOS_BORBOTONES.Rol.rol_CodRol = '"+ rol.rol_CodRol+"'");
+                        int valor = Clases.DB.ExecuteNonQuery("Update LOS_BORBOTONES.Rol set rol_Nombre = '" + nombre +
+                                                                "' where LOS_BORBOTONES.Rol.rol_CodRol = '"+ codigorol +"'");
                         int valor2 = Clases.DB.ExecuteNonQuery("Delete From LOS_BORBOTONES.Func_Rol Where LOS_BORBOTONES.Func_Rol.furo_CodRol = '"+
-                                                                rol.rol_CodRol + "'");
+                                                                codigorol + "'");
 
                 foreach (DataRow dr in grillaFunc.Rows)
                 {
+                    //Agregado para arreglar
+                   string IdFunc = dr["IdFunc"].ToString();
+
                     if(((CheckBox)dr["FuncAgregada"]).Checked){
 
                         int valor3 = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Func_Rol (furo_CodRol,furo_CodFuncionalidad) Values ("+
-                                                                  rol.rol_CodRol +", "+dr["IdFunc"].ToString()+")"); 
+                                                                  codigorol + ", " + IdFunc + ")"); 
                     }
                 }
                MessageBox.Show("El Rol se modifico correctamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -128,17 +140,17 @@ namespace Clinica_Frba.Abm_Rol
                 case 'A':
                     {
                         int valor = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Rol (rol_CodRol,rol_Nombre,rol_Estado) Values (null, '" +
-                                                                 txt_Nombre_Rol + "' , true)");
+                                                                 nombre + "' , true)");
                         int valor2 = Clases.DB.ExecuteNonQuery("Delete From LOS_BORBOTONES.Func_Rol Where LOS_BORBOTONES.Func_Rol.furo_CodRol = '" +
-                                                                rol.rol_CodRol + "'");
+                                                                codigorol + "'");
 
                         foreach (DataRow dr in grillaFunc.Rows)
                         {
                             if (((CheckBox)dr["FuncAgregada"]).Checked)
                             {
-
+                                string IdFunc = dr["IdFunc"].ToString();
                                 int valor3 = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Func_Rol (furo_CodRol,furo_CodFuncionalidad) Values (" +
-                                                                          rol.rol_CodRol + ", " + dr["IdFunc"].ToString() + ")");
+                                                                          codigorol + ", " + IdFunc + ")");
                             }
                         }
                         MessageBox.Show("El Rol se agregó correctamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -167,6 +179,22 @@ namespace Clinica_Frba.Abm_Rol
             Close();
            
         }
+
+        //Botón Cancelar
+        private void B_Cancelar_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        //Botón Limpiar Funcionalidades
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        //---------------------FIN Botones de la Grilla---------------------------
+
+
+        //-------------------------COMIENZO: Eventos Innecesarios-------------------
         private void Abm_Rol_Form_Load(object sender, EventArgs e)
         {
         
@@ -186,8 +214,23 @@ namespace Clinica_Frba.Abm_Rol
         {
 
         }
-                   
+        private void txt_Nombre_Rol_TextChanged(object sender, EventArgs e)
+        {
+
         }
-    
+
+        private void grillaFunc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+       
+
+       
+
+        //----------------------------FIN Eventos Innecesarios-----------------------
+
+       }
+        
     }
 

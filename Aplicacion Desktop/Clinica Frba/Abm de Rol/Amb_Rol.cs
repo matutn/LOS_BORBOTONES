@@ -26,8 +26,6 @@ namespace Clinica_Frba.Abm_Rol
 
 
             //Agregado para arreglar
-            long codigorol1;
-            long.TryParse(rol.rol_CodRol, out codigorol1);
 
             switch (tipoDeFormularioSecundario)
             {
@@ -37,7 +35,7 @@ namespace Clinica_Frba.Abm_Rol
 
                         txt_Nombre_Rol.Text = rol.rol_Nombre;
 
-                        DataTable listadoFuncRol = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Func_Rol fr, LOS_BORBOTONES.Funcionalidad f where	'" + codigorol1 + "' = fr.furo_CodRol AND f.fun_CodFuncionalidad = fr.furo_CodFuncionalidad");
+                        DataTable listadoFuncRol = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Func_Rol fr, LOS_BORBOTONES.Funcionalidad f where	'" + rol.rol_CodRol.ToString() + "' = fr.furo_CodRol AND f.fun_CodFuncionalidad = fr.furo_CodFuncionalidad");
                 DataTable listadoFuncTot = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Funcionalidad f");
 
 

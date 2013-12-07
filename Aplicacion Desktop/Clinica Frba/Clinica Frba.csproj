@@ -83,6 +83,17 @@
     </Compile>
     <Compile Include="Compra de Bono\CompraBono_Afiliado.Designer.cs">
       <DependentUpon>CompraBono_Afiliado.cs</DependentUpon>
+    <Compile Include="Abm de Rol\Amb_Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm de Rol\Amb_Rol.Designer.cs">
+      <DependentUpon>Amb_Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm de Rol\GrillaRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm de Rol\GrillaRol.Designer.cs">
+      <DependentUpon>GrillaRol.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexión BD\DB.cs" />
     <Compile Include="DTO\AfiliadoDTO.cs" />
@@ -179,6 +190,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Abm de Rol\Amb_Rol.resx">
+      <DependentUpon>Amb_Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm de Rol\GrillaRol.resx">
+      <DependentUpon>GrillaRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources" />
     <EmbeddedResource Include="obj\Debug\Clinica_Frba.Abm_de_Afiliado.FormAfiliado.resources" />

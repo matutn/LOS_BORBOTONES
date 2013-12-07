@@ -50,4 +50,9 @@ C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\o
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono_Afiliado.resources
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica_Frba.Properties.Resources.resources
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica Frba.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica_Frba.FormPrincipal.resources
+=======
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\bin\Release\Clinica Frba.exe
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\bin\Release\Clinica Frba.pdb
+>>>>>>> 22bc21a047546129a0025f8595b0bfaafae8fa6c

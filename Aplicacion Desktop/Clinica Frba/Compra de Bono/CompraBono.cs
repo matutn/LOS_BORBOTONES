@@ -52,14 +52,26 @@ namespace Clinica_Frba.Compra_de_Bono
                 MessageBox.Show("La Fecha de la Compra no puede ser menor a la fecha actual", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+            //Obtengo los precios del BC y BF segun el IdPlan
             precioBC = Clases.DB.ExecuteCardinal("Select plan_PrecioBC from LOS_BORBOTONES.Plan_Medico where plan_IdPlan = '" + idPlan.Text + "'");
             precioBF = Clases.DB.ExecuteCardinal("Select plan_PrecioBF from LOS_BORBOTONES.Plan_Medico where plan_IdPlan = '" + idPlan.Text + "'");
             int idAfiliado = Clases.DB.ExecuteCardinal("Select afi_IdAfiliado from LOS_BORBOTONES.Afiliado where afi_Dni = '" + dniAfi.Text + "'");
             montoTotal.Text = (precioBC * cantBC.Value + precioBF * cantBF.Value).ToString();
-
-            int valor = Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Compra_Bono (cobo_IdAfi,cobo_CantBC,cobo_CantBF,cobo_MontoTotal,cobo_FechaCompra) values ('" + idAfiliado + "','" + cantBC.Value + "','" + cantBF.Value + "','" + montoTotal.Text + "','" +  añoCompra.Text + diaCompra.Text + mesCompra.Text + "')");
+            int valor = Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Compra_Bono (cobo_IdAfi,cobo_CantBC,cobo_CantBF,cobo_MontoTotal,cobo_FechaCompra) values ('" + idAfiliado + "','" + cantBC.Value + "','" + cantBF.Value + "','" + montoTotal.Text + "','" + añoCompra.Text + mesCompra.Text + diaCompra.Text + "')");
+            
+            for (int bc = 1; bc <= cantBC.Value; bc++)
+            { 
+                int nroIdBonoConsulta = Clases.DB.ExecuteCardinal("select *from LOS_BORBOTONES.Bono_Consulta order by 1 desc");
+                Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Bono_Consulta (boco_IdBonoConsulta,boco_IdCompra,boco_FechaImpresion,boco_IdPlan) values (" + nroIdBonoConsulta + 1 + ",'" + cantBC.Value + "','" + añoCompra.Text + mesCompra.Text + diaCompra.Text + "','" + idPlan.Text + "')");
+            }
+            for (int bf = 1; bf <= cantBF.Value; bf++)
+            {
+                int nroIdBonoFarmacia = Clases.DB.ExecuteCardinal("select *from LOS_BORBOTONES.Bono_Farmacia order by 1 desc");
+                Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Bono_Farmacia (bofa_IdBonoFarmacia,bofa_IdAfi,bofa_IdPlan,bofa_IdCompra,bofa_FechaVencBF,bofa_FechaImpresion) values (" + nroIdBonoFarmacia + 1 + ",'" + idAfiliado + "','" + idPlan.Text + "','" + añoCompra.Text + mesCompra.Text + diaCompra.Text + "')");
+            }          
             MessageBox.Show("La compra se realizo correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return;
+            //return;
+            Close();
         }
 
         private void validarFormulario()

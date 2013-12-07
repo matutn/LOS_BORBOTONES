@@ -19,7 +19,7 @@ namespace Clinica_Frba
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CompraBono_Administrativo());
+            Application.Run(new FormPrincipal());
         }
     }
 }

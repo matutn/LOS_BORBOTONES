@@ -70,7 +70,7 @@ namespace Clinica_Frba.Abm_Profesional
             string sexo = (masculino.Checked) ? "M" : "F";
             string fecNac = añoNac.Text + diaNac.Text + mesNac.Text;
             int tel, matr = 0;
-            long dni_prof,idPlan;
+            long dni_prof;
             int.TryParse(telefono.Text, out tel);
             long.TryParse(dni.Text, out dni_prof);
 

@@ -38,7 +38,7 @@
             // 
             // TB_Usuario
             // 
-            this.TB_Usuario.Location = new System.Drawing.Point(122, 30);
+            this.TB_Usuario.Location = new System.Drawing.Point(122, 27);
             this.TB_Usuario.Name = "TB_Usuario";
             this.TB_Usuario.Size = new System.Drawing.Size(100, 20);
             this.TB_Usuario.TabIndex = 0;
@@ -47,6 +47,7 @@
             // 
             this.TB_Contraseña.Location = new System.Drawing.Point(122, 67);
             this.TB_Contraseña.Name = "TB_Contraseña";
+            this.TB_Contraseña.PasswordChar = '*';
             this.TB_Contraseña.Size = new System.Drawing.Size(100, 20);
             this.TB_Contraseña.TabIndex = 1;
             // 
@@ -78,6 +79,7 @@
             this.B_Aceptar.TabIndex = 4;
             this.B_Aceptar.Text = "Aceptar";
             this.B_Aceptar.UseVisualStyleBackColor = true;
+            this.B_Aceptar.Click += new System.EventHandler(this.B_Aceptar_Click);
             // 
             // B_Cancelar
             // 
@@ -101,6 +103,7 @@
             this.Controls.Add(this.TB_Usuario);
             this.Name = "Login_Form";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

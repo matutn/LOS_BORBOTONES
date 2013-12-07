@@ -32,14 +32,14 @@
             this.B_Buscar = new System.Windows.Forms.Button();
             this.B_Cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.B_ActualizarListado = new System.Windows.Forms.Button();
             this.B_Limpiar = new System.Windows.Forms.Button();
             this.B_Modificar = new System.Windows.Forms.Button();
             this.B_Añadir = new System.Windows.Forms.Button();
             this.B_BajaRol = new System.Windows.Forms.Button();
-            this.B_ActualizarListado = new System.Windows.Forms.Button();
             this.Codigo_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grillaRoles)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +95,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones de Roles";
             // 
+            // B_ActualizarListado
+            // 
+            this.B_ActualizarListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_ActualizarListado.Location = new System.Drawing.Point(20, 228);
+            this.B_ActualizarListado.Name = "B_ActualizarListado";
+            this.B_ActualizarListado.Size = new System.Drawing.Size(147, 35);
+            this.B_ActualizarListado.TabIndex = 47;
+            this.B_ActualizarListado.Text = "Actualizar Listado";
+            this.B_ActualizarListado.UseVisualStyleBackColor = true;
+            this.B_ActualizarListado.Click += new System.EventHandler(this.B_ActualizarListado_Click);
+            // 
             // B_Limpiar
             // 
             this.B_Limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,17 +153,6 @@
             this.B_BajaRol.UseVisualStyleBackColor = true;
             this.B_BajaRol.Click += new System.EventHandler(this.B_BajaRol_Click_1);
             // 
-            // B_ActualizarListado
-            // 
-            this.B_ActualizarListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_ActualizarListado.Location = new System.Drawing.Point(20, 228);
-            this.B_ActualizarListado.Name = "B_ActualizarListado";
-            this.B_ActualizarListado.Size = new System.Drawing.Size(147, 35);
-            this.B_ActualizarListado.TabIndex = 47;
-            this.B_ActualizarListado.Text = "Actualizar Listado";
-            this.B_ActualizarListado.UseVisualStyleBackColor = true;
-            this.B_ActualizarListado.Click += new System.EventHandler(this.B_ActualizarListado_Click);
-            // 
             // Codigo_Rol
             // 
             this.Codigo_Rol.HeaderText = "Codigo de Rol";
@@ -168,6 +168,8 @@
             // 
             this.Eliminado.HeaderText = "Eliminado";
             this.Eliminado.Name = "Eliminado";
+            this.Eliminado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Eliminado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Eliminado.Width = 101;
             // 
             // GrillaRol_Form
@@ -200,7 +202,7 @@
         private System.Windows.Forms.Button B_ActualizarListado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Eliminado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminado;
 
     }
 }

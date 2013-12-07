@@ -70,8 +70,11 @@ namespace Clinica_Frba.GrillaRol
         private void B_Modificar_Click_1(object sender, EventArgs e)
         {
             //Si no seleccionó ningun registro retorna.
-            if (grillaRoles.SelectedRows.Count == 0)
+            if (grillaRoles.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Debe seleccionar UNA fila.");
                 return;
+            }
 
             //Le asigno a reg el registro seleccionado.
             DataGridViewRow reg = grillaRoles.SelectedRows[0];
@@ -95,10 +98,12 @@ namespace Clinica_Frba.GrillaRol
         //Botón para la Eliminación Lógica
         private void B_BajaRol_Click_1(object sender, EventArgs e)
         {
-            /*Esto no anda.
+            
             if (grillaRoles.SelectedRows.Count == 0)
             { 
-            }*/
+                MessageBox.Show("No seleccionó ninguna fila.");
+                return;
+            }
 
             DataGridViewRow reg = grillaRoles.SelectedRows[0];
 

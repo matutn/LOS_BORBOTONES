@@ -47,3 +47,9 @@ C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\bin\Debug\Clinica Frba.pdb
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_Rol.Abm_Rol_Form.resources
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.GrillaRol.GrillaRol_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Administrativo.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Afiliado.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Login.Ingreso.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Login.Login_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Login.SelecFunc.resources

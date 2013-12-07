@@ -112,14 +112,12 @@ namespace Clinica_Frba.Abm_Rol
                         int valor2 = Clases.DB.ExecuteNonQuery("Delete From LOS_BORBOTONES.Func_Rol Where LOS_BORBOTONES.Func_Rol.furo_CodRol = '"+
                                                                 rol.rol_CodRol.ToString() + "'");
 
-                foreach (DataRow dr in grillaFunc.Rows)
+                foreach (DataGridViewRow dr in grillaFunc.Rows)
                 {
-                    
-
-                    if(((CheckBox)dr["FuncAgregada"]).Checked){
+                    if(Convert.ToBoolean(dr.Cells["FuncAgregada"].Value) == true){
 
                         int valor3 = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Func_Rol (furo_CodRol,furo_CodFuncionalidad) Values ("+
-                                                                  rol.rol_CodRol.ToString() + ", " + dr["IdFunc"].ToString() + ")"); 
+                                                                  rol.rol_CodRol.ToString() + ", " + dr.Cells["IdFunc"].Value.ToString() + ")"); 
                     }
                 }
                MessageBox.Show("El Rol se modifico correctamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -132,7 +130,7 @@ namespace Clinica_Frba.Abm_Rol
                 case 'A':
                     {
                         int valor = Clases.DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Rol (rol_CodRol,rol_Nombre,rol_Estado) Values (null, '" +
-                                                                 txt_Nombre_Rol + "' , true)");
+                                                                 txt_Nombre_Rol.Text + "' , true)");
                         int valor2 = Clases.DB.ExecuteNonQuery("Delete From LOS_BORBOTONES.Func_Rol Where LOS_BORBOTONES.Func_Rol.furo_CodRol = '" +
                                                                rol.rol_CodRol.ToString() + "'");
 

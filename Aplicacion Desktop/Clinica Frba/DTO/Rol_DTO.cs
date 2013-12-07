@@ -30,6 +30,10 @@ namespace Clinica_Frba.DTO {
             this.rol_Estado = Estado;
         }
 
+        public override string ToString()
+        {
+            return rol_Nombre;
+        }
     }
 }
 

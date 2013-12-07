@@ -94,6 +94,12 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedir Turno\PedidoTurno_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedir Turno\PedidoTurno_Principal.designer.cs">
+      <DependentUpon>PedidoTurno_Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro de Usuario\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     <EmbeddedResource Include="obj\Release\Clinica_Frba.GrillaProfesional.GrillaProfesional_Form.resources" />
     <EmbeddedResource Include="obj\Release\Clinica_Frba.NewFolder12.GrillaAfiliado.resources" />
     <EmbeddedResource Include="obj\Release\Clinica_Frba.Properties.Resources.resources" />
+    <EmbeddedResource Include="Pedir Turno\PedidoTurno_Principal.resx">
+      <DependentUpon>PedidoTurno_Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -241,7 +250,6 @@
     <Folder Include="DAO\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\TempPE\" />
-    <Folder Include="Pedir Turno\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -51,3 +51,4 @@ C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\o
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica_Frba.Properties.Resources.resources
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica Frba.csproj.GenerateResource.Cache
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica_Frba.FormPrincipal.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica_Frba.Pedir_Turno.PedidoTurno_Principal.resources

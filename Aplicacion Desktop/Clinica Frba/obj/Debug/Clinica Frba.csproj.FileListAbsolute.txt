@@ -1,0 +1,41 @@
+C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\bin\Debug\Clinica Frba.exe
+C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\bin\Debug\Clinica Frba.pdb
+C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_de_Afiliado.FormAfiliado.resources
+C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.NewFolder12.GrillaAfiliado.resources
+C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Properties.Resources.resources
+C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.csproj.GenerateResource.Cache
+C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.exe
+C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.pdb
+C:\Users\pablo\Desktop\TP CLINICA FRBA 1.0 - 2C 2013\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_de_Profesional.ModificacionProfesional.resources
+C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.exe
+C:\Documents and Settings\UsuarioAdmin\Escritorio\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.pdb
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.exe
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.pdb
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\bin\Debug\Clinica Frba.exe
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\bin\Debug\Clinica Frba.pdb
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.GrillaAfiliado.GrillaAfiliado_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Properties.Resources.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.csproj.GenerateResource.Cache
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.exe
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.pdb
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\bin\Debug\Clinica Frba.exe
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\bin\Debug\Clinica Frba.pdb
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.GrillaAfiliado.GrillaAfiliado_Form.resources
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Properties.Resources.resources
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica Frba.csproj.GenerateResource.Cache
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_Profesional.Amb_Profesional_Form.resources
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.GrillaProfesional.GrillaProfesional_Form.resources
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Afiliado.resources
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Administrativo.resources
+C:\Users\pablo\Dropbox\GD\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Abm_Profesional.Amb_Profesional_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.GrillaProfesional.GrillaProfesional_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Administrativo.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Afiliado.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.FormPrincipal.resources

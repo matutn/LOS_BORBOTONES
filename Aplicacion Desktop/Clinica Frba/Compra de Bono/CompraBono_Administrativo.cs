@@ -52,12 +52,42 @@ namespace Clinica_Frba.Compra_de_Bono
 
         private void button_Actualizar_Click(object sender, EventArgs e)
         {
-
+            cargarComprasAfiliado();
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void comboBoxAfiliado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //cargarComprasAfiliado();
+        }
+
+        private void cargarComprasAfiliado()
+        {
+            compraBonos.Rows.Clear();
+            if (comboBoxAfiliado.SelectedValue.ToString() == "")
+            {
+                return;
+            }
+            int idAfiliado = Clases.DB.ExecuteCardinal("Select afi_IdAfiliado from LOS_BORBOTONES.Afiliado where afi_Dni = '" + comboBoxAfiliado.SelectedValue.ToString() + "'");
+            var lista = Clases.DB.ExecuteReader("Select * from LOS_BORBOTONES.Compra_Bono where cobo_IdAfi = ' " + idAfiliado + "'");
+            List<DataGridViewRow> filas = new List<DataGridViewRow>();
+            Object[] columnas = new Object[4];
+
+            foreach (DataRow row in lista.Rows)
+            {
+                columnas[0] = row["cobo_FechaCompra"];
+                columnas[1] = row["cobo_CantBC"];
+                columnas[2] = row["cobo_CantBF"];
+                columnas[3] = row["cobo_MontoTotal"];
+
+                filas.Add(new DataGridViewRow());
+                filas[filas.Count - 1].CreateCells(compraBonos, columnas);
+            }
+            compraBonos.Rows.AddRange(filas.ToArray());
         }
     }
 }

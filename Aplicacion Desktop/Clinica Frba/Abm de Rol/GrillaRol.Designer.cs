@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grillaRoles = new System.Windows.Forms.DataGridView();
+            this.listadoRoles = new System.Windows.Forms.DataGridView();
+            this.Codigo_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.B_Buscar = new System.Windows.Forms.Button();
             this.B_Cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -36,28 +39,50 @@
             this.B_Limpiar = new System.Windows.Forms.Button();
             this.B_Modificar = new System.Windows.Forms.Button();
             this.B_Añadir = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.B_BajaRol = new System.Windows.Forms.Button();
             this.Codigo_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grillaRoles)).BeginInit();
+=======
+            this.B_EliminarClientes = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoRoles)).BeginInit();
+>>>>>>> fdb04937829614f6ad85aed48e16b3e6def6bae2
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grillaRoles
+            // listadoRoles
             // 
-            this.grillaRoles.AllowUserToAddRows = false;
-            this.grillaRoles.AllowUserToDeleteRows = false;
-            this.grillaRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.listadoRoles.AllowUserToAddRows = false;
+            this.listadoRoles.AllowUserToDeleteRows = false;
+            this.listadoRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listadoRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo_Rol,
             this.Nombre_Rol,
-            this.Eliminado});
-            this.grillaRoles.Location = new System.Drawing.Point(202, 12);
-            this.grillaRoles.Name = "grillaRoles";
-            this.grillaRoles.Size = new System.Drawing.Size(327, 244);
-            this.grillaRoles.TabIndex = 0;
-            this.grillaRoles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.Estado});
+            this.listadoRoles.Location = new System.Drawing.Point(202, 12);
+            this.listadoRoles.Name = "listadoRoles";
+            this.listadoRoles.Size = new System.Drawing.Size(355, 192);
+            this.listadoRoles.TabIndex = 0;
+            this.listadoRoles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // Codigo_Rol
+            // 
+            this.Codigo_Rol.HeaderText = "Codigo de Rol";
+            this.Codigo_Rol.Name = "Codigo_Rol";
+            // 
+            // Nombre_Rol
+            // 
+            this.Nombre_Rol.HeaderText = "Nombre de Rol";
+            this.Nombre_Rol.Name = "Nombre_Rol";
+            this.Nombre_Rol.Width = 110;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 101;
             // 
             // B_Buscar
             // 
@@ -68,29 +93,26 @@
             this.B_Buscar.TabIndex = 36;
             this.B_Buscar.Text = "Buscar";
             this.B_Buscar.UseVisualStyleBackColor = true;
-            this.B_Buscar.Click += new System.EventHandler(this.B_Buscar_Click_1);
             // 
             // B_Cancelar
             // 
-            this.B_Cancelar.Location = new System.Drawing.Point(371, 262);
+            this.B_Cancelar.Location = new System.Drawing.Point(467, 227);
             this.B_Cancelar.Name = "B_Cancelar";
             this.B_Cancelar.Size = new System.Drawing.Size(90, 25);
             this.B_Cancelar.TabIndex = 42;
             this.B_Cancelar.Text = "Cerrar";
             this.B_Cancelar.UseVisualStyleBackColor = true;
-            this.B_Cancelar.Click += new System.EventHandler(this.B_Cancelar_Click_1);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.B_ActualizarListado);
             this.groupBox1.Controls.Add(this.B_Limpiar);
             this.groupBox1.Controls.Add(this.B_Modificar);
             this.groupBox1.Controls.Add(this.B_Buscar);
             this.groupBox1.Controls.Add(this.B_Añadir);
-            this.groupBox1.Controls.Add(this.B_BajaRol);
+            this.groupBox1.Controls.Add(this.B_EliminarClientes);
             this.groupBox1.Location = new System.Drawing.Point(9, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(187, 276);
+            this.groupBox1.Size = new System.Drawing.Size(187, 240);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones de Roles";
@@ -115,7 +137,6 @@
             this.B_Limpiar.TabIndex = 46;
             this.B_Limpiar.Text = "Limpiar Lista";
             this.B_Limpiar.UseVisualStyleBackColor = true;
-            this.B_Limpiar.Click += new System.EventHandler(this.B_Limpiar_Click_1);
             // 
             // B_Modificar
             // 
@@ -127,7 +148,6 @@
             this.B_Modificar.TabIndex = 45;
             this.B_Modificar.Text = "Modificar";
             this.B_Modificar.UseVisualStyleBackColor = true;
-            this.B_Modificar.Click += new System.EventHandler(this.B_Modificar_Click_1);
             // 
             // B_Añadir
             // 
@@ -139,6 +159,7 @@
             this.B_Añadir.TabIndex = 44;
             this.B_Añadir.Text = "Añadir";
             this.B_Añadir.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
             this.B_Añadir.Click += new System.EventHandler(this.B_Añadir_Click_1);
             // 
             // B_BajaRol
@@ -163,27 +184,41 @@
             this.Nombre_Rol.HeaderText = "Nombre de Rol";
             this.Nombre_Rol.Name = "Nombre_Rol";
             this.Nombre_Rol.Width = 110;
+=======
+>>>>>>> fdb04937829614f6ad85aed48e16b3e6def6bae2
             // 
-            // Eliminado
+            // B_EliminarClientes
             // 
+<<<<<<< HEAD
             this.Eliminado.HeaderText = "Eliminado";
             this.Eliminado.Name = "Eliminado";
             this.Eliminado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Eliminado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Eliminado.Width = 101;
+=======
+            this.B_EliminarClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_EliminarClientes.Location = new System.Drawing.Point(20, 147);
+            this.B_EliminarClientes.Margin = new System.Windows.Forms.Padding(2);
+            this.B_EliminarClientes.Name = "B_EliminarClientes";
+            this.B_EliminarClientes.Size = new System.Drawing.Size(147, 35);
+            this.B_EliminarClientes.TabIndex = 29;
+            this.B_EliminarClientes.Text = "Dar de Baja";
+            this.B_EliminarClientes.UseVisualStyleBackColor = true;
+>>>>>>> fdb04937829614f6ad85aed48e16b3e6def6bae2
             // 
             // GrillaRol_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 299);
+            this.ClientSize = new System.Drawing.Size(588, 307);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.B_Cancelar);
-            this.Controls.Add(this.grillaRoles);
+            this.Controls.Add(this.listadoRoles);
             this.Name = "GrillaRol_Form";
             this.Text = "Roles";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.GrillaAfiliado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grillaRoles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listadoRoles)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -191,18 +226,21 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView grillaRoles;
+        private System.Windows.Forms.DataGridView listadoRoles;
         private System.Windows.Forms.Button B_Buscar;
         private System.Windows.Forms.Button B_Cancelar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button B_Modificar;
         private System.Windows.Forms.Button B_Añadir;
         private System.Windows.Forms.Button B_Limpiar;
-        private System.Windows.Forms.Button B_BajaRol;
-        private System.Windows.Forms.Button B_ActualizarListado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Rol;
+<<<<<<< HEAD
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminado;
+=======
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.Button B_EliminarClientes;
+>>>>>>> fdb04937829614f6ad85aed48e16b3e6def6bae2
 
     }
 }

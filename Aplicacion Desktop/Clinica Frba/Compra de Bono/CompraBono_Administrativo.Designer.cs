@@ -116,6 +116,7 @@
             this.comboBoxAfiliado.Size = new System.Drawing.Size(113, 21);
             this.comboBoxAfiliado.TabIndex = 18;
             this.comboBoxAfiliado.Text = "Seleccione Afiliado";
+            this.comboBoxAfiliado.SelectedIndexChanged += new System.EventHandler(this.comboBoxAfiliado_SelectedIndexChanged);
             // 
             // label1
             // 

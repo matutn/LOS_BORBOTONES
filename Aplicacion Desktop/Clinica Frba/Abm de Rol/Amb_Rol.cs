@@ -19,14 +19,9 @@ namespace Clinica_Frba.Abm_Rol
 
         public static Clinica_Frba.DTO.Rol_DTO rol;
         public static char tipoDeFormularioSecundario;
-        public Abm_Rol_Form()
-        {
+        public Abm_Rol_Form() {
 
             InitializeComponent();
-
-
-        
-
             switch (tipoDeFormularioSecundario)
             {
                 case 'M':
@@ -35,31 +30,35 @@ namespace Clinica_Frba.Abm_Rol
 
                         txt_Nombre_Rol.Text = rol.rol_Nombre;
 
-                        DataTable listadoFuncRol = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Func_Rol fr, LOS_BORBOTONES.Funcionalidad f where	'" + rol.rol_CodRol.ToString() + "' = fr.furo_CodRol AND f.fun_CodFuncionalidad = fr.furo_CodFuncionalidad");
+                DataTable listadoFuncRol = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Func_Rol fr, LOS_BORBOTONES.Funcionalidad f where	"+ rol.rol_CodRol+" = fr.furo_CodRol AND f.fun_CodFuncionalidad = fr.furo_CodFuncionalidad");
                 DataTable listadoFuncTot = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Funcionalidad f");
 
 
                 grillaFunc.Rows.Clear();
-                Object[] columnas = new Object[4];
+                List<DataGridViewRow> filas = new List<DataGridViewRow>();
+                Object[] columnas = new Object[3];
 
                 foreach (DataRow regft in listadoFuncTot.Rows)
-                {   
-                  
-                    columnas[0]= regft["fun_CodFuncionalidad"].ToString();
-                    columnas[1] = regft["fun_Descripcion"].ToString();
+                {
+                    columnas[0] = regft["fun_Descripcion"].ToString();
 
                     foreach (DataRow regfr in listadoFuncRol.Rows)
 
                         if (regfr["fun_CodFuncionalidad"].ToString() == regft["fun_CodFuncionalidad"].ToString())
-                          {
-                            columnas[2] = true;
-                            break;
-                            }
-                        else {columnas[2] = false; }
+                        {
 
-                    grillaFunc.Rows.Add(columnas[0], columnas[1],columnas[2]);
-                 
+                            columnas[1] = true;
+                            break;
+                        }
+                        else {columnas[1] = false; }
+
+                    filas.Add(new DataGridViewRow());
+                    filas[filas.Count - 1].CreateCells(grillaFunc, columnas);
                 }
+                grillaFunc.Rows.AddRange(filas.ToArray());
+                        
+                       
+
                     }
                     break;
 
@@ -71,8 +70,8 @@ namespace Clinica_Frba.Abm_Rol
                     DataTable listadoFuncTot2 = Clases.DB.ExecuteReader("Select f.fun_Descripcion, f.fun_CodFuncionalidad From LOS_BORBOTONES.Funcionalidad f");
 
 
-                    grillaFunc.Rows.Clear();
-                    
+                    DG_GrillaFunc.Rows.Clear();
+                    List<DataGridViewRow> filas2 = new List<DataGridViewRow>();
                     Object[] columnas2 = new Object[3];
 
                     foreach (DataRow regft in listadoFuncTot2.Rows)
@@ -80,9 +79,10 @@ namespace Clinica_Frba.Abm_Rol
                         columnas2[0] = regft["fun_Descripcion"].ToString();
                         columnas2[1] = false;
 
-                        grillaFunc.Rows.Add(columnas2[0], columnas2[1]);
+                        filas2.Add(new DataGridViewRow());
+                        filas2[filas2.Count - 1].CreateCells(DG_GrillaFunc, columnas2);
                     }
-              
+                    DG_GrillaFunc.Rows.AddRange(filas2.ToArray());
                         
                     break;
 
@@ -93,7 +93,9 @@ namespace Clinica_Frba.Abm_Rol
                     break;
             }
         }
+  
 
+<<<<<<< HEAD
 
 
         //---------------------COMIENZO Botones de la Grilla---------------------------
@@ -186,41 +188,24 @@ namespace Clinica_Frba.Abm_Rol
 
         //-------------------------COMIENZO: Eventos Innecesarios-------------------
         private void Abm_Rol_Form_Load(object sender, EventArgs e)
+=======
+        private void GB_Rol_Enter(object sender, EventArgs e)
+>>>>>>> fdb04937829614f6ad85aed48e16b3e6def6bae2
         {
         
         }
 
-        private void DG_GrillaFunc_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void B_Cancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GB_Rol_Enter_1(object sender, EventArgs e)
-        {
-
-        }
         private void txt_Nombre_Rol_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void grillaFunc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void B_Aceptar_Click(object sender, EventArgs e)
         {
 
         }
 
-       
-
-       
-
-        //----------------------------FIN Eventos Innecesarios-----------------------
-
-       }
         
+    
     }
-
+}

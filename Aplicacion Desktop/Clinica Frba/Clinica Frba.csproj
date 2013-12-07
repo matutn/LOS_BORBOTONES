@@ -66,17 +66,23 @@
     <Compile Include="Abm de Profesional\GrillaProfesional.Designer.cs">
       <DependentUpon>GrillaProfesional.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm de Rol\Amb_Rol.cs">
+    <Compile Include="Compra de Bono\CompraBono.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm de Rol\Amb_Rol.Designer.cs">
-      <DependentUpon>Amb_Rol.cs</DependentUpon>
+    <Compile Include="Compra de Bono\CompraBono.Designer.cs">
+      <DependentUpon>CompraBono.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm de Rol\GrillaRol.cs">
+    <Compile Include="Compra de Bono\CompraBono_Administrativo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm de Rol\GrillaRol.Designer.cs">
-      <DependentUpon>GrillaRol.cs</DependentUpon>
+    <Compile Include="Compra de Bono\CompraBono_Administrativo.Designer.cs">
+      <DependentUpon>CompraBono_Administrativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compra de Bono\CompraBono_Afiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compra de Bono\CompraBono_Afiliado.Designer.cs">
+      <DependentUpon>CompraBono_Afiliado.cs</DependentUpon>
     </Compile>
     <Compile Include="Compra de Bono\CompraBono.cs">
       <SubType>Form</SubType>
@@ -117,6 +123,17 @@
     </Compile>
     <Compile Include="Login\SelecFunc.Designer.cs">
       <DependentUpon>SelecFunc.cs</DependentUpon>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedir Turno\PedidoTurno_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedir Turno\PedidoTurno_Principal.designer.cs">
+      <DependentUpon>PedidoTurno_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Registro de Usuario\Form1.cs">
       <SubType>Form</SubType>
@@ -192,11 +209,17 @@
     <EmbeddedResource Include="Abm de Profesional\GrillaProfesional.resx">
       <DependentUpon>GrillaProfesional.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Rol\Amb_Rol.resx">
-      <DependentUpon>Amb_Rol.cs</DependentUpon>
+    <EmbeddedResource Include="Compra de Bono\CompraBono.resx">
+      <DependentUpon>CompraBono.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm de Rol\GrillaRol.resx">
-      <DependentUpon>GrillaRol.cs</DependentUpon>
+    <EmbeddedResource Include="Compra de Bono\CompraBono_Administrativo.resx">
+      <DependentUpon>CompraBono_Administrativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compra de Bono\CompraBono_Afiliado.resx">
+      <DependentUpon>CompraBono_Afiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Compra de Bono\CompraBono.resx">
       <DependentUpon>CompraBono.cs</DependentUpon>
@@ -215,6 +238,28 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\SelecFunc.resx">
       <DependentUpon>SelecFunc.cs</DependentUpon>
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Abm_de_Afiliado.FormAfiliado.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Abm_Profesional.Amb_Profesional_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Administrativo.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Afiliado.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.GrillaAfiliado.GrillaAfiliado_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.GrillaProfesional.GrillaProfesional_Form.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.NewFolder12.GrillaAfiliado.resources" />
+    <EmbeddedResource Include="obj\Debug\Clinica_Frba.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Abm_de_Afiliado.FormAfiliado.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Abm_Profesional.Amb_Profesional_Form.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono_Administrativo.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono_Afiliado.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.GrillaAfiliado.GrillaAfiliado_Form.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.GrillaProfesional.GrillaProfesional_Form.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.NewFolder12.GrillaAfiliado.resources" />
+    <EmbeddedResource Include="obj\Release\Clinica_Frba.Properties.Resources.resources" />
+    <EmbeddedResource Include="Pedir Turno\PedidoTurno_Principal.resx">
+      <DependentUpon>PedidoTurno_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -239,6 +284,8 @@
   <ItemGroup>
     <Folder Include="DAO\" />
     <Folder Include="Pedir Turno\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

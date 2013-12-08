@@ -51,4 +51,18 @@ C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\o
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica_Frba.Properties.Resources.resources
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica Frba.csproj.GenerateResource.Cache
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica_Frba.FormPrincipal.resources
-C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Release\Clinica_Frba.Pedir_Turno.PedidoTurno_Principal.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\bin\Release\Clinica Frba.exe
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\bin\Release\Clinica Frba.pdb
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\ResolveAssemblyReference.cache
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.GrillaAfiliado.GrillaAfiliado_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Abm_Profesional.Amb_Profesional_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.GrillaProfesional.GrillaProfesional_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono_Administrativo.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono_Afiliado.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.FormPrincipal.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Properties.Resources.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica Frba.csproj.GenerateResource.Cache
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica Frba.exe
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica Frba.pdb

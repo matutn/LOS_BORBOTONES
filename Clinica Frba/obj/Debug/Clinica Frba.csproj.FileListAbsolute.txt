@@ -39,3 +39,7 @@ C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\o
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Administrativo.resources
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Afiliado.resources
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.FormPrincipal.resources
+C:\Users\pablo\Desktop\TP2C2013 K3022 LOS_BORBOTONES 6\TP2C2013 K3022 LOS_BORBOTONES 6\src\Clinica Frba\obj\Debug\Clinica Frba.exe
+C:\Users\pablo\Desktop\TP2C2013 K3022 LOS_BORBOTONES 6\TP2C2013 K3022 LOS_BORBOTONES 6\src\Clinica Frba\obj\Debug\Clinica Frba.pdb
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica Frba.exe
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica Frba.pdb

@@ -55,6 +55,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.B_Buscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grillaAtenciones)).BeginInit();
             this.GB_Carga.SuspendLayout();
             this.GB_Concreto.SuspendLayout();
@@ -322,6 +323,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.B_Buscar);
             this.groupBox2.Controls.Add(this.grillaAtenciones);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
@@ -332,6 +334,16 @@
             this.groupBox2.Size = new System.Drawing.Size(632, 205);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
+            // 
+            // B_Buscar
+            // 
+            this.B_Buscar.Location = new System.Drawing.Point(17, 137);
+            this.B_Buscar.Name = "B_Buscar";
+            this.B_Buscar.Size = new System.Drawing.Size(150, 24);
+            this.B_Buscar.TabIndex = 5;
+            this.B_Buscar.Text = "Buscar";
+            this.B_Buscar.UseVisualStyleBackColor = true;
+            this.B_Buscar.Click += new System.EventHandler(this.B_Buscar_Click);
             // 
             // Resultado_Atencion_Form
             // 
@@ -383,5 +395,6 @@
         private System.Windows.Forms.DateTimePicker DTP_Dia;
         private System.Windows.Forms.DateTimePicker DTP_Horario;
         private System.Windows.Forms.GroupBox GB_Concreto;
+        private System.Windows.Forms.Button B_Buscar;
     }
 }

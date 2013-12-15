@@ -13,6 +13,7 @@ namespace Clinica_Frba.ResultadoAtencion
 {
     public partial class Resultado_Atencion_Form : Form
     {
+        
         public string IdAfi;
         public string IdConsulta;
 
@@ -40,8 +41,8 @@ namespace Clinica_Frba.ResultadoAtencion
                 columnas[0] = dr["afi_Apellido"].ToString();
                 columnas[1] = dr["afi_Nombre"].ToString();
                 columnas[2] = dr["tur_Fecha"].ToString();
-                columnas[3] = dr["afi_IdAfiliado"].ToString();
-                columnas[4] = dr["tur_IdTurno"].ToString();
+                columnas[3] = dr["tur_IdTurno"].ToString(); 
+                columnas[4] = dr["afi_IdAfiliado"].ToString();
                 columnas[5] = dr["con_IdConsulta"].ToString();
 
                 grillaAtenciones.Rows.Add(columnas[0], columnas[1], columnas[2], columnas[3], columnas[4], columnas[5]);
@@ -79,8 +80,9 @@ namespace Clinica_Frba.ResultadoAtencion
                 return;
             }
 
-            IdAfi = grillaAtenciones.SelectedRows[0].Cells["Id_Afi"].ToString();
-            IdConsulta = grillaAtenciones.SelectedRows[0].Cells["Id_Consulta"].ToString();
+            IdAfi = grillaAtenciones.SelectedRows[0].Cells["Id_Afi"].Value.ToString();
+            IdConsulta = grillaAtenciones.SelectedRows[0].Cells["Id_Consulta"].Value.ToString();
+            
 
             if (B_Cargar_Atencion.Text == "Cargar Atención")
             {
@@ -114,9 +116,16 @@ namespace Clinica_Frba.ResultadoAtencion
         //Botón Guardar Atención
         private void button1_Click(object sender, EventArgs e)
         {
+           
+            MessageBox.Show("La Atención fue cargada correctamente");
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             string dia = DTP_Dia.Value.ToShortDateString();
             string horario = DTP_Horario.Value.Hour + ":" + DTP_Horario.Value.Minute + ":" + DTP_Horario.Value.Second;
-            string diaHorario = dia +" "+ horario;
+            string diaHorario = dia + " " + horario;
 
             if (TB_Sintomas.Text == "")
             {
@@ -131,17 +140,11 @@ namespace Clinica_Frba.ResultadoAtencion
 
 
             int updateDiagnostico = DB.ExecuteNonQuery("Insert Into LOS_BORBOTONES.Diagnostico (diag_IdConsulta, diag_Diagnostico,diag_FechaDeLlegada)" +
-                                                            "Values ('"+grillaAtenciones.SelectedRows[0].Cells["Id_Consulta"].ToString()+"','"+ TB_Diagnostico.Text +"','"+diaHorario+"')");
+                                                            "Values ('" + grillaAtenciones.SelectedRows[0].Cells["Id_Consulta"].Value.ToString() + "','" + TB_Diagnostico.Text + "','" + diaHorario + "')");
 
             int updateConsulta = DB.ExecuteNonQuery("Update LOS_BORBOTONES.Consulta set con_Sintomas = '" + TB_Sintomas.Text + "' where con_IdConsulta = '" +
-                                                        grillaAtenciones.SelectedRows[0].Cells["Id_Consulta"].ToString() + "'");
+                                                        grillaAtenciones.SelectedRows[0].Cells["Id_Consulta"].Value.ToString() + "'");
 
-            MessageBox.Show("La Atención fue cargada correctamente");
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
             Generar_Receta receta = new Generar_Receta(IdAfi,IdConsulta);
             if (receta.ShowDialog() != DialogResult.OK)
             { this.Close(); }
@@ -151,6 +154,30 @@ namespace Clinica_Frba.ResultadoAtencion
         private void Resultado_Atencion_Form_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void B_Buscar_Click(object sender, EventArgs e)
+        {
+            grillaAtenciones.Rows.Clear();
+            DataTable listadoTurnos = Clases.DB.ExecuteReader("Select a.afi_Apellido, a.afi_Nombre,t.tur_Fecha, a.afi_IdAfiliado, t.tur_IdTurno, c.con_IdConsulta " +
+                                                               "From LOS_BORBOTONES.Turno t, LOS_BORBOTONES.Consulta c, LOS_BORBOTONES.Afiliado a, LOS_BORBOTONES.Profesional p " +
+                                                               "where t.tur_IdConsulta = c.con_IdConsulta " +
+                                                               "And c.con_Sintomas = '' And t.tur_IdAfi = a.afi_IdAfiliado And p.prof_IdProfesional = '" + txt_Id_Prof.Text + "' And p.prof_IdProfesional = t.tur_IdProf");
+
+
+            Object[] columnas = new Object[6];
+
+            foreach (DataRow dr in listadoTurnos.Rows)
+            {
+                columnas[0] = dr["afi_Apellido"].ToString();
+                columnas[1] = dr["afi_Nombre"].ToString();
+                columnas[2] = dr["tur_Fecha"].ToString();
+                columnas[3] = dr["tur_IdTurno"].ToString();
+                columnas[4] = dr["afi_IdAfiliado"].ToString();
+                columnas[5] = dr["con_IdConsulta"].ToString();
+
+                grillaAtenciones.Rows.Add(columnas[0], columnas[1], columnas[2], columnas[3], columnas[4], columnas[5]);
+            }
         }
 
         

@@ -11,7 +11,7 @@ using Clinica_Frba.RegLlegada;
 using Clinica_Frba.Login;
 using Clinica_Frba.Cancelar_Atencion;
 //using Clinica_Frba.ResultadoAtencion;
-//using Clinica_Frba.GenerarReceta;
+using Clinica_Frba.GenerarReceta;
 
 namespace Clinica_Frba
 {
@@ -25,7 +25,7 @@ namespace Clinica_Frba
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SelecFunc());
+            Application.Run(new Generar_Receta("13","12"));
         }
     }
 }

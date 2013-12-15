@@ -48,6 +48,8 @@
             this.txt_MinutoHasta = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label_dni = new System.Windows.Forms.Label();
+            this.txt_dniAfi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txt_HoraConfirmar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MinutoConfirmar)).BeginInit();
             this.SuspendLayout();
@@ -250,11 +252,29 @@
             this.label10.TabIndex = 20;
             this.label10.Text = ":";
             // 
+            // label_dni
+            // 
+            this.label_dni.AutoSize = true;
+            this.label_dni.Location = new System.Drawing.Point(17, 195);
+            this.label_dni.Name = "label_dni";
+            this.label_dni.Size = new System.Drawing.Size(104, 13);
+            this.label_dni.TabIndex = 21;
+            this.label_dni.Text = "Ingrese Dni Afiliado :";
+            // 
+            // txt_dniAfi
+            // 
+            this.txt_dniAfi.Location = new System.Drawing.Point(127, 192);
+            this.txt_dniAfi.Name = "txt_dniAfi";
+            this.txt_dniAfi.Size = new System.Drawing.Size(100, 20);
+            this.txt_dniAfi.TabIndex = 22;
+            // 
             // PedidoTurno_Secundario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 253);
+            this.Controls.Add(this.txt_dniAfi);
+            this.Controls.Add(this.label_dni);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_MinutoHasta);
@@ -307,5 +327,7 @@
         private System.Windows.Forms.TextBox txt_MinutoHasta;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label_dni;
+        private System.Windows.Forms.TextBox txt_dniAfi;
     }
 }

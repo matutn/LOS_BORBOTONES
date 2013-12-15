@@ -37,7 +37,7 @@ namespace Clinica_Frba.Abm_Profesional
                         dni.Text = profesional.Dni;
                         nombre.Text = profesional.Nombre;
                         apellido.Text = profesional.Apellido;
-                        calle.Text = profesional.Direccion;
+                        direc.Text = profesional.Direccion;
                         telefono.Text = profesional.Telefono;
                         mail.Text = profesional.Mail;
                         matricula.Text = profesional.NroMatricula;
@@ -88,8 +88,8 @@ namespace Clinica_Frba.Abm_Profesional
             {
                 case 'M':
                     {
-                        int valor = Clases.DB.ExecuteNonQuery(@"Update LOS_BORBOTONES.Profesional set prof_Nombre = '" + nombre.Text + "',prof_Apellido = '" +
-                            apellido.Text + "',prof_Direccion = '" + calle.Text + "',prof_Telefono = '" + profesional.Telefono + "',prof_Mail = '" + mail.Text +
+                        int valor = Clases.DB.ExecuteNonQuery(@"Update LOS_BORBOTONES.Profesional set prof_TipoDni = '" + tipoDni.Text + 
+                            "',prof_Direccion = '" + direc.Text + "',prof_Telefono = '" + telefono.Text + "',prof_Mail = '" + mail.Text +
                             profesional.Sexo + "' where prof_Dni = '" + long.Parse(profesional.Dni) + "'");
                         MessageBox.Show("El Profesional se modifico correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -122,7 +122,7 @@ namespace Clinica_Frba.Abm_Profesional
                             return;
                         }
                         int valor = Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Profesional (prof_Matricula,prof_Nombre,prof_Apellido,prof_TipoDni,prof_Dni,prof_Direccion,prof_Telefono,prof_Mail,prof_FechaNacimiento,prof_Sexo) 
-                        values ( '" + matricula.Text + "','" + nombre.Text + "','" + apellido.Text + "','" + tipoDni.Text + "'," + dni_prof + ",'" + calle.Text + "','" + tel + "','" + mail.Text + "','" + dateTime_Nac.Value.ToString("yyyy-MM-dd") + "','" + sexo + "')");
+                        values ( '" + matricula.Text + "','" + nombre.Text + "','" + apellido.Text + "','" + tipoDni.Text + "'," + dni_prof + ",'" + direc.Text + "','" + tel + "','" + mail.Text + "','" + dateTime_Nac.Value.ToString("yyyy-MM-dd") + "','" + sexo + "')");
                         Array array_especialidad = especialidadesCargadas.Items.ToArray();
                         DataTable dt_idprof = Clases.DB.ExecuteReader("Select prof_IdProfesional from LOS_BORBOTONES.Profesional where prof_Dni = " + dni_prof);
                         foreach (string array in array_especialidad)
@@ -141,10 +141,11 @@ namespace Clinica_Frba.Abm_Profesional
                         {
                             matr = -1;
                         }
+                        else matr = Convert.ToInt32(matricula.Text);
                         var lista = Clases.DB.ExecuteReader("Select * from LOS_BORBOTONES.Profesional where prof_Apellido = '" + apellido.Text +
                             "' OR prof_Nombre = '" + nombre.Text + "' OR prof_Dni = '" + dni_prof + "' OR prof_Telefono = '" + tel +
-                            "' OR prof_Mail = '" + mail.Text + "' OR prof_Matricula = '" + matr +
-                            "' OR prof_Direccion = '" + calle.Text + "' OR prof_Sexo = '" + sexo + "' OR prof_TipoDni = '" + tipoDni.Text + "' OR prof_FechaNacimiento = '" + dateTime_Nac.Value.ToString("yyyy-MM-dd") + "'");
+                            "' OR prof_Mail = '" + mail.Text + "' OR prof_Matricula = " + matr +
+                            " OR prof_Direccion = '" + direc.Text + "' OR prof_Sexo = '" + sexo + "' OR prof_TipoDni = '" + tipoDni.Text + "' OR prof_FechaNacimiento = '" + dateTime_Nac.Value.ToString("yyyy-MM-dd") + "'");
 
                         foreach (DataRow row in lista.Rows)
                         {
@@ -210,7 +211,7 @@ namespace Clinica_Frba.Abm_Profesional
             validador.esNumerico(matricula);
             validador.esNumerico(telefono);
             validador.esMail(mail);
-            validador.esAlfaNumerico(calle);
+            validador.esAlfaNumerico(direc);
 
             radioButtons.Add(masculino);
             radioButtons.Add(femenino);
@@ -241,6 +242,11 @@ namespace Clinica_Frba.Abm_Profesional
             {
                 especialidadesCargadas.Items.Add(dt_esp.Rows[0]["esp_Descripcion"]);
             }
+        }
+
+        private void dateTime_Nac_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

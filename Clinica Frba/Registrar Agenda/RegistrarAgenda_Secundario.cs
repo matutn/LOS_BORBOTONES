@@ -13,10 +13,12 @@ namespace Clinica_Frba.Registrar_Agenda
     public partial class RegistrarAgenda_Secundario : Form
     {
         public static char tipoFormularioSecundario;
-        public static int idProfesional = 2;
+        public static int idProfesional;
         public RegistrarAgenda_Secundario()
         {
             InitializeComponent();
+            if (idProfesional == 0)
+                return;
             switch (tipoFormularioSecundario)
             {
                 case 'C':
@@ -36,7 +38,6 @@ namespace Clinica_Frba.Registrar_Agenda
                         break;
                     }
             }
- 
         }
 
         private void cargarDatosAgenda()
@@ -102,18 +103,36 @@ namespace Clinica_Frba.Registrar_Agenda
             DateTime fechaDesde;
             DateTime fechaHasta;
 
-            if((lunes_HoraHasta.Value*60 + lunes_MinutoHasta.Value) < (lunes_HoraDesde.Value*60 + miercoles_MinutoDesde.Value))
+            if ((lunes_HoraHasta.Value * 60 + lunes_MinutoHasta.Value) < (lunes_HoraDesde.Value * 60 + miercoles_MinutoDesde.Value))
+            {
                 MessageBox.Show("El horario del día Lunes es incorrecto", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if ((martes_HoraHasta.Value * 60 + martes_MinutoHasta.Value) < (martes_HoraDesde.Value * 60 + martes_MinutoDesde.Value))
+            {
                 MessageBox.Show("El horario del día Martes es incorrecto", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if ((miercoles_HoraHasta.Value * 60 + miercoles_MinutoHasta.Value) < (miercoles_HoraDesde.Value * 60 + miercoles_MinutoDesde.Value))
+            {
                 MessageBox.Show("El horario del día Miércoles es incorrecto", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if ((jueves_HoraHasta.Value * 60 + jueves_MinutoHasta.Value) < (jueves_HoraDesde.Value * 60 + jueves_MinutoDesde.Value))
+            {
                 MessageBox.Show("El horario del día Jueves es incorrecto", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if ((viernes_HoraHasta.Value * 60 + viernes_MinutoHasta.Value) < (viernes_HoraDesde.Value * 60 + viernes_MinutoDesde.Value))
+            {
                 MessageBox.Show("El horario del día Viernes es incorrecto", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             if ((sabado_HoraHasta.Value * 60 + sabado_MinutoHasta.Value) < (sabado_HoraDesde.Value * 60 + sabado_MinutoDesde.Value))
+            {
                 MessageBox.Show("El horario del día Sábado es incorrecto", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if (dateTime_Desde.Value > dateTime_Hasta.Value)
             {

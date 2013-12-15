@@ -11,7 +11,7 @@ namespace Clinica_Frba.Registrar_Agenda
 {
     public partial class RegistrarAgenda_Principal : Form
     {
-        public static int idProfesional;
+        public static int idProfesionall;
         public RegistrarAgenda_Principal(int id)
         {
             InitializeComponent();
@@ -21,8 +21,8 @@ namespace Clinica_Frba.Registrar_Agenda
 
         private void cargarRangoFechasProfesional()
         {
-            DataTable dt_agendaFechaDesde = Clases.DB.ExecuteReader("Select top 1 age_Fecha from LOS_BORBOTONES.Agenda where age_IdProfesional = " + idProfesional);
-            DataTable dt_agendaFechaHasta = Clases.DB.ExecuteReader("Select top 1 age_Fecha from LOS_BORBOTONES.Agenda where age_IdProfesional = " + idProfesional + " order by age_Fecha desc");
+            DataTable dt_agendaFechaDesde = Clases.DB.ExecuteReader("Select top 1 age_Fecha from LOS_BORBOTONES.Agenda where age_IdProfesional = " + idProfesionall);
+            DataTable dt_agendaFechaHasta = Clases.DB.ExecuteReader("Select top 1 age_Fecha from LOS_BORBOTONES.Agenda where age_IdProfesional = " + idProfesionall + " order by age_Fecha desc");
             if (dt_agendaFechaDesde.Rows.Count > 0)
             {
                 List<DataGridViewRow> filas = new List<DataGridViewRow>();
@@ -42,6 +42,7 @@ namespace Clinica_Frba.Registrar_Agenda
                 MessageBox.Show("El Profesional ya tiene una agenda cargada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            RegistrarAgenda_Secundario.idProfesional = idProfesionall;
             RegistrarAgenda_Secundario.tipoFormularioSecundario = 'C';
             (new RegistrarAgenda_Secundario()).Show();
         }
@@ -50,6 +51,7 @@ namespace Clinica_Frba.Registrar_Agenda
         {
             if (grillaAgenda.SelectedRows.Count == 0)
                 return;
+            RegistrarAgenda_Secundario.idProfesional = idProfesionall;
             RegistrarAgenda_Secundario.tipoFormularioSecundario = 'V';
             (new RegistrarAgenda_Secundario()).Show();
         }

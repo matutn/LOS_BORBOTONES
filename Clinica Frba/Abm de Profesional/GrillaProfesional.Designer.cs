@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.listadoProfesionales = new System.Windows.Forms.DataGridView();
-            this.agregar = new System.Windows.Forms.Button();
-            this.B_EliminarClientes = new System.Windows.Forms.Button();
-            this.B_Buscar = new System.Windows.Forms.Button();
-            this.B_Limpiar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.txt_IdProfesional = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +42,11 @@
             this.txt_FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.agregar = new System.Windows.Forms.Button();
+            this.B_EliminarClientes = new System.Windows.Forms.Button();
+            this.B_Buscar = new System.Windows.Forms.Button();
+            this.B_Limpiar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listadoProfesionales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,59 +73,6 @@
             this.listadoProfesionales.Size = new System.Drawing.Size(1207, 247);
             this.listadoProfesionales.TabIndex = 0;
             this.listadoProfesionales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // agregar
-            // 
-            this.agregar.Location = new System.Drawing.Point(12, 12);
-            this.agregar.Name = "agregar";
-            this.agregar.Size = new System.Drawing.Size(90, 23);
-            this.agregar.TabIndex = 31;
-            this.agregar.Text = "Agregar";
-            this.agregar.UseVisualStyleBackColor = true;
-            this.agregar.Click += new System.EventHandler(this.agregar_Click);
-            // 
-            // B_EliminarClientes
-            // 
-            this.B_EliminarClientes.Location = new System.Drawing.Point(297, 12);
-            this.B_EliminarClientes.Margin = new System.Windows.Forms.Padding(2);
-            this.B_EliminarClientes.Name = "B_EliminarClientes";
-            this.B_EliminarClientes.Size = new System.Drawing.Size(90, 25);
-            this.B_EliminarClientes.TabIndex = 29;
-            this.B_EliminarClientes.Text = "Cambiar Estado";
-            this.B_EliminarClientes.UseVisualStyleBackColor = true;
-            this.B_EliminarClientes.Click += new System.EventHandler(this.B_EliminarClientes_Click);
-            // 
-            // B_Buscar
-            // 
-            this.B_Buscar.Location = new System.Drawing.Point(203, 12);
-            this.B_Buscar.Margin = new System.Windows.Forms.Padding(2);
-            this.B_Buscar.Name = "B_Buscar";
-            this.B_Buscar.Size = new System.Drawing.Size(90, 25);
-            this.B_Buscar.TabIndex = 27;
-            this.B_Buscar.Text = "Buscar";
-            this.B_Buscar.UseVisualStyleBackColor = true;
-            this.B_Buscar.Click += new System.EventHandler(this.B_Buscar_Click);
-            // 
-            // B_Limpiar
-            // 
-            this.B_Limpiar.Location = new System.Drawing.Point(391, 11);
-            this.B_Limpiar.Margin = new System.Windows.Forms.Padding(2);
-            this.B_Limpiar.Name = "B_Limpiar";
-            this.B_Limpiar.Size = new System.Drawing.Size(90, 25);
-            this.B_Limpiar.TabIndex = 28;
-            this.B_Limpiar.Text = "Limpiar";
-            this.B_Limpiar.UseVisualStyleBackColor = true;
-            this.B_Limpiar.Click += new System.EventHandler(this.B_Limpiar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(108, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 25);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Modificar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txt_IdProfesional
             // 
@@ -206,6 +153,59 @@
             this.Eliminado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Eliminado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Eliminado.Width = 60;
+            // 
+            // agregar
+            // 
+            this.agregar.Location = new System.Drawing.Point(12, 12);
+            this.agregar.Name = "agregar";
+            this.agregar.Size = new System.Drawing.Size(90, 23);
+            this.agregar.TabIndex = 31;
+            this.agregar.Text = "Agregar";
+            this.agregar.UseVisualStyleBackColor = true;
+            this.agregar.Click += new System.EventHandler(this.agregar_Click);
+            // 
+            // B_EliminarClientes
+            // 
+            this.B_EliminarClientes.Location = new System.Drawing.Point(297, 12);
+            this.B_EliminarClientes.Margin = new System.Windows.Forms.Padding(2);
+            this.B_EliminarClientes.Name = "B_EliminarClientes";
+            this.B_EliminarClientes.Size = new System.Drawing.Size(90, 25);
+            this.B_EliminarClientes.TabIndex = 29;
+            this.B_EliminarClientes.Text = "Cambiar Estado";
+            this.B_EliminarClientes.UseVisualStyleBackColor = true;
+            this.B_EliminarClientes.Click += new System.EventHandler(this.B_EliminarClientes_Click);
+            // 
+            // B_Buscar
+            // 
+            this.B_Buscar.Location = new System.Drawing.Point(203, 12);
+            this.B_Buscar.Margin = new System.Windows.Forms.Padding(2);
+            this.B_Buscar.Name = "B_Buscar";
+            this.B_Buscar.Size = new System.Drawing.Size(90, 25);
+            this.B_Buscar.TabIndex = 27;
+            this.B_Buscar.Text = "Buscar";
+            this.B_Buscar.UseVisualStyleBackColor = true;
+            this.B_Buscar.Click += new System.EventHandler(this.B_Buscar_Click);
+            // 
+            // B_Limpiar
+            // 
+            this.B_Limpiar.Location = new System.Drawing.Point(391, 11);
+            this.B_Limpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.B_Limpiar.Name = "B_Limpiar";
+            this.B_Limpiar.Size = new System.Drawing.Size(90, 25);
+            this.B_Limpiar.TabIndex = 28;
+            this.B_Limpiar.Text = "Limpiar";
+            this.B_Limpiar.UseVisualStyleBackColor = true;
+            this.B_Limpiar.Click += new System.EventHandler(this.B_Limpiar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(108, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 25);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Modificar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GrillaProfesional_Form
             // 

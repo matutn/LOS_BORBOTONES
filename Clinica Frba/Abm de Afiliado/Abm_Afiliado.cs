@@ -42,7 +42,7 @@ namespace Clinica_Frba.Abm_Afiliado
                         dni.Text = afiliado.Dni;
                         nombre.Text = afiliado.Nombre;
                         apellido.Text = afiliado.Apellido;
-                        calle.Text = afiliado.Direccion;
+                        direc.Text = afiliado.Direccion;
                         telefono.Text = afiliado.Telefono;
                         mail.Text = afiliado.Mail;
                         cantFamiliares.Text = afiliado.CantPersonas;
@@ -94,8 +94,7 @@ namespace Clinica_Frba.Abm_Afiliado
                             return;
                         }
                         dt_estCiv = Clases.DB.ExecuteReader("Select esci_CodEcivil from LOS_BORBOTONES.EstadoCivil where esci_Descripcion = '" + estado_civil + "'");
-                        int valor = Clases.DB.ExecuteNonQuery(@"Update LOS_BORBOTONES.Afiliado set afi_Nombre = '" + nombre.Text + "',afi_Apellido = '" + 
-                            apellido.Text  + "',afi_Direccion = '" + calle.Text + "',afi_Telefono = '" + telefono.Text + "',afi_Mail = '" + mail.Text +
+                        int valor = Clases.DB.ExecuteNonQuery(@"Update LOS_BORBOTONES.Afiliado set afi_TipoDni='" + tipoDni.Text + "',afi_Direccion = '" + direc.Text + "',afi_Telefono = '" + telefono.Text + "',afi_Mail = '" + mail.Text +
                             afiliado.Sexo + "',afi_IdPlan = '" + combo_Plan.SelectedValue + "',afi_EstadoCivil = '" + dt_estCiv.Rows[0]["esci_CodEcivil"] + "', afi_CantidadConsultas = " + 0 + " where afi_Dni = '" + long.Parse(afiliado.Dni) + "'"); 
                         MessageBox.Show("El Afiliado se modifico correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -116,7 +115,7 @@ namespace Clinica_Frba.Abm_Afiliado
                         }
                         dt_estCiv = Clases.DB.ExecuteReader("Select esci_CodEcivil from LOS_BORBOTONES.EstadoCivil where esci_Descripcion = '" + estado_civil + "'");
                         int valor = Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Afiliado (afi_IdPlan,afi_EstadoCivil,afi_Nombre,afi_Apellido ,afi_TipoDni,afi_Dni,afi_Direccion,afi_Telefono,afi_Mail,afi_FechaNacimiento,afi_Sexo,afi_CantPersonas) 
-                        values ( '" + combo_Plan.SelectedValue + "','" + dt_estCiv.Rows[0]["esci_CodEcivil"] + "','" + nombre.Text + "','" + apellido.Text + "','" + tipoDni.Text + "'," + dni_afi + ",'" + calle.Text + "','" + tel + "','" + mail.Text + "','" + dateTime_Nac.Value.ToString("yyyy-MM-dd") + "','" + sexo + "'," + cantFamiliares.Text + ")");
+                        values ( '" + combo_Plan.SelectedValue + "','" + dt_estCiv.Rows[0]["esci_CodEcivil"] + "','" + nombre.Text + "','" + apellido.Text + "','" + tipoDni.Text + "'," + dni_afi + ",'" + direc.Text + "','" + tel + "','" + mail.Text + "','" + dateTime_Nac.Value.ToString("yyyy-MM-dd") + "','" + sexo + "'," + cantFamiliares.Text + ")");
                         MessageBox.Show("El Afiliado se dio de alta correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DataTable dt_idAfi = Clases.DB.ExecuteReader("Select afi_IdAfiliado from LOS_BORBOTONES.Afiliado where afi_Dni =" + dni_afi);
                         if (Convert.ToInt16(cantFamiliares.Text) > 0 || Convert.ToInt32(dt_estCiv.Rows[0]["esci_CodECivil"]) == 4)
@@ -134,9 +133,7 @@ namespace Clinica_Frba.Abm_Afiliado
                         }
                         if (Convert.ToInt32(dt_estCiv.Rows[0]["esci_CodECivil"]) == 4)
                         {
-                        
                             Amb_Afiliado_Form.tipoDeFormularioSecundario = 'F';
-                            Amb_Afiliado_Form.countFamiliar = 0;
                             Amb_Afiliado_Form.idAfi = Convert.ToInt32(dt_idAfi.Rows[0]["afi_IdAfiliado"]);
                             (new Amb_Afiliado_Form() { Text = "Alta de Familiar" }).Show();
                         }
@@ -155,6 +152,10 @@ namespace Clinica_Frba.Abm_Afiliado
                             nro_estadoCivil = Convert.ToInt16(dt_estCiv.Rows[0]["esci_CodEcivil"]);
                         }
                         int comboPlanValue = 0;
+                        if (combo_Plan.SelectedValue == null)
+                        {
+                            return;
+                        }
                         if (combo_Plan.SelectedValue.ToString() == "")
                         {
                             comboPlanValue = 0;
@@ -163,7 +164,7 @@ namespace Clinica_Frba.Abm_Afiliado
                         var lista = Clases.DB.ExecuteReader("Select * ,isNull(afi_CantPersonas,0) afiCantPersonas from LOS_BORBOTONES.Afiliado where afi_Apellido = '" + apellido.Text +
                             "' OR afi_Nombre = '" + nombre.Text + "' OR afi_Dni = '" + dni_afi + "' OR afi_Telefono = '" + tel +
                             "' OR afi_Mail = '" + mail.Text + "' OR afi_EstadoCivil = '" + nro_estadoCivil + "' OR afi_IdPlan = '" + comboPlanValue +
-                            "' OR afi_Direccion = '" + calle.Text + "' OR afi_Sexo = '" + sexo + "' OR afi_TipoDni = '" + tipoDni.Text + "' OR afi_FechaNacimiento ='" + dateTime_Nac.Value.ToString("yyyy-MM-dd") + "' OR afi_CantPersonas ='" + cantFamiliares.Text + "'");
+                            "' OR afi_Direccion = '" + direc.Text + "' OR afi_Sexo = '" + sexo + "' OR afi_TipoDni = '" + tipoDni.Text + "' OR afi_FechaNacimiento ='" + dateTime_Nac.Value.ToString("yyyy-MM-dd") + "' OR afi_CantPersonas ='" + cantFamiliares.Text + "'");
 
                         foreach (DataRow row in lista.Rows)
                         {
@@ -200,7 +201,7 @@ namespace Clinica_Frba.Abm_Afiliado
                         }
                         dt_estCiv = Clases.DB.ExecuteReader("Select esci_CodEcivil from LOS_BORBOTONES.EstadoCivil where esci_Descripcion = '" + estado_civil + "'");
                         int valor = Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Afiliado (afi_IdFamiliar,afi_IdPlan,afi_EstadoCivil,afi_Nombre,afi_Apellido ,afi_TipoDni,afi_Dni,afi_Direccion,afi_Telefono,afi_Mail,afi_FechaNacimiento,afi_Sexo,afi_CantidadConsultas) 
-                        values ( '" + idAfi + "0" + countFamiliar + "','" + combo_Plan.SelectedValue + "','" + dt_estCiv.Rows[0]["esci_CodEcivil"] + "','" + nombre.Text + "','" + apellido.Text + "','" + tipoDni.Text + "'," + dni_afi + ",'" + calle.Text + "','" + tel + "','" + mail.Text + "','" + dateTime_Nac.Value.ToString("yyyy-MM-dd") + "','" + sexo + "'," + 0 + ")");
+                        values ( '" + idAfi + "0" + countFamiliar + "','" + combo_Plan.SelectedValue + "','" + dt_estCiv.Rows[0]["esci_CodEcivil"] + "','" + nombre.Text + "','" + apellido.Text + "','" + tipoDni.Text + "'," + dni_afi + ",'" + direc.Text + "','" + tel + "','" + mail.Text + "','" + dateTime_Nac.Value.ToString("yyyy-MM-dd") + "','" + sexo + "'," + 0 + ")");
                         MessageBox.Show("El Familiar se dio de alta correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     }
@@ -251,7 +252,7 @@ namespace Clinica_Frba.Abm_Afiliado
             validador.esNumerico(telefono);
             validador.esNumerico(cantFamiliares);
             validador.esMail(mail);
-            validador.esAlfaNumerico(calle);
+            validador.esAlfaNumerico(direc);
 
             radioButtons.Add(masculino);
             radioButtons.Add(femenino);

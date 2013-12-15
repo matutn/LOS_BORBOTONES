@@ -105,3 +105,4 @@ C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Fr
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica Frba.csproj.GenerateResource.Cache
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica Frba.exe
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica Frba.pdb
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\bin\Debug\Clinica Frba.exe.config

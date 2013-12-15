@@ -149,3 +149,4 @@ C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica Frba.csproj.GenerateResource.Cache
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica Frba.exe
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica Frba.pdb
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\bin\Release\Clinica Frba.exe.config

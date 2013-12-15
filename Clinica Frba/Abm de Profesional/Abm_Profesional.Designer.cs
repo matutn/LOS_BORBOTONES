@@ -40,7 +40,7 @@
             this.LApellido = new System.Windows.Forms.Label();
             this.telefono = new System.Windows.Forms.TextBox();
             this.LTelefono = new System.Windows.Forms.Label();
-            this.calle = new System.Windows.Forms.TextBox();
+            this.direc = new System.Windows.Forms.TextBox();
             this.limpiar = new System.Windows.Forms.Button();
             this.cancelar = new System.Windows.Forms.Button();
             this.aceptar = new System.Windows.Forms.Button();
@@ -181,15 +181,15 @@
             this.LTelefono.TabIndex = 100;
             this.LTelefono.Text = "Telefono";
             // 
-            // calle
+            // direc
             // 
-            this.calle.ForeColor = System.Drawing.Color.Black;
-            this.calle.Location = new System.Drawing.Point(111, 164);
-            this.calle.MaxLength = 35;
-            this.calle.Name = "calle";
-            this.calle.Size = new System.Drawing.Size(216, 20);
-            this.calle.TabIndex = 93;
-            this.calle.Tag = "Calle";
+            this.direc.ForeColor = System.Drawing.Color.Black;
+            this.direc.Location = new System.Drawing.Point(111, 164);
+            this.direc.MaxLength = 35;
+            this.direc.Name = "direc";
+            this.direc.Size = new System.Drawing.Size(216, 20);
+            this.direc.TabIndex = 93;
+            this.direc.Tag = "Dirección";
             // 
             // limpiar
             // 
@@ -303,6 +303,7 @@
             this.dateTime_Nac.Name = "dateTime_Nac";
             this.dateTime_Nac.Size = new System.Drawing.Size(216, 20);
             this.dateTime_Nac.TabIndex = 134;
+            this.dateTime_Nac.ValueChanged += new System.EventHandler(this.dateTime_Nac_ValueChanged);
             // 
             // label3
             // 
@@ -390,7 +391,7 @@
             this.Controls.Add(this.LApellido);
             this.Controls.Add(this.telefono);
             this.Controls.Add(this.LTelefono);
-            this.Controls.Add(this.calle);
+            this.Controls.Add(this.direc);
             this.Name = "Amb_Profesional_Form";
             this.Text = "FormAfiliado";
             this.Load += new System.EventHandler(this.FormAfiliado_Load);
@@ -413,7 +414,7 @@
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.TextBox telefono;
         private System.Windows.Forms.Label LTelefono;
-        private System.Windows.Forms.TextBox calle;
+        private System.Windows.Forms.TextBox direc;
         private System.Windows.Forms.Button limpiar;
         private System.Windows.Forms.Button cancelar;
         private System.Windows.Forms.Button aceptar;

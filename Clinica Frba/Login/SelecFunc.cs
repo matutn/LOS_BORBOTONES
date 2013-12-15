@@ -154,7 +154,7 @@ namespace Clinica_Frba.Login
 
         private void registrarAgendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistrarAgenda_Principal.idProfesional = Id;
+            RegistrarAgenda_Principal.idProfesionall = Id;
             (new RegistrarAgenda_Principal(Id)).Show();
         }
 

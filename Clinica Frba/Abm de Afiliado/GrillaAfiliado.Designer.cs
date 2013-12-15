@@ -46,10 +46,10 @@
             this.txt_CantidadConsultas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.agregar = new System.Windows.Forms.Button();
-            this.B_EliminarClientes = new System.Windows.Forms.Button();
             this.B_Buscar = new System.Windows.Forms.Button();
             this.B_Limpiar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.B_EliminarClientes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listadoAfiliados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,17 +184,6 @@
             this.agregar.UseVisualStyleBackColor = true;
             this.agregar.Click += new System.EventHandler(this.agregar_Click);
             // 
-            // B_EliminarClientes
-            // 
-            this.B_EliminarClientes.Location = new System.Drawing.Point(297, 12);
-            this.B_EliminarClientes.Margin = new System.Windows.Forms.Padding(2);
-            this.B_EliminarClientes.Name = "B_EliminarClientes";
-            this.B_EliminarClientes.Size = new System.Drawing.Size(90, 25);
-            this.B_EliminarClientes.TabIndex = 29;
-            this.B_EliminarClientes.Text = "Cambiar Estado";
-            this.B_EliminarClientes.UseVisualStyleBackColor = true;
-            this.B_EliminarClientes.Click += new System.EventHandler(this.B_EliminarClientes_Click);
-            // 
             // B_Buscar
             // 
             this.B_Buscar.Location = new System.Drawing.Point(203, 12);
@@ -227,6 +216,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // B_EliminarClientes
+            // 
+            this.B_EliminarClientes.Location = new System.Drawing.Point(297, 12);
+            this.B_EliminarClientes.Margin = new System.Windows.Forms.Padding(2);
+            this.B_EliminarClientes.Name = "B_EliminarClientes";
+            this.B_EliminarClientes.Size = new System.Drawing.Size(90, 25);
+            this.B_EliminarClientes.TabIndex = 29;
+            this.B_EliminarClientes.Text = "Cambiar Estado";
+            this.B_EliminarClientes.UseVisualStyleBackColor = true;
+            this.B_EliminarClientes.Click += new System.EventHandler(this.B_EliminarClientes_Click);
+            // 
             // GrillaAfiliado_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,7 +250,6 @@
 
         private System.Windows.Forms.DataGridView listadoAfiliados;
         private System.Windows.Forms.Button agregar;
-        private System.Windows.Forms.Button B_EliminarClientes;
         private System.Windows.Forms.Button B_Buscar;
         private System.Windows.Forms.Button B_Limpiar;
         private System.Windows.Forms.Button button1;
@@ -270,6 +269,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn txt_CantPersonas;
         private System.Windows.Forms.DataGridViewTextBoxColumn txt_CantidadConsultas;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminado;
+        private System.Windows.Forms.Button B_EliminarClientes;
 
     }
 }

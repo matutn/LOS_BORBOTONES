@@ -76,7 +76,7 @@ namespace Clinica_Frba.Cancelar_Atencion
                                             " AND e.esp_Descripcion like '%" + txt_esp.Text + "%' AND t.tur_IdProf = p.prof_IdProfesional " +
                                             " AND t.tur_estado = 'true' AND t.tur_IdAfi = a.afi_IdAfiliado " +
                                             "AND e.esp_CodEspecialidad = t.tur_Especialidad AND a.afi_IdAfiliado = '" + txt_Id_Afi.Text + "'" +
-                                            "AND t.tur_IdConsulta is NULL");
+                                            "AND t.tur_IdConsulta is NULL AND cast(t.tur_Fecha as date) > cast('" + GetDateTime() + "' as date)");
                 
             }
             

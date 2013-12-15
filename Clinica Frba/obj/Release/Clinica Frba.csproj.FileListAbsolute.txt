@@ -149,4 +149,38 @@ C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica Frba.csproj.GenerateResource.Cache
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica Frba.exe
 \\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica Frba.pdb
+<<<<<<< HEAD
 C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\bin\Release\Clinica Frba.exe.config
+=======
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\bin\Release\Clinica Frba.exe.config
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\bin\Release\Clinica Frba.exe
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\bin\Release\Clinica Frba.pdb
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\ResolveAssemblyReference.cache
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.GrillaAfiliado.GrillaAfiliado_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Abm_Profesional.Amb_Profesional_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.GrillaProfesional.GrillaProfesional_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Abm_Rol.Abm_Rol_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.GrillaRol.GrillaRol_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Cancelar_Atencion.Cancelar_Turno_Afiliado.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Cancelar_Atencion.CancelaProfesional.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono_Secundario.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Compra_de_Bono.CompraBono_Principal.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.GenerarReceta.Generar_Receta.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.NewFolder9.BonosFarmaciaPorEspecialidad.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.NewFolder9.BonosFarmaciaVencidos.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.NewFolder9.BonosQueComproOtro.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.NewFolder9.CancelacionesPorEspecialidad.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.ListadoEstadisticoMenu.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Login.Ingreso.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Login.Login_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Login.SelecFunc.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Pedir_Turno.PedidoTurno_Principal.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Pedir_Turno.PedidoTurno_Secundario.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Properties.Resources.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Registrar_Agenda.RegistrarAgenda_Principal.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.Registrar_Agenda.RegistrarAgenda_Secundario.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.RegLlegada.RegLlegada_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica_Frba.ResultadoAtencion.Resultado_Atencion_Form.resources
+\\VBOXSVR\Enlace_con_VMs\LOS_BORBOTONES\Clinica Frba\obj\Release\Clinica Frba.csproj.GenerateResource.Cache
+>>>>>>> 838048fbb41b23f2803dda1ea4a88fb0b61f53fa

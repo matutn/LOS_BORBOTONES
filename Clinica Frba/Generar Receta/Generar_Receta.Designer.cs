@@ -38,7 +38,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.B_OtraReceta = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
@@ -55,6 +54,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.B_OtraReceta = new System.Windows.Forms.Button();
             this.B_Validar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -84,6 +84,7 @@
             this.txt_BonoF.Name = "txt_BonoF";
             this.txt_BonoF.Size = new System.Drawing.Size(100, 20);
             this.txt_BonoF.TabIndex = 1;
+            this.txt_BonoF.TextChanged += new System.EventHandler(this.txt_BonoF_TextChanged);
             // 
             // label1
             // 
@@ -182,17 +183,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(103, 23);
             this.textBox3.TabIndex = 13;
-            // 
-            // B_OtraReceta
-            // 
-            this.B_OtraReceta.Enabled = false;
-            this.B_OtraReceta.Location = new System.Drawing.Point(231, 295);
-            this.B_OtraReceta.Name = "B_OtraReceta";
-            this.B_OtraReceta.Size = new System.Drawing.Size(120, 35);
-            this.B_OtraReceta.TabIndex = 10;
-            this.B_OtraReceta.Text = "Generar Nueva Receta";
-            this.B_OtraReceta.UseVisualStyleBackColor = true;
-            this.B_OtraReceta.Click += new System.EventHandler(this.B_OtraReceta_Click);
             // 
             // label8
             // 
@@ -373,6 +363,17 @@
             this.label3.Size = new System.Drawing.Size(108, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "Medicamento 4:";
+            // 
+            // B_OtraReceta
+            // 
+            this.B_OtraReceta.Enabled = false;
+            this.B_OtraReceta.Location = new System.Drawing.Point(231, 295);
+            this.B_OtraReceta.Name = "B_OtraReceta";
+            this.B_OtraReceta.Size = new System.Drawing.Size(120, 35);
+            this.B_OtraReceta.TabIndex = 10;
+            this.B_OtraReceta.Text = "Generar Nueva Receta";
+            this.B_OtraReceta.UseVisualStyleBackColor = true;
+            this.B_OtraReceta.Click += new System.EventHandler(this.B_OtraReceta_Click);
             // 
             // B_Validar
             // 

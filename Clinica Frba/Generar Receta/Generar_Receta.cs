@@ -79,12 +79,7 @@ namespace Clinica_Frba.GenerarReceta
             DataTable BonoF = DB.ExecuteReader("Select * From LOS_BORBOTONES.Bono_Farmacia b, LOS_BORBOTONES.Afiliado a" +
                                                 " Where b.bofa_IdBonoFarmacia = '" + txt_BonoF.Text + "' AND b.bofa_IdAfi = a.afi_IdAfiliado");
 
-            if (BonoF.Rows[0]["bofa_IdPlan"] != BonoF.Rows[0]["afi_IdPlan"])
-            {
-                MessageBox.Show("El afiliado no tiene le mismo plan con el que el Bono Farmacia fue comprado");
-                return;
-            }
-
+          
 
             if (BonoF.Rows.Count == 0)
             {
@@ -92,19 +87,26 @@ namespace Clinica_Frba.GenerarReceta
                 return;
             }
 
-            if (BonoF.Rows[0]["bofa_Estado"].ToString() == "true")
+            if (BonoF.Rows[0]["bofa_IdPlan"].ToString() != BonoF.Rows[0]["afi_IdPlan"].ToString())
+            {
+                MessageBox.Show("El afiliado no tiene le mismo plan con el que el Bono Farmacia fue comprado");
+                return;
+            }
+
+            if (BonoF.Rows[0]["bofa_Estado"].ToString() == "True")
             {
                 MessageBox.Show("El Bono es inutilizable. Caducó o ya fue utilizado.");
                 return;
             }
 
-            if (((Convert.ToDateTime(GetDateTime()).Year == Convert.ToDateTime(BonoF.Rows[0]["bofa_FechaVencBF"].ToString()).Year) && (Convert.ToDateTime(GetDateTime()).DayOfYear >= Convert.ToDateTime(BonoF.Rows[0]["bofa_FechaVencBF"].ToString()).DayOfYear)) || (Convert.ToDateTime(GetDateTime()).Year > Convert.ToDateTime(BonoF.Rows[0]["bofa_FechaVencBF"].ToString()).Year))
-            {
-                MessageBox.Show("El bono farmacia caducó");
-                int updateBonoF = DB.ExecuteNonQuery("Update LOS_BORBOTONES.Bono_Farmacia set bofa_Estado = 'true' where bofa_IdBonoFarmacia = '" + txt_BonoF.Text + "'");
-                return;
-            }
-
+            //if (((Convert.ToDateTime(GetDateTime()).Year == Convert.ToDateTime(BonoF.Rows[0]["bofa_FechaVencBF"].ToString()).Year) && (Convert.ToDateTime(GetDateTime()).DayOfYear >= Convert.ToDateTime(BonoF.Rows[0]["bofa_FechaVencBF"].ToString()).DayOfYear)) || (Convert.ToDateTime(GetDateTime()).Year > Convert.ToDateTime(BonoF.Rows[0]["bofa_FechaVencBF"].ToString()).Year))
+            //{
+            //    MessageBox.Show("El bono farmacia caducó");
+            //    int updateBonoF = DB.ExecuteNonQuery("Update LOS_BORBOTONES.Bono_Farmacia set bofa_Estado = 'true' where bofa_IdBonoFarmacia = '" + txt_BonoF.Text + "'");
+            //    return;
+            //}
+            txt_BonoF.Enabled = false;
+            B_Validar.Enabled = false;
             GB_Receta.Enabled = true;
             B_Generar.Enabled = true;
         }
@@ -124,6 +126,7 @@ namespace Clinica_Frba.GenerarReceta
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             Close();
         }
 
@@ -277,12 +280,13 @@ namespace Clinica_Frba.GenerarReceta
 
             listadoRecetas.Add(receta);
 
-            
+            int updateBofoF = DB.ExecuteNonQuery("Update LOS_BORBOTONES.Bono_Farmacia set bofa_Estado = 1 where bofa_IdBonoFarmacia = '"+txt_BonoF.Text +"'");
 
             MessageBox.Show("La receta se guardó correctamente.");
-
+            B_Validar.Enabled = false;
             GB_Receta.Enabled = false;
             B_OtraReceta.Enabled = true;
+            txt_BonoF.Enabled = false;
             return;
 
         }
@@ -331,6 +335,8 @@ namespace Clinica_Frba.GenerarReceta
             numericLetras(numericUpDown4.Value.ToString(), textBox4);
             numericLetras(numericUpDown5.Value.ToString(), textBox5);
 
+            txt_BonoF.Text = "";
+
         }
 
         private void B_OtraReceta_Click(object sender, EventArgs e)
@@ -339,11 +345,17 @@ namespace Clinica_Frba.GenerarReceta
 
             button2.Enabled = true;
             B_OtraReceta.Enabled = false;
-            GB_Receta.Enabled = true;
+            txt_BonoF.Enabled = true;
+            B_Validar.Enabled = true;
             
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_BonoF_TextChanged(object sender, EventArgs e)
         {
 
         }

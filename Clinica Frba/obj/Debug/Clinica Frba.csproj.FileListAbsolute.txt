@@ -73,3 +73,35 @@ C:\Users\pablo\Desktop\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.Ge
 C:\Users\pablo\Desktop\Aplicacion Desktop\Clinica Frba\obj\Debug\Clinica_Frba.ResultadoAtencion.Resultado_Atencion_Form.resources
 C:\Users\pablo\Desktop\TP ENTREGA FINAL\Clinica Frba\obj\Debug\Clinica Frba.exe
 C:\Users\pablo\Desktop\TP ENTREGA FINAL\Clinica Frba\obj\Debug\Clinica Frba.pdb
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\bin\Debug\Clinica Frba.exe
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\bin\Debug\Clinica Frba.pdb
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Abm_Afiliado.Amb_Afiliado_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.GrillaAfiliado.GrillaAfiliado_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Abm_Profesional.Amb_Profesional_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.GrillaProfesional.GrillaProfesional_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Abm_Rol.Abm_Rol_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.GrillaRol.GrillaRol_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Cancelar_Atencion.Cancelar_Turno_Afiliado.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Cancelar_Atencion.CancelaProfesional.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Secundario.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Compra_de_Bono.CompraBono_Principal.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.GenerarReceta.Generar_Receta.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.NewFolder9.BonosFarmaciaPorEspecialidad.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.NewFolder9.BonosFarmaciaVencidos.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.NewFolder9.BonosQueComproOtro.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.NewFolder9.CancelacionesPorEspecialidad.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.ListadoEstadisticoMenu.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Login.Ingreso.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Login.Login_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Login.SelecFunc.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Pedir_Turno.PedidoTurno_Principal.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Pedir_Turno.PedidoTurno_Secundario.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Properties.Resources.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Registrar_Agenda.RegistrarAgenda_Principal.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.Registrar_Agenda.RegistrarAgenda_Secundario.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.RegLlegada.RegLlegada_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica_Frba.ResultadoAtencion.Resultado_Atencion_Form.resources
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica Frba.csproj.GenerateResource.Cache
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica Frba.exe
+C:\Users\pablo\Documents\GitHub\LOS_BORBOTONES\Clinica Frba\obj\Debug\Clinica Frba.pdb

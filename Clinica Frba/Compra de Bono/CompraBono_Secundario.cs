@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clinica_Frba.Utils;
+using System.IO;
 
 namespace Clinica_Frba.Compra_de_Bono
 {
@@ -20,6 +21,7 @@ namespace Clinica_Frba.Compra_de_Bono
             dniAfi.Text = dniAfiliado;
             idPlan.Text = Clases.DB.ExecuteCardinal("Select isNull(afi_IdPlan,0) from LOS_BORBOTONES.Afiliado where afi_Dni = '" + dniAfiliado + "'").ToString();
             this.Text = "Compra Bonos";
+            dateTime_Compra.MinDate = Convert.ToDateTime(GetDateTime());
         }
 
         private void CompraBono_Load(object sender, EventArgs e)
@@ -30,6 +32,19 @@ namespace Clinica_Frba.Compra_de_Bono
         private void button_Cancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        public string GetDateTime()
+        {
+            string path = "";
+
+            StreamReader sr = new StreamReader(path + "fechaActual.txt");
+            string aux = sr.ReadLine();
+
+            sr.Close();
+            sr.Dispose();
+
+            return aux;
         }
 
         private void button_Aceptar_Click(object sender, EventArgs e)
@@ -53,16 +68,16 @@ namespace Clinica_Frba.Compra_de_Bono
             {
                 int nroIdBonoConsulta = Clases.DB.ExecuteCardinal("select * from LOS_BORBOTONES.Bono_Consulta order by 1 desc");
                 int idBonoC = nroIdBonoConsulta + bc;
-              
-                Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Bono_Consulta (boco_IdBonoConsulta,boco_IdCompra,boco_FechaImpresion,boco_IdPlan) values (" + idBonoC + ",'" + dt_idCompra.Rows[0]["cobo_IdCompra"] + "','" + dateTime_Compra.Value.ToString("yyyy-MM-dd") + "','" + idPlan.Text + "')");
+
+                Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Bono_Consulta (boco_IdAfiliado,boco_IdBonoConsulta,boco_IdCompra,boco_FechaImpresion,boco_IdPlan) values ('" + idAfiliado + "'," + idBonoC + ",'" + dt_idCompra.Rows[0]["cobo_IdCompra"] + "','" + dateTime_Compra.Value.ToString("yyyy-MM-dd") + "','" + idPlan.Text + "')");
             }
             for (int bf = 1; bf <= cantBF.Value; bf++)
             {
                 int nroIdBonoFarmacia = Clases.DB.ExecuteCardinal("select * from LOS_BORBOTONES.Bono_Farmacia order by 1 desc");
                 int idBonoF = nroIdBonoFarmacia + bf;
-                DateTime fechaImpresion = dateTime_Compra.Value.AddDays(60);
-               
-                Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Bono_Farmacia (bofa_IdAfi,bofa_IdPlan,bofa_IdCompra,bofa_FechaVencBF,bofa_FechaImpresion) values ('" + idAfiliado + "','" + idPlan.Text + "'," + dt_idCompra.Rows[0]["cobo_IdCompra"] + ",'" + dateTime_Compra.Value.ToString("yyyy-MM-dd") + "','" + fechaImpresion.ToString("yyyy-MM-dd") + "')");
+                DateTime fechaVencimiento = dateTime_Compra.Value.AddDays(60);
+
+                Clases.DB.ExecuteNonQuery(@"Insert into LOS_BORBOTONES.Bono_Farmacia (bofa_IdAfi,bofa_IdPlan,bofa_IdCompra,bofa_FechaImpresion,bofa_FechaVencBF) values ('" + idAfiliado + "','" + idPlan.Text + "'," + dt_idCompra.Rows[0]["cobo_IdCompra"] + ",'" + dateTime_Compra.Value.ToString("yyyy-MM-dd") + "','" + fechaVencimiento.ToString("yyyy-MM-dd") + "')");
             }          
             MessageBox.Show("La compra se realizo correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
